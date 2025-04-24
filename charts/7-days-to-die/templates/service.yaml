@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "7-days-to-die.fullname" . }}
+  labels:
+    {{- include "7-days-to-die.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: gameport1
+      port: 26900
+      targetPort: gameport1
+      protocol: TCP # Default game ports
+    - name: gameport2
+      port: 26900
+      targetPort: gameport2
+      protocol: UDP # Default game ports
+    - name: gameport3
+      port: 26901
+      targetPort: gameport3
+      protocol: udp # Default game ports
+    - name: gameport4
+      port: 26902
+      targetPort: gameport4
+      protocol: udp # Default game ports
+    - name: webadmin
+      port: 8080
+      targetPort: webadmin
+      protocol: TCP   # OPTIONAL - WEBADMIN
+    - name: telnet
+      port: 8081
+      targetPort: telnet
+      protocol: TCP   # OPTIONAL - TELNET
+    - name: webserver
+      port: 8082
+      targetPort: webserver
+      protocol: TCP   # OPTIONAL - WEBSERVER https://7dtd.illy.bz/wiki/Server%20fixes
+  selector:
+    {{- include "7-days-to-die.selectorLabels" . | nindent 4 }}

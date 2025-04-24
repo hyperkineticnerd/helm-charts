@@ -1,0 +1,16 @@
+{{- if .Values.storage.nfs.enabled }}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ include "minecraft.storage.pvName" . }}
+spec:
+  capacity:
+    storage: {{ .Values.storage.capacity }}
+  accessModes:
+    - {{ .Values.storage.access }}
+  nfs:
+    server: {{ .Values.storage.nfs.server }}
+    path: {{ .Values.storage.nfs.path }}
+  persistentVolumeReclaimPolicy: Retain
+{{- end -}}

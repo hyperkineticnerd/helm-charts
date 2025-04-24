@@ -1,0 +1,90 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "satisfactory.fullname" . }}
+  labels:
+    app: game
+    game: satisfactory
+    {{- include "satisfactory.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      app: game
+      game: satisfactory
+      {{- include "satisfactory.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        app: game
+        game: satisfactory
+        {{- include "satisfactory.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "satisfactory.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            - secretRef:
+                name: {{ include "satisfactory.fullname" . }}-env
+          ports:
+            - name: game
+              containerPort: {{ .Values.service.game.port }}
+              protocol: UDP
+            - name: gametcp
+              containerPort: {{ .Values.service.gametcp.port }}
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: backups
+              mountPath: "/config/backups"
+            - name: gamefiles
+              mountPath: "/config/gamefiles"
+            - name: logs
+              mountPath: "/config/logs"
+            - name: saved
+              mountPath: "/config/saved"
+      volumes:
+        - name: backups
+          persistentVolumeClaim:
+            claimName: {{ include "satisfactory.fullname" . }}-backups
+        - name: gamefiles
+          persistentVolumeClaim:
+            claimName: {{ include "satisfactory.fullname" . }}-gamefiles
+        - name: logs
+          persistentVolumeClaim:
+            claimName: {{ include "satisfactory.fullname" . }}-logs
+        - name: saved
+          persistentVolumeClaim:
+            claimName: {{ include "satisfactory.fullname" . }}-saved
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

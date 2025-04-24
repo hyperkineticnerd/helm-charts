@@ -1,0 +1,12 @@
+redis:
+  enabled: true
+  auth:
+    enabled: false
+    # password: redis
+
+postgresql:
+  enabled: false
+  auth:
+    username: obico
+    password:
+    database:

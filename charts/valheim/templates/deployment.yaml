@@ -1,0 +1,64 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: valheim
+  # namespace: valheim
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: game
+      game: valheim
+  minReadySeconds: 0
+  template:
+    metadata:
+      labels:
+        app: game
+        game: valheim
+    spec:
+      containers:
+        - name: server
+          image: ghcr.io/lloesche/valheim-server:latest
+          env:
+            {{ toYaml .Values.env | nindent 12 }}
+          resources:
+            requests:
+              cpu: 4000m
+              memory: 12Gi
+            limits:
+              cpu: 8000m
+              memory: 16Gi
+          ports:
+            - name: game
+              containerPort: 2456
+              protocol: UDP
+            - name: query
+              containerPort: 2457
+              protocol: UDP
+            - name: steam-api
+              containerPort: 27015
+              protocol: UDP
+            - name: supervisor
+              containerPort: 9001
+              protocol: TCP
+            - name: status
+              containerPort: 80
+              protocol: TCP
+          securityContext:
+            allowPrivilegeEscalation: true
+            runAsNonRoot: false
+            # runAsUser: 1000
+            # runAsGroup: 1000
+          volumeMounts:
+            - name: valheim-data
+              mountPath: /opt/valheim
+            - name: valheim-config
+              mountPath: /config
+      volumes:
+        - name: valheim-config
+          persistentVolumeClaim:
+            claimName: valheim-config-pvc
+        - name: valheim-data
+          persistentVolumeClaim:
+            claimName: valheim-data-pvc

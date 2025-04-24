@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.modpack.slug }}
+  namespace: {{ .Release.Namespace | quote }}
+  {{- include "minecraft.default.service.labels" . | nindent 2 }}
+  {{- include "minecraft.default.service.annotations" . | nindent 2 }}
+spec:
+  type: {{ .Values.service.serviceType }}
+  ports: 
+    {{- include "minecraft.default.service.ports" . | nindent 4 }}
+  selector: 
+    {{- include "minecraft.default.pod.selectors" . | nindent 4 }}

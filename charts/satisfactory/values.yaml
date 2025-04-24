@@ -1,0 +1,110 @@
+# Default values for satisfactory.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: wolveix/satisfactory-server
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  # @default -- chart.appVersion
+  tag: ""
+
+env: {}
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Automatically mount a ServiceAccount's API credentials?
+  automount: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+  # runAsNonRoot: true
+  # runAsUser: 0
+  # seccompProfile:
+    # type: RuntimeDefault
+  # fsGroup: 2000
+
+securityContext: {}
+  # privileged: false
+  # allowPrivilegeEscalation: false
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  game:
+    type: NodePort
+    port: 7777
+    targetPort: 7777
+    nodePort: 7777
+  gametcp:
+    type: NodePort
+    port: 7777
+    targetPort: 7777
+    nodePort: 7777
+
+storage:
+  backups:
+    size: 5Gi
+    accessMode: ReadWriteOnce
+    existingVolume: ""
+    storageClassName: lvms-vg1
+  gamefiles:
+    size: 10Gi
+    accessModes: ReadWriteOnce
+    existingVolume: ""
+    storageClassName: lvms-vg1
+  logs:
+    size: 1Gi
+    accessModes: ReadWriteOnce
+    existingVolume: ""
+    storageClassName: lvms-vg1
+  saved:
+    size: 5Gi
+    accessModes: ReadWriteOnce
+    existingVolume: ""
+    storageClassName: lvms-vg1
+
+resources:
+  limits:
+    cpu: 8000m
+    memory: 16Gi
+  requests:
+    cpu: 4000m
+    memory: 12Gi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+# Additional volumes on the output Deployment definition.
+volumes: []
+
+# Additional volumeMounts on the output Deployment definition.
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

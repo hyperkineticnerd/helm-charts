@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mainsail
+  namespace: mainsail
+data:
+  config.json: |
+    {
+      "instancesDB": "json",
+      "instances": [
+        { "hostname": "172.16.247.92", "port": 7125 }
+      ]
+    }

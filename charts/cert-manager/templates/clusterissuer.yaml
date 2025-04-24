@@ -1,0 +1,23 @@
+apiVersion: cert-manager.io/v1
+{{- if .Values.issuer.cluster }}
+kind: ClusterIssuer
+{{- else -}}
+kind: Issuer
+{{- end }}
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "90"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+spec:
+  acme:
+    server: {{ .Values.issuer.acmeServer | quote }}
+    email: {{ .Values.issuer.email | quote }}
+    preferredChain: {{ .Values.issuer.preferredChain | quote }}
+    privateKeySecretRef:
+      name: {{ .Values.issuer.privateKeySecretRef | quote }}
+    solvers:
+{{- with .Values.issuer.solvers -}}
+{{ toYaml . | nindent 6 }}
+{{- end }}

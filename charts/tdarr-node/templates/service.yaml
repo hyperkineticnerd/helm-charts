@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "tdarr-node.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    {{- include "tdarr-node.selectorLabels" . | nindent 4 }}
+  ports:
+    - name: server
+      protocol: TCP
+      port: {{ .Values.service.server.port }}
+      targetPort: server

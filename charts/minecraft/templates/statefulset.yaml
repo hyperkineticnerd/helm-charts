@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Values.modpack.slug }}
+  namespace: {{ .Release.Namespace | quote }}
+spec:
+  # replica: 1
+  serviceName: minecraft
+  selector:
+    matchLabels:
+    {{- include "minecraft.default.pod.selectors" . | nindent 6 }}
+  minReadySeconds: 0
+  template:
+    metadata:
+      labels:
+        {{- include "minecraft.default.pod.labels" . | nindent 8 }}
+    spec:
+      containers:
+        {{- include "minecraft.default.pod.containers" . | nindent 8 }}
+      volumes:
+        {{- include "minecraft.default.volumes" . | nindent 8 }}

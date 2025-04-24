@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "omada.fullname" . }}
+  labels:
+    {{- include "omada.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    {{- include "omada.selectorLabels" . | nindent 4 }}
+  ports:
+    - name: http
+      port: {{ .Values.service.http.port }}
+      targetPort: http
+      protocol: TCP
+      nodePort: {{ .Values.service.http.port }}
+    - name: manage-https
+      port: {{ .Values.service.manage_https.port }}
+      targetPort: manage-https
+      protocol: TCP
+      nodePort: {{ .Values.service.manage_https.port }}
+    # - name: portal-http
+    #   port: {{ .Values.service.portal_http.port }}
+    #   targetPort: portal-http
+    #   protocol: TCP
+    #   nodePort: {{ .Values.service.portal_http.port }}
+    - name: portal-https
+      port: {{ .Values.service.portal_https.port }}
+      targetPort: portal-https
+      protocol: TCP
+      nodePort: {{ .Values.service.portal_https.port }}
+    - name: adopt-v1
+      port: {{ .Values.service.adopt_v1.port }}
+      targetPort: adopt-v1
+      protocol: TCP
+      nodePort: {{ .Values.service.adopt_v1.port }}
+    - name: app-discovery
+      port: {{ .Values.service.app_discovery.port }}
+      targetPort: app-discovery
+      protocol: UDP
+      nodePort: {{ .Values.service.app_discovery.port }}
+    - name: discovery
+      port: {{ .Values.service.discovery.port }}
+      targetPort: discovery
+      protocol: UDP
+      nodePort: {{ .Values.service.discovery.port }}
+    - name: mgmt-v1
+      port: {{ .Values.service.mgmt_v1.port }}
+      targetPort: mgmt-v1
+      protocol: TCP
+      nodePort: {{ .Values.service.mgmt_v1.port }}
+    - name: mgmt-v2
+      port: {{ .Values.service.mgmt_v2.port }}
+      targetPort: mgmt-v2
+      protocol: TCP
+      nodePort: {{ .Values.service.mgmt_v2.port }}
+    - name: transfer-v2
+      port: {{ .Values.service.transfer_v2.port }}
+      targetPort: transfer-v2
+      protocol: TCP
+      nodePort: {{ .Values.service.transfer_v2.port }}
+    - name: rtty
+      port: {{ .Values.service.rtty.port }}
+      targetPort: rtty
+      protocol: TCP
+      nodePort: {{ .Values.service.rtty.port }}
+    - name: upgrade-v1
+      port: {{ .Values.service.upgrade_v1.port }}
+      targetPort: upgrade-v1
+      protocol: TCP
+      nodePort: {{ .Values.service.upgrade_v1.port }}

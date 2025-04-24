@@ -1,0 +1,19 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: mainsail
+  namespace: mainsail
+  labels:
+    app: mainsail
+    service: server
+spec:
+  to:
+    kind: Service
+    name: mainsail
+    weight: 100
+  port:
+    targetPort: http
+  tls:
+    insecureEdgeTerminationPolicy: Allow
+    termination: edge
+  wildcardPolicy: None

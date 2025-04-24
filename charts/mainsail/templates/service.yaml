@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mainsail
+  namespace: mainsail
+  labels:
+    app: mainsail
+    service: server
+spec:
+  type: ClusterIP
+  selector:
+    app: mainsail
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80

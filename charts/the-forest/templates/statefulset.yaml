@@ -1,0 +1,93 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: the-forest
+  namespace: the-forest
+spec:
+  replica: 1
+  serviceName: the-forest
+  selector:
+    matchLabels:
+      app: game
+      game: the-forest
+  minReadySeconds: 0
+  template:
+    metadata:
+      labels:
+        app: game
+        game: the-forest
+    spec:
+      containers:
+      - name: server
+        image: docker.io/jammsen/the-forest-dedicated-server:latest
+        ports:
+        - name: steam-tcp 
+          containerPort: 8766
+          protocol: TCP
+        - name: steam-udp
+          containerPort: 8766
+          protocol: UDP
+        - name: game-tcp
+          containerPort: 27015
+          protocol: UDP
+        - name: game-udp
+          containerPort: 27015
+          protocol: UDP
+        - name: query-tcp
+          containerPort: 27016
+          protocol: UDP
+        - name: query-udp
+          containerPort: 27016
+          protocol: UDP
+        resources:
+          requests:
+            cpu: "1"
+            memory: 3Gi
+          limits:
+            cpu: "2"
+            memory: 4Gi
+        securityContext:
+          allowPrivilegeEscalation: true
+          runAsNonRoot: false
+        envFrom:
+        - secretRef:
+            name: the-forest-env
+        volumeMounts:
+        - name: game-data
+          mountPath: /theforest
+        - name: steamcmd-data
+          mountPath: /steamcmd
+        - name: wine-data
+          mountPath: /winedata
+        - name: game-cfg
+          mountPath: /theforest/config/
+      volumes:
+      - name: game-cfg
+        configMap:
+          name: the-forest-cfg
+  volumeClaimTemplates:
+  - metadata:
+      name: game-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "lvms-vg1"
+      resources:
+        requests:
+          storage: 20Gi
+  - metadata:
+      name: steamcmd-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "lvms-vg1"
+      resources:
+        requests:
+          storage: 20Gi
+  - metadata:
+      name: wine-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "lvms-vg1"
+      resources:
+        requests:
+          storage: 20Gi

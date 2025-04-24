@@ -1,0 +1,64 @@
+= Redirecterr
+
+== Primary GitHub
+
+https://github.com/varthe/Redirecterr
+
+== ConfigMap
+
+[source,yaml]
+-----
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redirecterr-config
+data:
+  config.yaml: |
+    overseerr_url: "https://my-overseerr-instance.com"
+    overseerr_api_token: "YOUR_API_TOKEN"
+
+    approve_on_no_match: True
+
+    instances:
+    radarr: # Custom instance name
+      server_id: 0
+      root_folder: "/mnt/plex/Movies"
+    radarr4k: # Custom instance name
+      server_id: 1
+      root_folder: "/mnt/plex/Movies - 4K"
+    radarr_anime: # Custom instance name
+      server_id: 2
+      root_folder: "/mnt/plex/Movies - Anime"
+      quality_profile_id: 2 # Optional
+      approve: false # Optional
+    sonarr: # Custom instance name
+      server_id: 0
+      root_folder: "/mnt/plex/Shows"
+
+    filters:
+      - media_type: movie
+        conditions:
+          keywords: anime # Match if keyword "anime" is present
+          requestedBy_username: varthe # Match if requested by "varthe"
+          # requestedBy_email: ""
+        apply: radarr_anime # Send request to "radarr_anime"
+      - media_type: movie
+        conditions:
+        keywords: # Exclude requests with keywords "anime" or "animation"
+          exclude:
+            - anime
+            - animation
+        apply: # Send requests to "radarr" and "radarr4k"
+          - radarr
+          - radarr4k
+      - media_type: tv
+        conditions:
+        genres: # Match if genre is "adventure" or "comedy"
+          - adventure
+          - comedy
+        contentRatings: # Match if content rating is "12" or "16"
+          - 12
+          - 16
+        apply: sonarr # Send request to "sonarr"
+-----

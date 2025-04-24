@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "satisfactory.fullname" . }}
+  labels:
+    app: game
+    game: satisfactory
+    {{- include "satisfactory.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.game.type }}
+  ports:
+    - name: game
+      protocol: UDP
+      port: {{ .Values.service.game.port }}
+      targetPort: {{ .Values.service.game.targetPort }}
+      {{- if eq .Values.service.game.type "NodePort" }}
+      nodePort: {{ .Values.service.game.nodePort }}
+      {{- end }}
+    - name: gametcp
+      protocol: TCP
+      port: {{ .Values.service.gametcp.port }}
+      targetPort: {{ .Values.service.gametcp.targetPort }}
+      {{- if eq .Values.service.gametcp.type "NodePort" }}
+      nodePort: {{ .Values.service.gametcp.nodePort }}
+      {{- end }}
+  selector:
+    app: game
+    game: satisfactory
+    {{- include "satisfactory.selectorLabels" . | nindent 4 }}

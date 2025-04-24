@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: palworld
+  # namespace: palworld
+  labels:
+    app: game
+    game: palworld
+    {{- include "palworld.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports: 
+    - name: game
+      port: {{ .Values.service.game.port }}
+      protocol: UDP
+      targetPort: 8211
+      {{- if eq .Values.service.type "NodePort" }}
+      nodePort: {{ .Values.service.game.nodePort }}
+      {{- end }}
+    - name: query
+      port: {{ .Values.service.query.port }}
+      protocol: UDP
+      targetPort: 27015
+      {{- if eq .Values.service.type "NodePort" }}
+      nodePort: {{ .Values.service.query.nodePort }}
+      {{- end }}
+  selector: 
+    app: game
+    game: palworld
+    {{- include "palworld.selectorLabels" . | nindent 4 }}

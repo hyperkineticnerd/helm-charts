@@ -1,0 +1,76 @@
+---
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: enshrouded
+spec:
+  replicas: 1
+  serviceName: enshrouded
+  selector:
+    matchLabels:
+      app: game
+      game: enshrouded
+  minReadySeconds: 0
+  template:
+    metadata:
+      labels:
+        app: game
+        game: enshrouded
+    spec:
+      containers:
+        - name: server
+          image: docker.io/sknnr/enshrouded-dedicated-server:v2.0.5
+          envFrom:
+            - configMapRef:
+                name: enshrouded-env
+            - secretRef:
+                name: enshrouded-env-secrets
+          resources:
+            requests:
+              cpu: 1000m
+              memory: 4Gi
+            limits:
+              cpu: 2000m
+              memory: 8Gi
+          ports:
+            - name: game
+              containerPort: 15636
+              protocol: UDP
+            - name: query
+              containerPort: 15637
+              protocol: UDP
+          securityContext:
+            allowPrivilegeEscalation: true
+            runAsNonRoot: true
+            runAsUser: 10000
+            runAsGroup: 10000
+          volumeMounts:
+            - name: enshrouded-data
+              mountPath: /home/steam/enshrouded
+            - name: enshrouded-config
+              mountPath: /home/steam/enshorouded/savegame
+      # volumes:
+  volumeClaimTemplates:
+    - metadata:
+        name: enshrouded-config
+      spec:
+        accessModes:
+          - "ReadWriteOnce"
+        # storageClassName: ""
+        # volumeName: nfs-valheim-config
+        persistentVolumeReclaimPolicy: Retain
+        resources:
+          requests:
+            storage: 20Gi
+    - metadata:
+        name: enshrouded-data
+      spec:
+        accessModes:
+          - "ReadWriteOnce"
+        # storageClassName: ""
+        # volumeName: nfs-valheim-data
+        persistentVolumeReclaimPolicy: Retain
+        resources:
+          requests:
+            storage: 20Gi

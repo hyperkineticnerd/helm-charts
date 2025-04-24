@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fluidd
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fluidd
+  template:
+    metadata:
+      labels:
+        app: fluidd
+    spec:
+      containers:
+      - name: fluidd
+        image: ghcr.io/fluidd-core/fluidd:latest
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: fluidd
+        resources:
+          limits:
+            cpu: 6000m
+            memory: 8Gi
+          requests:
+            cpu: 4000m
+            memory: 4Gi
+        ports:
+        - name: http
+          containerPort: 80
+        securityContext:
+          runAsUser: 0
+          runAsGroup: 0
+          allowPrivilegeEscalation: true
+          runAsNonRoot: false
+        volumeMounts:
+        - name: fluidd-config
+          mountPath: /config
+      volumes:
+      - name: fluidd-config
+        configMap:
+          name: fluidd

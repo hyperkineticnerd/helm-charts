@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: enshrouded-env
+data:
+  SERVER_NAME: Enshrouded Containerized Server
+  SERVER_SLOTS: 16
+  SERVER_PASSWORD: {{ .Values.server.password }}
+  GAME_PORT: 15636
+  QUERY_PORT: 15637

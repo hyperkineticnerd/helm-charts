@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name }}
+    service: server
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: {{ .Release.Name }}
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8096
+    targetPort: 8096
+  - name: https
+    protocol: TCP
+    port: 8920
+    targetPort: 8920
+  - name: dlna
+    protocol: UDP
+    port: 1900
+    targetPort: 1900
+  - name: client
+    protocol: UDP
+    port: 7359
+    targetPort: 7359

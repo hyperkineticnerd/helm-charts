@@ -1,0 +1,62 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bazarr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bazarr
+  template:
+    metadata:
+      labels:
+        app: bazarr
+    spec:
+      containers:
+        - name: bazarr
+          image: lscr.io/linuxserver/bazarr:latest
+          env:
+            - name: PUID
+              value: '0'
+            - name: PGID
+              value: '0'
+            - name: TZ
+              value: Etc/UTC
+            # - name: UMASK
+            #   value: '002'
+          ports:
+            - name: bazarr
+              containerPort: 6767
+              protocol: TCP
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          resources:
+            requests:
+              cpu: 1000m
+              memory: 2Gi
+            limits:
+              cpu: 2000m
+              memory: 4Gi
+          securityContext:
+            allowPrivilegeEscalation: true
+            runAsNonRoot: false
+          volumeMounts:
+            - name: bazarr-config
+              mountPath: /config
+            - name: tv
+              mountPath: /tv
+            - name: movies
+              mountPath: /movies
+      volumes:
+        - name: bazarr-config
+          persistentVolumeClaim:
+            claimName: {{ printf "%s-config" .Release.Name }}
+        - name: movies
+          persistentVolumeClaim:
+            claimName: {{ default (printf "%s-movies" .Release.Name) .Values.storage.movies.existingClaimName }}
+        - name: tv
+          persistentVolumeClaim:
+            claimName: {{ default (printf "%s-tv" .Release.Name) .Values.storage.tv.existingClaimName }}

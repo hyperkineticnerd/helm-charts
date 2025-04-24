@@ -1,0 +1,53 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: obico-task
+  namespace: obico
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: obico-task
+  template:
+    metadata:
+      annotations:
+        openshift.io/required-scc: anyuid
+      labels:
+        app: obico-task
+    spec:
+      containers:
+        - name: tasks
+          image: ghcr.io/thespaghettidetective/obico-server/server:0.1.0-release.1.4241
+          imagePullPolicy: Always
+          command: 
+            - sh 
+            - -c 
+            - "celery -A config worker --beat -l info -c 2 -Q realtime,celery"
+          envFrom:
+          - configMapRef:
+              name: obico-base
+          - configMapRef:
+              name: obico-tasks
+          resources:
+            limits:
+              cpu: 2000m
+              memory: 8Gi
+            requests:
+              cpu: 1000m
+              memory: 4Gi
+          securityContext:
+            runAsUser: 0
+            runAsGroup: 0
+            allowPrivilegeEscalation: true
+            runAsNonRoot: false
+            capabilities:
+              drop: ["ALL"]
+            # seccompProfile:
+            #   type: RuntimeDefault
+
+        #   volumeMounts:
+        #   - name: backend
+        #     mountPath: /app
+        #   - name: frontend
+        #     mountPath: /frontend

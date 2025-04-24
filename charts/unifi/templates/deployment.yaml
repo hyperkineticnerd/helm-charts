@@ -1,0 +1,131 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "unifi.fullname" . }}
+  labels:
+    {{- include "unifi.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "unifi.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "unifi.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "unifi.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: UNIFI_STDOUT
+              value: 'true'
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.http.port }}
+              protocol: TCP
+            - name: https
+              containerPort: {{ .Values.service.https.port }}
+              protocol: TCP
+            - name: stun
+              containerPort: {{ .Values.service.stun.port }}
+              protocol: UDP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: data
+              mountPath: /unifi/data
+            - name: log
+              mountPath: /unifi/log
+            - name: run
+              mountPath: /unifi/run
+            # - name: cert
+            #   mountPath: /unifi/cert
+            # - name: init
+            #   mountPath: /unifi/init.d
+            {{- with .Values.volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
+
+      {{- with .Values.volumes }}
+      volumes:
+        # - name: data
+        #   persistentVolumeClaim:
+        #     claimName: unifi-data
+        # - name: log
+        #   persistentVolumeClaim:
+        #     claimName: unifi-log
+        # - name: run
+        #   persistentVolumeClaim:
+        #     claimName: unifi-run
+        # - name: cert
+        #   persistentVolumeClaim:
+        #     claimName: unifi-cert
+        # - name: init
+        #   persistentVolumeClaim:
+        #     claimName: unifi-init
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        resources:
+          requests:
+            storage: 10Gi
+        volumeName: {{ .Values.storage.data.volumeName }}
+        storageClassName: {{ .Values.storage.data.storageClassName }}
+
+    - metadata:
+        name: log
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        resources:
+          requests:
+            storage: 10Gi
+        volumeName: {{ .Values.storage.log.volumeName }}
+        storageClassName: {{ .Values.storage.log.storageClassName }}
+
+    - metadata:
+        name: run
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        resources:
+          requests:
+            storage: 10Gi
+        volumeName: {{ .Values.storage.run.volumeName }}
+        storageClassName: {{ .Values.storage.run.storageClassName }}

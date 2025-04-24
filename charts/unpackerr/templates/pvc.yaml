@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ printf "%s-config" .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  accessModes: {{ .Values.storage.config.accessModes }}
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 5Gi
+
+{{- if .Values.storage.downloads.enabled }}
+{{- if not .Values.storage.downloads.existingClaimName }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ printf "%s-downloads" .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  accessModes: {{ .Values.storage.downloads.accessModes }}
+  resources:
+    requests:
+      storage: {{ .Values.storage.downloads.storageSize }}
+  volumeName: {{ .Values.storage.downloads.existingVolumeName | quote }}
+  storageClassName: {{ .Values.storage.downloads.storageClassName | quote }}
+{{- end }}
+{{- end }}

@@ -1,0 +1,11 @@
+spec:
+  template:
+    spec:
+      containers:
+        - name: nitrox
+          securityContext:
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              drop:
+                - ALL

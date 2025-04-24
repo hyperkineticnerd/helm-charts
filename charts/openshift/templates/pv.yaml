@@ -1,0 +1,18 @@
+{{- if .Values.pv.enable }}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .Values.pv.name }}
+spec:
+  capacity:
+    storage: {{ .Values.pv.capacity }}
+  accessModes: {{ .Values.pv.accessModes }}
+  {{- if .Values.pv.nfs.enable }}
+  nfs:
+    server: {{ .Values.pv.nfs.server }}
+    path: {{ .Values.pv.nfs.path }}
+  {{- end }}
+  persistentVolumeReclaimPolicy: Retain
+
+{{- end }}

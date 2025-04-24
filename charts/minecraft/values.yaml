@@ -1,0 +1,66 @@
+global:
+  image: itzg/minecraft-server:java17
+
+server:
+  version: 1.19.2
+  motd: "[HyperKineticNerd] Vanilla"
+  memory: 6G
+  serverPort: 25565
+  rconPort: 25575
+
+modpack:
+  commonLabels:
+    app: game
+    game: minecraft
+
+  extraEnv: {}
+
+  slug: vanilla
+  slug_id: ''
+
+  version: v1.20.1
+  version_id: ''
+
+  modrinth:
+    enabled: false
+    loader: fabric
+
+  forge:
+    enabled: false
+    version: ''
+
+  fabric:
+    enabled: false
+    version: latest
+
+  feed_the_beast:
+    enabled: false
+
+  curseforge:
+    enabled: false
+    auto: false
+    api_key: ""
+    page_url: ""
+
+storage:
+  enabled: true
+  capacity: 10Gi
+  access: ReadWriteMany
+  nfs:
+    enabled: false
+    server: ''
+    path: ''
+  pvc:
+    storageClass: ""
+    enabled: false
+
+deployment:
+  resources: {}
+  securityContext: {}
+
+service:
+  serviceType: NodePort
+  annotations: {}
+  externalPort: 25565
+  nodePort: 25565
+  nodePortEnable: true

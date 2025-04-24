@@ -1,0 +1,59 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: dont-starve-together
+  namespace: dont-starve-together
+spec:
+  replica: 1
+  serviceName: dont-starve-together
+  selector:
+    matchLabels:
+      app: game
+      game: dont-starve-together
+  template:
+    metadata:
+      labels:
+        app: game
+        game: dont-starve-together
+    spec:
+      containers:
+      - name: server
+        image: docker.io/jamesits/dst-server:latest
+        ports:
+        - name: master 
+          containerPort: 10999
+          protocol: UDP
+        - name: caves
+          containerPort: 11000
+          protocol: UDP
+        - name: steam
+          containerPort: 12346
+          protocol: UDP
+        - name: steam-query
+          containerPort: 12347
+          protocol: UDP
+        resources:
+          requests:
+            cpu: "1"
+            memory: 3Gi
+          limits:
+            cpu: "2"
+            memory: 4Gi
+        securityContext:
+          allowPrivilegeEscalation: true
+          runAsNonRoot: false
+          # capabilities:
+          #   drop:
+          #   - ALL
+          # seccompProfile:
+          #   type: RuntimeDefault
+        envFrom:
+        - secretRef:
+            name: dont-starve-together-env
+        volumeMounts:
+        - name: game-data
+          mountPath: /data
+      volumes:
+      - name: game-data
+        emptyDir: {}

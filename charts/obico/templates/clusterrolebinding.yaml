@@ -1,0 +1,15 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+# kind: ClusterRoleBinding
+kind: RoleBinding
+metadata:
+  name: obico-scc-anyuid
+  namespace: obico
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: obico
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: 'system:openshift:scc:anyuid'

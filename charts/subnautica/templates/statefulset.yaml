@@ -1,0 +1,66 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: subnautica
+  # namespace: subnautica
+spec:
+  replicas: 1
+  serviceName: nitrox
+  selector:
+    matchLabels:
+      app: game
+      game: subnautica
+  minReadySeconds: 0
+  template:
+    metadata:
+      labels:
+        app: game
+        game: subnautica
+    spec:
+      containers:
+        - name: nitrox
+          image: quay.io/snelson/subnautica-nitrox:latest
+          env:
+            - name: TIMEZONE
+              value: Etc/GMT
+            - name: SUBNAUTICA_INSTALLATION_PATH
+              value: /software/subnautica
+          resources:
+            limits:
+              memory: "4Gi"
+              cpu: "4000m"
+          securityContext:
+            runAsNonRoot: false
+            allowPrivilegeEscalation: true
+            runAsUser: 0
+          ports:
+            - name: nitrox
+              containerPort: 11000
+              protocol: UDP
+          volumeMounts:
+            - mountPath: /software/subnautica
+              name: subnautica-data
+            - mountPath: /software/nitrox
+              name: nitrox-data
+  volumeClaimTemplates:
+    - metadata:
+        name: subnautica-data
+      spec:
+        storageClassName: ""
+        volumeName: pv-subnautica
+        accessModes:
+          - ReadWriteMany
+        resources:
+          requests:
+            storage: 20Gi
+    - metadata:
+        name: nitrox-data 
+      spec:
+        storageClassName: ""
+        volumeName: pv-nitrox
+        accessModes:
+          - ReadWriteMany
+        resources:
+          requests:
+            storage: 10Gi

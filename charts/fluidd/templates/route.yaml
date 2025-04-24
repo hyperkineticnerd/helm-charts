@@ -1,0 +1,19 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: fluidd
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: fluidd
+    service: server
+spec:
+  to:
+    kind: Service
+    name: fluidd
+    weight: 100
+  port:
+    targetPort: http
+  tls:
+    insecureEdgeTerminationPolicy: Allow
+    termination: edge
+  wildcardPolicy: None

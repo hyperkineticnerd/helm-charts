@@ -1,0 +1,50 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: obico-ml-api
+  namespace: obico
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: obico-ml-api
+  template:
+    metadata:
+      # annotations:
+      #   openshift.io/required-scc: anyuid
+      labels:
+        app: obico-ml-api
+    spec:
+      containers:
+        - name: ml-api
+          image: ghcr.io/thespaghettidetective/obico-server/ml:0.1.0-release.1.4241
+          imagePullPolicy: Always
+          command: 
+            - bash
+            - -c 
+            - "gunicorn --bind 0.0.0.0:3333 --workers 1 wsgi"
+          envFrom:
+          - configMapRef:
+              name: obico-base
+          - configMapRef:
+              name: obico-ml-api
+          ports:
+          - name: ml-api
+            containerPort: 3333
+          resources:
+            limits:
+              cpu: 2000m
+              memory: 8Gi
+            requests:
+              cpu: 1000m
+              memory: 4Gi
+          securityContext:
+            # runAsUser: 0
+            # runAsGroup: 0
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities:
+              drop: ["ALL"]
+            seccompProfile:
+              type: RuntimeDefault

@@ -1,0 +1,59 @@
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: {{ printf "%s-data" .Release.Name }}
+#   namespace: {{ .Release.Namespace }}
+# spec:
+#   accessModes:
+#     - ReadWriteOnce
+#   volumeMode: Filesystem
+#   resources:
+#     requests:
+#       storage: 5Gi
+
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: {{ printf "%s-config" .Release.Name }}
+#   namespace: {{ .Release.Namespace }}
+# spec:
+#   accessModes:
+#     - ReadWriteOnce
+#   volumeMode: Filesystem
+#   resources:
+#     requests:
+#       storage: 3Gi
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ printf "%s-media-movies" .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  accessModes:
+    - ReadWriteMany
+  volumeName: {{ printf "nfs-%s-media-movies" .Release.Name }}
+  storageClassName: ''  
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 10Ti
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ printf "%s-media-television" .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  accessModes:
+    - ReadWriteMany
+  volumeName: {{ printf "nfs-%s-media-television" .Release.Name }}
+  storageClassName: ''  
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 10Ti

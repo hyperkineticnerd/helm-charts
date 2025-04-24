@@ -1,0 +1,81 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name }}
+    version: {{ .Chart.AppVersion }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+      version: {{ .Chart.AppVersion }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+        version: {{ .Chart.AppVersion }}
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    spec:
+      serviceAccountName: {{ .Values.serviceAccount.name }}
+      containers:
+        - name: media-server
+          image: {{ include "jellyfin.imageString" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - /jellyfin/jellyfin
+          envFrom:
+            - secretRef:
+                name: {{ .Release.Name }}-env
+          ports:
+            - name: http
+              containerPort: 8096
+            - name: https
+              containerPort: 8920
+            - name: dlna
+              containerPort: 1900
+              protocol: UDP
+            - name: client
+              containerPort: 7359
+              protocol: UDP
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            # - name: media
+            #   mountPath: /media
+            - name: movies
+              mountPath: /media/Movies
+            - name: tv
+              mountPath: /media/Television
+            - name: config
+              mountPath: /config
+            - name: cache
+              mountPath: /cache
+      volumes:
+      # - name: media
+      #   persistentVolumeClaim:
+      #     claimName: {{ .Release.Name }}-media
+      - name: movies
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}-media-movies
+      - name: tv
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}-media-tv
+      - name: config
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}-config
+      - name: cache
+        emptyDir:
+          medium: Memory

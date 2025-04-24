@@ -1,0 +1,128 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "omada.fullname" . }}
+  labels:
+    {{- include "omada.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "omada.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "omada.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "omada.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- with .Values.environment }}
+          env:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.http.port }}
+              protocol: TCP
+            - name: manage-https
+              containerPort: {{ .Values.service.manage_https.port }}
+              protocol: TCP
+            # - name: portal-http
+            #   containerPort: {{ .Values.service.portal_http.port }}
+            #   protocol: TCP
+            - name: portal-https
+              containerPort: {{ .Values.service.portal_https.port }}
+              protocol: TCP
+            - name: adopt-v1
+              containerPort: {{ .Values.service.adopt_v1.port }}
+              protocol: TCP
+            - name: app-discovery
+              containerPort: {{ .Values.service.app_discovery.port }}
+              protocol: UDP
+            - name: discovery
+              containerPort: {{ .Values.service.discovery.port }}
+              protocol: UDP
+            - name: mgmt-v1
+              containerPort: {{ .Values.service.mgmt_v1.port }}
+              protocol: TCP
+            - name: mgmt-v2
+              containerPort: {{ .Values.service.mgmt_v2.port }}
+              protocol: TCP
+            - name: transfer-v2
+              containerPort: {{ .Values.service.transfer_v2.port }}
+              protocol: TCP
+            - name: rtty
+              containerPort: {{ .Values.service.rtty.port }}
+              protocol: TCP
+            - name: upgrade-v1
+              containerPort: {{ .Values.service.upgrade_v1.port }}
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+
+          volumeMounts:
+            - name: data
+              mountPath: /opt/tplink/EAPController/data
+            - name: logs
+              mountPath: /opt/tplink/EAPController/logs
+
+      {{- with .Values.volumes }}
+      volumes:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: 
+          - ReadWriteMany
+        resources:
+          requests:
+            storage: 10Gi
+        volumeName: ''
+        storageClassName: 'basic'
+
+    - metadata:
+        name: logs
+      spec:
+        accessModes: 
+          - ReadWriteMany
+        resources:
+          requests:
+            storage: 10Gi
+        volumeName: ''
+        storageClassName: 'basic'

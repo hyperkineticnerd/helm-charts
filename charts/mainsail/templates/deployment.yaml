@@ -1,0 +1,49 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mainsail
+  namespace: mainsail
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mainsail
+  template:
+    metadata:
+      labels:
+        app: mainsail
+    spec:
+      containers:
+      - name: mainsail
+        image: ghcr.io/mainsail-crew/mainsail:latest
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: mainsail
+        resources:
+          limits:
+            cpu: 6000m
+            memory: 8Gi
+          requests:
+            cpu: 4000m
+            memory: 4Gi
+        ports:
+        - name: http
+          containerPort: 80
+        securityContext:
+          runAsUser: 0
+          runAsGroup: 0
+          allowPrivilegeEscalation: true
+          runAsNonRoot: false
+        volumeMounts:
+        - name: mainsail-config
+          mountPath: /usr/share/nginx/html/config.json
+          subPath: config.json
+      volumes:
+      - name: mainsail-config
+        configMap:
+          name: mainsail
+          items:
+          - key: config.json
+            path: config.json

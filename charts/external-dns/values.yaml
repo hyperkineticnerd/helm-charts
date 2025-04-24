@@ -1,0 +1,19 @@
+# Default values for external-dns-operator.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+operator:
+  enable: true
+  channel: stable-v1
+  installPlanApproval: Automatic
+  name: external-dns-operator
+  namespace: external-dns-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  additionalNamespaces:
+    - external-dns-operator
+
+provider:
+  type: Cloudflare
+  credentialData: {}
+  zones: []

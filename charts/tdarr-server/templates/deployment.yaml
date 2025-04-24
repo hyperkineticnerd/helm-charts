@@ -1,0 +1,115 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "tdarr-server.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "tdarr-server.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "tdarr-server.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "tdarr-server.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: tdarr-server
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            - secretRef:
+                name: {{ printf "%s-env" .Release.Name }}
+          ports:
+            - name: webui
+              containerPort: {{ .Values.service.webui.port }}
+              protocol: TCP
+            - name: server
+              containerPort: {{ .Values.service.server.port }}
+              protocol: TCP
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: server
+              mountPath: /app/server
+            - name: config
+              mountPath: /app/configs
+            - name: logs
+              mountPath: /app/logs
+            - name: media-movies
+              mountPath: /media/movies
+            - name: media-television
+              mountPath: /media/television
+            - name: cache
+              mountPath: /temp
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+        # - name: server
+        #   persistentVolumeClaim:
+        #     claimName: {{ printf "%s-data" .Release.Name }}
+        # - name: config
+        #   persistentVolumeClaim:
+        #     claimName: {{ printf "%s-config" .Release.Name }}
+        - name: media-movies
+          persistentVolumeClaim:
+            claimName: {{ printf "%s-media-movies" .Release.Name }}
+        - name: media-television
+          persistentVolumeClaim:
+            claimName: {{ printf "%s-media-television" .Release.Name }}
+        - name: logs
+          emptyDir: {}
+        - name: cache
+          emptyDir: {}
+  volumeClaimTemplates:
+    - metadata:
+        name: server
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        volumeMode: Filesystem
+        resources:
+          requests:
+            storage: 5Gi
+    - metadata:
+        name: config
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        volumeMode: Filesystem
+        resources:
+          requests:
+            storage: 3Gi

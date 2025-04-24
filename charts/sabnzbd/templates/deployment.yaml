@@ -1,0 +1,121 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "sabnzbd.fullname" . }}
+  labels:
+    {{- include "sabnzbd.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "sabnzbd.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "sabnzbd.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "sabnzbd.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          # args:
+          #   - '--config-file'
+          #   - '/k8s/sabnzbd.ini'
+          env:
+            - name: PUID
+              value: '0'
+            - name: PGID
+              value: '0'
+            - name: TZ
+              value: Etc/UTC
+            - name: UMASK
+              value: '002'
+            - name: WEBUI_PORTS
+              value: "8080/tcp,8080/udp"
+            - name: ARGS
+              value: ""
+            # - name: VPN_ENABLED
+            #   value: "true"
+            # - name: VPN_CONF
+            #   value: "wg0"
+            # - name: VPN_PROVIDER
+            #   value: "proton"
+            # - name: VPN_LAN_NETWORK
+            #   value: "10.128.0.0/16"
+            # - name: VPN_LAN_LEAK_ENABLED
+            #   value: "false"
+            # - name: VPN_EXPOSE_PORTS_ON_LAN
+            #   value: ""
+            # - name: VPN_AUTO_PORT_FORWARD
+            #   value: "true"
+            # - name: VPN_AUTO_PORT_FORWARD_TO_PORTS
+            #   value: ""
+            # - name: VPN_KEEP_LOCAL_DNS
+            #   value: "false"
+            # - name: VPN_FIREWALL_TYPE
+            #   value: "auto"
+            # - name: VPN_HEALTHCHECK_ENABLED
+            #   value: "false"
+            # - name: PRIVOXY_ENABLED
+            #   value: "false"
+            # - name: UNBOUND_ENABLED
+            #   value: "false"
+          ports:
+            - name: sabnzbd
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            # - name: sabnzbd-ini
+            #   mountPath: /k8s/sabnzbd.ini
+            #   subPath: sabnzbd.ini
+            - name: sabnzbd-config
+              mountPath: /config
+            - name: downloads
+              mountPath: /downloads
+            - name: incomplete-downloads
+              mountPath: /incomplete-downloads
+      volumes:
+        # - name: sabnzbd-ini
+        #   configMap:
+        #     name: sabnzbd-ini
+        - name: sabnzbd-config
+          persistentVolumeClaim:
+            claimName: {{ printf "%s-config" .Release.Name }}
+        - name: downloads
+          persistentVolumeClaim:
+            claimName: {{ default (printf "%s-downloads" .Release.Name) .Values.storage.downloads.existingClaimName }}
+        - name: incomplete-downloads
+          persistentVolumeClaim:
+            claimName: {{ default (printf "%s-incomplete" .Release.Name) .Values.storage.incomplete.existingClaimName }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

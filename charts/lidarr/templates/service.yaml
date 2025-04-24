@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lidarr
+  labels:
+    app: lidarr
+    service: server
+spec:
+  selector:
+    app: lidarr
+  ports:
+    - protocol: TCP
+      port: 8686
+      targetPort: 8686

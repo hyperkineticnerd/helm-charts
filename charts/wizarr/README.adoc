@@ -1,0 +1,5 @@
+= Wizarr
+
+== Primary GitHub
+
+https://github.com/wizarrrr/wizarr

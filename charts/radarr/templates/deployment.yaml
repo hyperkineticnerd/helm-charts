@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: radarr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: radarr
+  template:
+    metadata:
+      labels:
+        app: radarr
+    spec:
+      containers:
+        - name: radarr
+          image: lscr.io/linuxserver/radarr:latest
+          env:
+            - name: PUID
+              value: '0'
+            - name: PGID
+              value: '0'
+            - name: TZ
+              value: Etc/UTC
+          ports:
+            - containerPort: 7878
+              name: radarr
+          resources:
+            requests:
+              cpu: 1000m
+              memory: 2Gi
+            limits:
+              cpu: 2000m
+              memory: 4Gi
+          securityContext:
+            allowPrivilegeEscalation: true
+            runAsNonRoot: false
+          volumeMounts:
+            - name: radarr-config
+              mountPath: /config
+            - name: downloads
+              mountPath: /downloads
+            - name: movies
+              mountPath: /movies
+      volumes:
+        - name: radarr-config
+          persistentVolumeClaim:
+            claimName: {{ printf "%s-config" .Release.Name }}
+        - name: downloads
+          persistentVolumeClaim:
+            claimName: {{ default (printf "%s-downloads" .Release.Name) .Values.storage.downloads.existingClaimName }}
+        - name: movies
+          persistentVolumeClaim:
+            claimName: {{ default (printf "%s-movies" .Release.Name) .Values.storage.movies.existingClaimName }}

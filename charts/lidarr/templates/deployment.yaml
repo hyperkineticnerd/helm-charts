@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lidarr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lidarr
+  template:
+    metadata:
+      labels:
+        app: lidarr
+    spec:
+      containers:
+        - name: lidarr
+          image: lscr.io/linuxserver/lidarr:latest
+          env:
+            - name: PUID
+              value: '0'
+            - name: PGID
+              value: '0'
+            - name: TZ
+              value: Etc/UTC
+          ports:
+            - containerPort: 8686
+              name: lidarr
+          resources:
+            requests:
+              cpu: 1000m
+              memory: 2Gi
+            limits:
+              cpu: 2000m
+              memory: 4Gi
+          securityContext:
+            allowPrivilegeEscalation: true
+            runAsNonRoot: false
+          volumeMounts:
+            - name: lidarr-config
+              mountPath: /config
+            - name: downloads
+              mountPath: /downloads
+            - name: music
+              mountPath: /music
+      volumes:
+        - name: lidarr-config
+          persistentVolumeClaim:
+            claimName: {{ printf "%s-config" .Release.Name }}
+        - name: downloads
+          persistentVolumeClaim:
+            claimName: {{ default (printf "%s-downloads" .Release.Name) .Values.storage.downloads.existingClaimName }}
+        - name: music
+          persistentVolumeClaim:
+            claimName: {{ default (printf "%s-music" .Release.Name) .Values.storage.music.existingClaimName }}

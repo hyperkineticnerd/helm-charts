@@ -1,0 +1,18 @@
+# Default values for operator.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+enable: true
+
+name: my-operator
+install:
+  installPlanApproval: Automatic
+catalog:
+  channel: stable
+  source: my-operator-index
+  sourceNamespace: olm
+operatorGroup:
+  enable: true
+  namespace: my-operator-namespace
+  additionalNamespaces: # []
+    - my-managed-namespace

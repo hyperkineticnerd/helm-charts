@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonarr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sonarr
+  template:
+    metadata:
+      labels:
+        app: sonarr
+    spec:
+      containers:
+        - name: sonarr
+          image: lscr.io/linuxserver/sonarr:latest
+          env:
+            - name: PUID
+              value: '0'
+            - name: PGID
+              value: '0'
+            - name: TZ
+              value: Etc/UTC
+          ports:
+            - containerPort: 8989
+              name: sonarr
+          resources:
+            requests:
+              cpu: 1000m
+              memory: 2Gi
+            limits:
+              cpu: 2000m
+              memory: 4Gi
+          securityContext:
+            allowPrivilegeEscalation: true
+            runAsNonRoot: false
+          volumeMounts:
+            - name: sonarr-config
+              mountPath: /config
+            - name: downloads
+              mountPath: /downloads
+            - name: tv
+              mountPath: /tv
+      volumes:
+        - name: sonarr-config
+          persistentVolumeClaim:
+            claimName: {{ printf "%s-config" .Release.Name }}
+        - name: downloads
+          persistentVolumeClaim:
+            claimName: {{ default (printf "%s-downloads" .Release.Name) .Values.storage.downloads.existingClaimName }}
+        - name: tv
+          persistentVolumeClaim:
+            claimName: {{ default (printf "%s-tv" .Release.Name) .Values.storage.tv.existingClaimName }}

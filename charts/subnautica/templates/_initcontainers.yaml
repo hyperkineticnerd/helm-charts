@@ -1,0 +1,17 @@
+spec:
+  template:
+    spec:
+      initContainers:
+        - name: steamcmd
+          image: docker.io/steamcmd/steamcmd:latest
+          args:
+          securityContext:
+            runAsNonRoot: false
+            allowPrivilegeEscalation: false
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          volumeMounts:
+            - mountPath: /software/subnautica
+              name: subnautica

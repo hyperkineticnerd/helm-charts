@@ -1,0 +1,47 @@
+{{- if .Values.persistentVolumeClaims.tv.enabled }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Release.Name }}-media-tv
+  namespace: {{ .Release.Namespace }}
+spec:
+  accessModes: {{ .Values.persistentVolumeClaims.tv.accessModes }}
+  resources:
+    requests:
+      storage: {{ .Values.persistentVolumeClaims.tv.storageSize }}
+  volumeName: {{ .Values.persistentVolumeClaims.tv.existingVolumeName | quote }}
+  storageClassName: {{ .Values.persistentVolumeClaims.tv.storageClassName | quote }}
+{{- end }}
+
+{{- if .Values.persistentVolumeClaims.movies.enabled }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Release.Name }}-media-movies
+  namespace: {{ .Release.Namespace }}
+spec:
+  accessModes: {{ .Values.persistentVolumeClaims.movies.accessModes }}
+  resources:
+    requests:
+      storage: {{ .Values.persistentVolumeClaims.movies.storageSize }}
+  volumeName: {{ .Values.persistentVolumeClaims.movies.existingVolumeName | quote }}
+  storageClassName: {{ .Values.persistentVolumeClaims.movies.storageClassName | quote }}
+{{- end }}
+
+{{- if .Values.persistentVolumeClaims.config.enabled }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Release.Name }}-config
+  namespace: {{ .Release.Namespace }}
+spec:
+  accessModes: {{ .Values.persistentVolumeClaims.config.accessModes }}
+  resources:
+    requests:
+      storage: {{ .Values.persistentVolumeClaims.config.storageSize }}
+  volumeName: {{ .Values.persistentVolumeClaims.config.existingVolumeName | quote }}
+  storageClassName: {{ .Values.persistentVolumeClaims.config.storageClassName | quote }}
+{{- end }}

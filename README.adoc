@@ -1,0 +1,63 @@
+= Hyperkineticnerd Helm Charts
+
+== Library
+
+* `charts/openshift` - For adding openshift resources to charts
+* `charts/olm-operator` - Operator Lifecycle Manager operator template chart
+
+== Operators
+
+* `charts/cert-manager` - OpenShift compatable operator of cert-manager
+* `charts/external-dns` - ExternalDNS operator
+* `charts/lvm-storage` - (local) LVM Storage operator
+* `charts/nmstate` - NMState operator
+* `charts/nvidia` - nVidia GPU operator
+* `charts/openshift-servicemesh` - OpenShift Service Mesh (istio) operator
+* `charts/rhbk` - Red Hat Build of Keycloak operator for OIDC
+* `charts/trident` - NetApp Trident operator
+
+== In Development
+
+* `charts/7-days-to-die` - 7 Days to Die dedicated server
+* `charts/astroneer` - Astroneer dedicated server
+* `charts/audiobookshelf` - Audiobookshelf
+* `charts/bazarr` - Bazarr
+* `charts/configarr` - Configarr
+* `charts/dendrite` - Matrix Dendrite
+* `charts/dont-starve-together` - Don't Starve Together dedicated server
+* `charts/element-web`
+* `charts/enshrouded` - Enshouded dedicated server
+* `charts/fluidd`
+* `charts/lidarr`
+* `charts/mainsail`
+* `charts/matrix-dendrite`
+* `charts/matrix-synapse`
+* `charts/metube` - MeTube
+* `charts/netbox` - Netbox
+* `charts/obico`
+* `charts/omada` - TP-Link Omada Controller
+* `charts/palworld` -
+* `charts/prowlarr`- 
+* `charts/radarr` -
+* `charts/readarr` -
+* `charts/redirecterr` -
+* `charts/return-to-moria` - LOTR: Return to Moria dedicated server
+* `charts/sabnzbd`
+* `charts/sonarr`
+* `charts/spoolman`
+* `charts/subnautica` - Subnautica dedicated server
+* `charts/synology-vdsm`
+* `charts/tdarr-node` - Tdarr gpu node
+* `charts/tdarr-server` - Tdarr server
+* `charts/the-forest` - The Forest dedicated server
+* `charts/unifi` - Unifi Controller
+* `charts/unpackerr`
+* `charts/valheim` - Valheim dedicated server
+* `charts/wizarr`
+
+== Stable
+
+* `charts/jellyfin` - Jellyfin, The Free Software Media System
+* `charts/jellyseerr` - Jellyseerr, Open-source media request and discovery manager for jellyfin
+* `charts/minecraft` - Minecraft
+* `charts/satisfactory` - Satisfactory

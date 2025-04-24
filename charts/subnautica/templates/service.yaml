@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nitrox
+  # namespace: subnautica
+spec:
+  type: NodePort
+  selector:
+    app: game
+    game: subnautica
+  ports:
+    - name: nitrox
+      protocol: UDP
+      port: 11000
+      targetPort: nitrox
+      nodePort: 31021
