@@ -1,11 +1,15 @@
 = Hyperkineticnerd Helm Charts
 
-== Library
+== Usage
+
+== Charts
+
+=== Library
 
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/openshift[`charts/openshift`] - For adding openshift resources to charts
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/olm-operator[`charts/olm-operator`] - Operator Lifecycle Manager operator template chart
 
-== Operators
+=== Operators
 
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/cert-manager[`charts/cert-manager`] - OpenShift compatable operator of cert-manager
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/external-dns[`charts/external-dns`] - ExternalDNS operator
@@ -16,14 +20,14 @@
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/rhbk[`charts/rhbk`] - Red Hat Build of Keycloak operator for OIDC
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/trident[`charts/trident`] - NetApp Trident operator
 
-== Stable
+=== Stable
 
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/jellyfin[`charts/jellyfin`] - Jellyfin, The Free Software Media System
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/jellyseerr[`charts/jellyseerr`] - Jellyseerr, Open-source media request and discovery manager for jellyfin
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/minecraft[`charts/minecraft`] - Minecraft
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/satisfactory[`charts/satisfactory`] - Satisfactory
 
-== In Development
+=== In Development
 
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/7-days-to-die[`charts/7-days-to-die`] - 7 Days to Die dedicated server
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/astroneer[`charts/astroneer`] - Astroneer dedicated server
