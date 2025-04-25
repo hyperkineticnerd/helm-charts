@@ -1,1 +1,1 @@
-= OpenShift Service Mesh operator
+= OpenShift Service Mesh (Istio) operator

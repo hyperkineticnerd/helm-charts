@@ -1,6 +1,8 @@
-﻿apiVersion: argoproj.io/v1beta1
+﻿{{- if .Values.enableSpec }}
+apiVersion: argoproj.io/v1beta1
 kind: ArgoCD
 metadata:
   name: openshift-gitops
   namespace: openshift-gitops
 spec: {{ .Values.argoSpec }}
+{{- end }}

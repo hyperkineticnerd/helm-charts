@@ -11,7 +11,9 @@ operator:
     namespace: openshift-gitops-operator
     additionalNamespaces: []
 
-argoSpec: {}
+enableSpec: False
+
+argoSpec:
   # server:
   #   autoscale:
   #     enabled: false
