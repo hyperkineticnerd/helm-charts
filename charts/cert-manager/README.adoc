@@ -1,0 +1,1 @@
+= OpenShift compatable operator of cert-manager

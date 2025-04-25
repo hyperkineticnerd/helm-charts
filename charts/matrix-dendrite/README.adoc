@@ -1,0 +1,4 @@
+= Matrix Dendrite
+
+* *Project*: https://github.com/element-hq/dendrite[]  
+* *Chart*: https://github.com/element-hq/dendrite/tree/main/helm/dendrite[]  

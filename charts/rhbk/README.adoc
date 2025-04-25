@@ -1,0 +1,1 @@
+= Red Hat Build of Keycloak operator
