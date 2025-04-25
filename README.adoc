@@ -16,7 +16,8 @@
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/lvm-storage[`charts/lvm-storage`] - (local) LVM Storage operator
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/nmstate[`charts/nmstate`] - NMState operator
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/nvidia[`charts/nvidia`] - nVidia GPU operator
-* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/openshift-servicemesh[`charts/openshift-servicemesh`] - OpenShift Service Mesh (istio) operator
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/openshift-gitops[`charts/openshift-gitops`] - OpenShift GitOps (ArgoCD) operator
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/openshift-servicemesh[`charts/openshift-servicemesh`] - OpenShift Service Mesh (Istio) operator
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/rhbk[`charts/rhbk`] - Red Hat Build of Keycloak operator for OIDC
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/trident[`charts/trident`] - NetApp Trident operator
 
