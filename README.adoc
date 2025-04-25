@@ -16,6 +16,13 @@
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/rhbk[`charts/rhbk`] - Red Hat Build of Keycloak operator for OIDC
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/trident[`charts/trident`] - NetApp Trident operator
 
+== Stable
+
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/jellyfin[`charts/jellyfin`] - Jellyfin, The Free Software Media System
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/jellyseerr[`charts/jellyseerr`] - Jellyseerr, Open-source media request and discovery manager for jellyfin
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/minecraft[`charts/minecraft`] - Minecraft
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/satisfactory[`charts/satisfactory`] - Satisfactory
+
 == In Development
 
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/7-days-to-die[`charts/7-days-to-die`] - 7 Days to Die dedicated server
@@ -54,10 +61,3 @@
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/unpackerr[`charts/unpackerr`]
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/valheim[`charts/valheim`] - Valheim dedicated server
 * https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/wizarr[`charts/wizarr`]
-
-== Stable
-
-* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/jellyfin[`charts/jellyfin`] - Jellyfin, The Free Software Media System
-* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/jellyseerr[`charts/jellyseerr`] - Jellyseerr, Open-source media request and discovery manager for jellyfin
-* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/minecraft[`charts/minecraft`] - Minecraft
-* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/satisfactory[`charts/satisfactory`] - Satisfactory
