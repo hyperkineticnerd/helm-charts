@@ -2,62 +2,62 @@
 
 == Library
 
-* `charts/openshift` - For adding openshift resources to charts
-* `charts/olm-operator` - Operator Lifecycle Manager operator template chart
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/openshift[`charts/openshift`] - For adding openshift resources to charts
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/olm-operator[`charts/olm-operator`] - Operator Lifecycle Manager operator template chart
 
 == Operators
 
-* `charts/cert-manager` - OpenShift compatable operator of cert-manager
-* `charts/external-dns` - ExternalDNS operator
-* `charts/lvm-storage` - (local) LVM Storage operator
-* `charts/nmstate` - NMState operator
-* `charts/nvidia` - nVidia GPU operator
-* `charts/openshift-servicemesh` - OpenShift Service Mesh (istio) operator
-* `charts/rhbk` - Red Hat Build of Keycloak operator for OIDC
-* `charts/trident` - NetApp Trident operator
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/cert-manager[`charts/cert-manager`] - OpenShift compatable operator of cert-manager
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/external-dns[`charts/external-dns`] - ExternalDNS operator
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/lvm-storage[`charts/lvm-storage`] - (local) LVM Storage operator
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/nmstate[`charts/nmstate`] - NMState operator
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/nvidia[`charts/nvidia`] - nVidia GPU operator
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/openshift-servicemesh[`charts/openshift-servicemesh`] - OpenShift Service Mesh (istio) operator
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/rhbk[`charts/rhbk`] - Red Hat Build of Keycloak operator for OIDC
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/trident[`charts/trident`] - NetApp Trident operator
 
 == In Development
 
-* `charts/7-days-to-die` - 7 Days to Die dedicated server
-* `charts/astroneer` - Astroneer dedicated server
-* `charts/audiobookshelf` - Audiobookshelf
-* `charts/bazarr` - Bazarr
-* `charts/configarr` - Configarr
-* `charts/dendrite` - Matrix Dendrite
-* `charts/dont-starve-together` - Don't Starve Together dedicated server
-* `charts/element-web`
-* `charts/enshrouded` - Enshouded dedicated server
-* `charts/fluidd`
-* `charts/lidarr`
-* `charts/mainsail`
-* `charts/matrix-dendrite`
-* `charts/matrix-synapse`
-* `charts/metube` - MeTube
-* `charts/netbox` - Netbox
-* `charts/obico`
-* `charts/omada` - TP-Link Omada Controller
-* `charts/palworld` -
-* `charts/prowlarr`- 
-* `charts/radarr` -
-* `charts/readarr` -
-* `charts/redirecterr` -
-* `charts/return-to-moria` - LOTR: Return to Moria dedicated server
-* `charts/sabnzbd`
-* `charts/sonarr`
-* `charts/spoolman`
-* `charts/subnautica` - Subnautica dedicated server
-* `charts/synology-vdsm`
-* `charts/tdarr-node` - Tdarr gpu node
-* `charts/tdarr-server` - Tdarr server
-* `charts/the-forest` - The Forest dedicated server
-* `charts/unifi` - Unifi Controller
-* `charts/unpackerr`
-* `charts/valheim` - Valheim dedicated server
-* `charts/wizarr`
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/7-days-to-die[`charts/7-days-to-die`] - 7 Days to Die dedicated server
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/astroneer[`charts/astroneer`] - Astroneer dedicated server
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/audiobookshelf[`charts/audiobookshelf`] - Audiobookshelf
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/bazarr[`charts/bazarr`] - Bazarr
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/configarr[`charts/configarr`] - Configarr
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/dendrite[`charts/dendrite`] - Matrix Dendrite
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/dont-starve-together[`charts/dont-starve-together`] - Don't Starve Together dedicated server
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/element-web[`charts/element-web`]
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/enshrouded[`charts/enshrouded`] - Enshouded dedicated server
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/fluidd[`charts/fluidd`]
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/lidarr[`charts/lidarr`]
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/mainsail[`charts/mainsail`]
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/matrix-dendrite[`charts/matrix-dendrite`]
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/matrix-synapse[`charts/matrix-synapse`]
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/metube[`charts/metube`] - MeTube
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/netbox[`charts/netbox`] - Netbox
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/obico[`charts/obico`]
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/omada[`charts/omada`] - TP-Link Omada Controller
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/palworld[`charts/palworld`] -
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/prowlarr[`charts/prowlarr`]- 
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/radarr[`charts/radarr`] -
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/readarr[`charts/readarr`] -
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/redirecterr[`charts/redirecterr`] -
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/return-to-moria[`charts/return-to-moria`] - LOTR: Return to Moria dedicated server
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/sabnzbd[`charts/sabnzbd`]
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/sonarr[`charts/sonarr`]
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/spoolman[`charts/spoolman`]
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/subnautica[`charts/subnautica`] - Subnautica dedicated server
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/synology-vdsm[`charts/synology-vdsm`]
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/tdarr-node[`charts/tdarr-node`] - Tdarr gpu node
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/tdarr-server[`charts/tdarr-server`] - Tdarr server
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/the-forest[`charts/the-forest`] - The Forest dedicated server
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/unifi[`charts/unifi`] - Unifi Controller
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/unpackerr[`charts/unpackerr`]
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/valheim[`charts/valheim`] - Valheim dedicated server
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/wizarr[`charts/wizarr`]
 
 == Stable
 
-* `charts/jellyfin` - Jellyfin, The Free Software Media System
-* `charts/jellyseerr` - Jellyseerr, Open-source media request and discovery manager for jellyfin
-* `charts/minecraft` - Minecraft
-* `charts/satisfactory` - Satisfactory
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/jellyfin[`charts/jellyfin`] - Jellyfin, The Free Software Media System
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/jellyseerr[`charts/jellyseerr`] - Jellyseerr, Open-source media request and discovery manager for jellyfin
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/minecraft[`charts/minecraft`] - Minecraft
+* https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/satisfactory[`charts/satisfactory`] - Satisfactory
