@@ -2,6 +2,11 @@
 
 == Usage
 
+[source,bash]
+-----
+helm repo add hknlab https://charts.hknlab.io
+-----
+
 == Charts
 
 === Library
