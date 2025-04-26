@@ -12,7 +12,6 @@ dependencies:
     repository: https://charts.hknlab.io
     version: 0.1.0
     alias: openshift
-    condition: openshift.enable
 
 -----
 
@@ -39,7 +38,7 @@ Configuring `values.yaml`:
 -----
 openshift:
   scc:
-    enable: false
+    enable: true
     name: project-anyuid-scc
     serviceAccount: default
     profile: anyuid
@@ -52,7 +51,7 @@ Configuring `values.yaml`:
 -----
 openshift:
   pv:
-    enable: false
+    enable: true
     name: mypv
     capacity: 30Gi
     accessModes:
