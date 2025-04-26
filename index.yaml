@@ -364,6 +364,22 @@ entries:
   openshift-gitops:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-04-26T13:54:32.152359172Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enable
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: bea75b9bbd638b99ddb16d3550ec3d0112f00aac7049addf52acd67817c50e19
+    name: openshift-gitops
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-gitops-0.1.2/openshift-gitops-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-04-25T17:33:32.202704765Z"
     dependencies:
     - alias: operator
@@ -631,4 +647,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/valheim-0.1.0/valheim-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-25T17:33:32.331835104Z"
+generated: "2025-04-26T13:54:32.363970074Z"
