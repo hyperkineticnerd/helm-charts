@@ -11,8 +11,8 @@ dependencies:
   - name: openshift
     repository: https://charts.hknlab.io
     version: 0.1.0
-    alias: openshi
-    condition: operator.enable
+    alias: openshift
+    condition: openshift.enable
 
 -----
 
