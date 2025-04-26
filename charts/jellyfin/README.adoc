@@ -1,4 +1,4 @@
 = Jellyfin
 
-*Current Chart Version*: `0.1.1`
-*Status*: Stable
+* *Current Chart Version*: `0.1.1`
+* *Status*: Stable
