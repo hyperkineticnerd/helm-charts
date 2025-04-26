@@ -1,1 +1,33 @@
 = (local) LVM Storage operator
+
+*Current Chart Version*: `0.1.0`
+
+== Usage
+
+Add this repo to Helm:
+[source,bash]
+-----
+helm repo add hknlab https://charts.hknlab.io
+-----
+
+Create your `myvalues.yaml`.
+[source,bash]
+-----
+deviceClasses:
+  - name: vg1
+    thinPoolConfig:
+      name: thin-pool-1
+      overprovisionRatio: 10
+      sizePercent: 90
+    deviceSelector:
+      paths:
+      # - /dev/disk/by-id/scsi-SDELL_PERC_H730_Mini_00d4601e4dc2a1bc2c0086525ba06d86 # R730
+      # - /dev/disk/by-id/scsi-SDELL_PERC_H730P_Adp_00ae99f206f94dd12c0086525ba06d86 # R740
+      - /dev/sdb
+-----
+
+Then, deploy this helm chart:
+[source,bash]
+-----
+helm upgrade -i --create-namespace --namespace openshift-storage lvms-vg1 hknlab/lvm-storage -f myvalues.yaml
+-----

@@ -1,1 +1,48 @@
 = OpenShift compatable operator of cert-manager
+
+*Current Chart Version*: `0.1.0`
+
+== Usage 
+
+Add this repo to Helm:
+[source,bash]
+-----
+helm repo add hknlab https://charts.hknlab.io
+-----
+
+Optional, Create Kubernetes Secret for DNS-01 integration:
+[source,yaml]
+-----
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cloudflare-api-token-secret
+  namespace: cert-manager
+type: Opaque
+stringData:
+  api-token: REDACTED
+-----
+
+Create your `myvalues.yaml`.
+[source,bash]
+-----
+issuer:
+  cluster: true
+  acmeServer: "https://acme-v02.api.letsencrypt.org/directory"
+  email: "sean.nelson.04@gmail.com"
+  preferredChain: ""
+  privateKeySecretRef: letsencrypt-account-key
+  solvers:
+    - dns01:
+        cloudflare:
+          apiTokenSecretRef:
+            name: cloudflare-api-token-secret
+            key: api-token
+
+-----
+
+Then, deploy this helm chart:
+[source,bash]
+-----
+helm upgrade -i --create-namespace --namespace cert-manager letsencrypt hknlab/cert-manager -f myvalues.yaml
+-----

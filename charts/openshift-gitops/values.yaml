@@ -13,7 +13,7 @@ operator:
 
 enableSpec: False
 
-argoSpec:
+argoSpec: {}
   # server:
   #   autoscale:
   #     enabled: false

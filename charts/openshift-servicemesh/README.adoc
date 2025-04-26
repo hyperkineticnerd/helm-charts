@@ -1,1 +1,22 @@
-= OpenShift Service Mesh (Istio) operator
+= OpenShift Service Mesh 2 (Istio) operator
+
+*Current Chart Version*: `0.1.0`
+
+== Usage
+
+Add this repo to Helm:
+[source,bash]
+-----
+helm repo add hknlab https://charts.hknlab.io
+-----
+
+Optionally, create a `myvalues.yaml`:
+[source,bash]
+-----
+-----
+
+Then, deploy this helm chart:
+[source,bash]
+-----
+helm upgrade -i --create-namespace --namespace openshift-operators openshift-servicemesh hknlab/openshift-servicemesh
+-----

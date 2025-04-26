@@ -1,1 +1,52 @@
 = Red Hat Build of Keycloak operator
+
+*Current Chart Version*: `0.1.0`
+
+== Usage
+
+Add this repo to Helm:
+[source,bash]
+-----
+helm repo add hknlab https://charts.hknlab.io
+-----
+
+Create a Kubernetes Secret:
+[source,bash]
+-----
+apiVersion: v1
+kind: Secret
+metadata:
+  name: keycloak-db-secret
+  namespace: keycloak
+type: Opaque 
+stringData:
+  POSTGRES_DATABASE: *REDACTED*
+  POSTGRES_USERNAME: *REDACTED*
+  POSTGRES_PASSWORD: *REDACTED*
+  POSTGRES_HOST: keycloak-postgresql
+-----
+
+Create a `myvalues.yaml`:
+[source,bash]
+-----
+keycloakSpec:
+  instances: 1
+  db:
+    vendor: postgres
+  hostname: 
+    # admin: keycloak.hknlab.io
+    adminUrl: https://keycloak.hknlab.io
+    hostname: keycloak.hknlab.io
+  http:
+    httpEnabled: true
+    tlsSecret: keycloak-tls
+  ingress:
+    className: openshift-default
+    enabled: true
+-----
+
+Then, deploy this helm chart:
+[source,bash]
+-----
+helm upgrade -i --create-namespace --namespace keycloak keycloak hknlab/rhbk -f myvalues.yaml
+-----

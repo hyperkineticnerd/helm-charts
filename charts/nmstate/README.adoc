@@ -1,1 +1,33 @@
 = NMState operator
+
+*Current Chart Version*: `0.1.0`
+
+== Usage
+
+Add this repo to Helm:
+[source,bash]
+-----
+helm repo add hknlab https://charts.hknlab.io
+-----
+
+Optionally, create a `myvalues.yaml`:
+[source,bash]
+-----
+operator:
+  channel: stable
+  installPlanApproval: Automatic
+  name: kubernetes-nmstate-operator
+  namespace: openshift-nmstate
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  additionalNamespaces: # []
+    - openshift-nmstate
+
+nmstateSpec: {}
+-----
+
+Then, deploy this helm chart:
+[source,bash]
+-----
+helm upgrade -i --create-namespace --namespace openshift-nmstate nmstate hknlab/nmstate
+-----
