@@ -53,6 +53,9 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
+          {{- with .Values.volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
             # - name: media
             #   mountPath: /media
             - name: movies
@@ -64,6 +67,9 @@ spec:
             - name: cache
               mountPath: /cache
       volumes:
+      {{- with .Values.volumes }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       # - name: media
       #   persistentVolumeClaim:
       #     claimName: {{ .Release.Name }}-media
