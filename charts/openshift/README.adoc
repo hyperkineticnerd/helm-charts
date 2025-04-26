@@ -1,1 +1,66 @@
 = OpenShift Object Library
+
+*Current Chart Version*: `0.1.0`
+
+== Usage
+
+Adding this helm chart as a dependency in your chart, add to `Chart.yaml`.
+[source,yaml]
+-----
+dependencies:
+  - name: openshift
+    repository: https://charts.hknlab.io
+    version: 0.1.0
+    alias: openshi
+    condition: operator.enable
+
+-----
+
+=== OpenShift Routes
+
+Configuring `values.yaml`:
+[source,yaml]
+-----
+openshift:
+  route:
+    enable: true
+    annotations: {}
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+    serviceName: example
+    weight: 100
+    targetPort: 8080
+-----
+
+=== OpenShift SCC RoleBinding
+
+Configuring `values.yaml`:
+[source,yaml]
+-----
+openshift:
+  scc:
+    enable: false
+    name: project-anyuid-scc
+    serviceAccount: default
+    profile: anyuid
+-----
+
+=== Kubernetes Persistent Volumes for NFS
+
+Configuring `values.yaml`:
+[source,yaml]
+-----
+openshift:
+  pv:
+    enable: false
+    name: mypv
+    capacity: 30Gi
+    accessModes:
+      - ReadWriteOnce
+      - ReadWriteMany
+    nfs:
+      enable: false
+      server: 172.16.100.10
+      path: /volume1/games/palworld
+    storageClass: thin-csi
+-----
