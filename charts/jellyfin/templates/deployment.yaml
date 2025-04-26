@@ -70,18 +70,18 @@ spec:
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      # - name: media
-      #   persistentVolumeClaim:
-      #     claimName: {{ .Release.Name }}-media
-      - name: movies
-        persistentVolumeClaim:
-          claimName: {{ .Release.Name }}-media-movies
-      - name: tv
-        persistentVolumeClaim:
-          claimName: {{ .Release.Name }}-media-tv
-      - name: config
-        persistentVolumeClaim:
-          claimName: {{ .Release.Name }}-config
-      - name: cache
-        emptyDir:
-          medium: Memory
+        # - name: media
+        #   persistentVolumeClaim:
+        #     claimName: {{ .Release.Name }}-media
+        - name: movies
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-media-movies
+        - name: tv
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-media-tv
+        - name: config
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-config
+        - name: cache
+          emptyDir:
+            medium: Memory
