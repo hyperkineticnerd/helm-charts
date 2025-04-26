@@ -136,6 +136,16 @@ entries:
   jellyfin:
   - apiVersion: v2
     appVersion: 10.9.9
+    created: "2025-04-26T16:39:22.240202401Z"
+    description: Installs Jellyfin Media Server on Kubernetes
+    digest: 559dbb3883ad2c6bb19aa8437a96f3e3dd89c25b2cf7690fab940f7ec47f93fc
+    name: jellyfin
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/jellyfin-0.1.2/jellyfin-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 10.9.9
     created: "2025-04-26T16:32:49.194622192Z"
     description: Installs Jellyfin Media Server on Kubernetes
     digest: 396f7c16f945c3eb9f991fa9023d432490916df146ae7c1ee02b8cc2a890558f
@@ -657,4 +667,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/valheim-0.1.0/valheim-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-26T16:32:49.194640997Z"
+generated: "2025-04-26T16:39:22.240227438Z"
