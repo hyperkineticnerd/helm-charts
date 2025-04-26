@@ -1,1 +1,37 @@
 = Operator Lifecycle Manager operator template chart
+
+*Current Chart Version*: `0.1.0`
+
+== Usage
+
+.`Charts.yaml`
+[source,yaml]
+-----
+dependencies:
+  - name: olm-operator
+    repository: https://charts.hknlab.io
+    version: 0.1.0
+    alias: operator
+    condition: operator.enable
+-----
+
+.`values.yaml`
+[source,yaml]
+-----
+operator:
+  enable: true
+  name: my-operator
+  install:
+  installPlanApproval: Automatic
+  catalog:
+  channel: stable
+  source: my-operator-index
+  sourceNamespace: olm
+  operatorGroup:
+  enable: true
+  namespace: my-operator-namespace
+  additionalNamespaces: # []
+      - my-managed-namespace
+-----
+
+Use the empty list (`[]`) to denote that the operator watches all namespaces. Otherwise, list namespaces that the operator watches.

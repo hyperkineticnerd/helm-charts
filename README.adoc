@@ -56,7 +56,7 @@ helm repo add hknlab https://charts.hknlab.io
 
 |===
 
-=== Stable
+=== Stable Application Helm Charts
 
 [frame=none, cols="2,1"]
 |===
@@ -75,7 +75,7 @@ helm repo add hknlab https://charts.hknlab.io
 
 |===
 
-=== In Development
+=== In-Development Application Helm Charts
 
 [frame=none, cols="2,1"]
 |===
