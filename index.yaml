@@ -329,6 +329,27 @@ entries:
   obico:
   - apiVersion: v2
     appVersion: 1.1.5
+    created: "2025-04-27T15:57:01.214598829Z"
+    dependencies:
+    - alias: valkey
+      condition: valkey.enabled
+      name: valkey
+      repository: https://charts.bitnami.com/bitnami
+      version: 3.0.2
+    - alias: postgresql
+      condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.6.3
+    description: A Helm chart for Kubernetes
+    digest: 60bf0030c5e6a069d67b1c509ef47d767a075e67275517a5c9bd9f28c319b9df
+    name: obico
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/obico-0.1.1/obico-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.1.5
     created: "2025-04-25T14:25:08.533812733Z"
     dependencies:
     - alias: redis
@@ -667,4 +688,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/valheim-0.1.0/valheim-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-26T16:39:22.240227438Z"
+generated: "2025-04-27T15:57:01.503543069Z"
