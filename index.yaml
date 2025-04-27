@@ -275,6 +275,25 @@ entries:
   netbox:
   - apiVersion: v2
     appVersion: 4.2.5
+    created: "2025-04-27T17:30:53.136491848Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 15.5.37
+    - condition: valkey.enabled
+      name: valkey
+      repository: https://charts.bitnami.com/bitnami
+      version: 3.0.2
+    description: A Helm chart for Kubernetes
+    digest: 03cbddf89fe83c23cd972f67aaf73d1d9e3f6847f4d1930a31d1de6e914e9664
+    name: netbox
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/netbox-0.1.1/netbox-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 4.2.5
     created: "2025-04-25T14:25:08.191895239Z"
     dependencies:
     - condition: postgresql.enabled
@@ -709,4 +728,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/valheim-0.1.0/valheim-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-27T16:02:34.151928027Z"
+generated: "2025-04-27T17:30:53.300390665Z"
