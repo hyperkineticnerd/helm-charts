@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: ghcr.io/thespaghettidetective/obico-server/server:0.1.0-release.1.4241
+          image: quay.io/hyperkineticnerd/obico-server_web:latest
           imagePullPolicy: Always
           command: 
             - sh 
@@ -48,3 +48,15 @@ spec:
               drop: ["ALL"]
             # seccompProfile:
             #   type: RuntimeDefault
+          volumeMounts:
+            - name: backend
+              mountPath: /backend
+          #   - name: frontend
+          #     mountPath: /frontend
+      volumes:
+        - name: backend
+          persistentVolumeClaim:
+            claimName: obico-backend
+      #   - name: frontend
+      #     persistentVolumeClaim:
+      #       claimName: obico-frontend

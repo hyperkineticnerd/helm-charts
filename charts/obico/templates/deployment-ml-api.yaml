@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: ml-api
-          image: ghcr.io/thespaghettidetective/obico-server/ml:0.1.0-release.1.4241
+          image: quay.io/hyperkineticnerd/obico-server_ml_api:latest
           imagePullPolicy: Always
           command: 
             - bash

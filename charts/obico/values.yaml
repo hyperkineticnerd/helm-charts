@@ -1,4 +1,4 @@
-redis:
+valkey:
   enabled: true
   auth:
     enabled: false
