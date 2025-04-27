@@ -1,3 +1,48 @@
 = NetApp Trident operator
 
 * *Project*: https://github.com/NetApp/trident
+* *Current Chart Version*: `0.1.0`
+
+== Usage
+
+Add this repo to Helm:
+[source,bash]
+-----
+helm repo add hknlab https://charts.hknlab.io
+-----
+
+Create Secret for Trident Credentials:
+[source,yaml]
+-----
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backend-tbc-ontap-nas-secret
+  namespace: trident
+type: Opaque
+data:
+  username: REDACTED
+  password: REDACTED
+-----
+
+Create and customize your `myvaules.yaml`:
+[source,yaml]
+-----
+tridentBackendConfigs:
+  - name: backend-tbc-ontap-nas
+    spec:
+      credentials:
+        name: backend-tbc-ontap-nas-secret
+      dataLIF: 172.16.105.1
+      managementLIF: 172.16.104.1
+      nasType: nfs
+      storageDriverName: ontap-nas
+      svm: nfs_svm
+      version: 1
+-----
+
+Then, deploy this helm chart:
+[source,bash]
+-----
+helm upgrade -i --create-namespace --namespace jellyfin jellyfin hknlab/jellyfin -f myvaules.yaml
+-----
