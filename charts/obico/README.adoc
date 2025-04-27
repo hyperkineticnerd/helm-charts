@@ -24,3 +24,12 @@ Then, deploy this helm chart:
 -----
 helm upgrade -i --create-namespace --namespace obico obico hknlab/obico
 -----
+
+
+Due to Django site "security", we need to add the domain to the database:
+[source,bash]
+-----
+export SITE=$(oc -n obico get route obico -o jsonpath='{.spec.host}')
+export PODS=$(oc -n obico get pods -l app=obico-web -o name)
+oc exec -it ${POD} -- ./manage.py site --add ${SITE}
+-----
