@@ -1,1 +1,26 @@
 = Obico
+
+* *Current Chart Version*: `0.1.2`
+* *Project*: https://github.com/TheSpaghettiDetective/obico-server
+
+== Used Containers
+
+This helm chart uses containers built and pushed to:
+* `quay.io/hyperkineticnerd/obico-server_ml_api`
+* `quay.io/hyperkineticnerd/obico-server_web`
+* `quay.io/hyperkineticnerd/obico-server_tasks`
+as the project's provided containers are incomplete.
+
+== Usage
+
+Add this repo to Helm:
+[source,bash]
+-----
+helm repo add hknlab https://charts.hknlab.io
+-----
+
+Then, deploy this helm chart:
+[source,bash]
+-----
+helm upgrade -i --create-namespace --namespace obico obico hknlab/obico
+-----
