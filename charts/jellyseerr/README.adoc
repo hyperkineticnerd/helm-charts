@@ -1,3 +1,42 @@
 = Jellyseerr
 
 * *Status*: Stable
+* *Current Chart Version*: `0.1.0`
+
+== Usage
+
+Add this repo to Helm:
+[source,bash]
+-----
+helm repo add hknlab https://charts.hknlab.io
+-----
+
+Optional, create RoleBinding for OpenShift `SecurityContextConstraint`:
+[source,yaml]
+-----
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: helm-jellyseerr-scc
+  namespace: jellyseerr
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: jellyseerr
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: 'system:openshift:scc:anyuid'
+-----
+
+Create and customize your `myvaules.yaml`:
+[source,yaml]
+-----
+include::values.yaml[]
+-----
+
+Then, deploy this helm chart:
+[source,bash]
+-----
+helm upgrade -i --create-namespace --namespace jellyseerr jellyseerr hknlab/jellyseerr -f myvaules.yaml
+-----
