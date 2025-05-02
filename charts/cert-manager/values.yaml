@@ -4,13 +4,17 @@
 
 operator:
   enable: true
-  channel: stable-v1
-  installPlanApproval: Automatic
   name: openshift-cert-manager-operator
-  namespace: cert-manager-operator
-  source: redhat-operators
-  sourceNamespace: openshift-marketplace
-  additionalNamespaces: {}
+  install:
+    installPlanApproval: Automatic
+  catalog:
+    channel: stable-v1
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  operatorGroup:
+    enable: true
+    namespace: cert-manager-operator
+    additionalNamespaces: {}
     # - cert-manager
 
 issuer:
