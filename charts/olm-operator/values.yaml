@@ -16,3 +16,5 @@ operatorGroup:
   namespace: my-operator-namespace
   additionalNamespaces: # []
     - my-managed-namespace
+
+config: {}

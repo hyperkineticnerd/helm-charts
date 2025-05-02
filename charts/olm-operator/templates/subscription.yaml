@@ -11,3 +11,7 @@ spec:
   name: {{ .Values.name }}
   source: {{ .Values.catalog.source }}
   sourceNamespace: {{ .Values.catalog.sourceNamespace }}
+  {{- with .Values.config }}
+  config:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
