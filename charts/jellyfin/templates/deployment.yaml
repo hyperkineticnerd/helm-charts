@@ -83,5 +83,5 @@ spec:
           persistentVolumeClaim:
             claimName: {{ .Release.Name }}-config
         - name: cache
-          emptyDir:
-            medium: Memory
+          emptyDir: {}
+            # medium: Memory
