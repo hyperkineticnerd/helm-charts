@@ -64,8 +64,6 @@ spec:
               mountPath: /media/Television
             - name: config
               mountPath: /config
-            - name: cache
-              mountPath: /cache
       volumes:
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
@@ -82,6 +80,3 @@ spec:
         - name: config
           persistentVolumeClaim:
             claimName: {{ .Release.Name }}-config
-        - name: cache
-          emptyDir: {}
-            # medium: Memory
