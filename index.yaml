@@ -782,6 +782,16 @@ entries:
   uptime-kuma:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-05-27T13:49:20.117229678Z"
+    description: A Helm chart for Kubernetes
+    digest: 9319850251d2d524cdd2b2d482525afb214101091f3ed35b26df8bca852da498
+    name: uptime-kuma
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/uptime-kuma-0.1.1/uptime-kuma-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-05-27T13:46:21.755321343Z"
     description: A Helm chart for Kubernetes
     digest: 952a9f217d33ead3cf8316d4a5d1c4d8005c5eb46f3d58975826b56d0a6c103d
@@ -801,4 +811,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/valheim-0.1.0/valheim-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-27T13:46:21.755362667Z"
+generated: "2025-05-27T13:49:20.117275376Z"
