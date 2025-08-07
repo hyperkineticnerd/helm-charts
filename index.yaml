@@ -697,6 +697,16 @@ entries:
     version: 0.1.0
   spoolman:
   - apiVersion: v2
+    appVersion: 0.22.1
+    created: "2025-08-07T19:20:40.170465142Z"
+    description: A Helm chart for Kubernetes
+    digest: 36a1d7db13f740866113a2838eb061c2bacea5b9773b7f31348697fcfdb0979e
+    name: spoolman
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/spoolman-0.1.1/spoolman-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 0.19.3
     created: "2025-04-25T14:25:10.078151633Z"
     description: A Helm chart for Kubernetes
@@ -821,4 +831,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/valheim-0.1.0/valheim-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-08T01:29:15.329596257Z"
+generated: "2025-08-07T19:20:40.170535725Z"
