@@ -58,7 +58,7 @@ spec:
         accessModes:
           - "ReadWriteOnce"
         # storageClassName: ""
-        # volumeName: nfs-valheim-config
+        # volumeName: nfs-enshrouded-config
         persistentVolumeReclaimPolicy: Retain
         resources:
           requests:
@@ -69,7 +69,7 @@ spec:
         accessModes:
           - "ReadWriteOnce"
         # storageClassName: ""
-        # volumeName: nfs-valheim-data
+        # volumeName: nfs-enshrouded-data
         persistentVolumeReclaimPolicy: Retain
         resources:
           requests:
