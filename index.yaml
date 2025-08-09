@@ -698,6 +698,16 @@ entries:
   spoolman:
   - apiVersion: v2
     appVersion: 0.22.1
+    created: "2025-08-09T23:29:49.793480509Z"
+    description: A Helm chart for Kubernetes
+    digest: 538599624f9c4de209308b5c974aa938af99996d19e3538949544bd8791af01a
+    name: spoolman
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/spoolman-0.1.2/spoolman-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 0.22.1
     created: "2025-08-07T19:20:40.170465142Z"
     description: A Helm chart for Kubernetes
     digest: 36a1d7db13f740866113a2838eb061c2bacea5b9773b7f31348697fcfdb0979e
@@ -741,6 +751,16 @@ entries:
   tdarr-node:
   - apiVersion: v2
     appVersion: 2.35.02
+    created: "2025-08-09T23:29:49.930762575Z"
+    description: A Helm chart for Kubernetes
+    digest: c10684d1e4dabac45b0ce49e68024d275b0a08b0fe2bd8a936b7dbde6a0b712b
+    name: tdarr-node
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/tdarr-node-0.1.1/tdarr-node-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 2.35.02
     created: "2025-04-25T14:25:10.435037802Z"
     description: A Helm chart for Kubernetes
     digest: 4e3f58bb226fe17971bb0bf64dfcd1acfd0e1db7614be9b0db7c3cfe4862bce0
@@ -750,6 +770,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/tdarr-node-0.1.0/tdarr-node-0.1.0.tgz
     version: 0.1.0
   tdarr-server:
+  - apiVersion: v2
+    appVersion: 2.35.02
+    created: "2025-08-09T23:29:50.083155021Z"
+    description: A Helm chart for Kubernetes
+    digest: d03a376894b424c9721ffabcc15b0e394a752051527aaccc0abfc9cbb8e0abd7
+    name: tdarr-server
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/tdarr-server-0.1.1/tdarr-server-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: 2.35.02
     created: "2025-04-25T14:25:10.557690992Z"
@@ -831,4 +861,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/valheim-0.1.0/valheim-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-07T19:20:40.170535725Z"
+generated: "2025-08-09T23:29:50.083221646Z"
