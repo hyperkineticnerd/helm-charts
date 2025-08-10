@@ -1,3 +1,0 @@
-= 7 Days to Die dedicated server
-
-* *Status*: In Development

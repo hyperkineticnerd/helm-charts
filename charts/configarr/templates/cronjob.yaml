@@ -36,8 +36,8 @@ spec:
               #   claimName: media-app-data
             - name: config-volume
               configMap:
-                name: configarr
+                name: configarr-config
             - name: secret-volume
               secret:
-                secretName: configarr
+                secretName: configarr-secrets
           restartPolicy: Never

@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: configarr
+  name: configarr-config
 data:
   config.yml: |
     trashGuideUrl: https://github.com/TRaSH-Guides/Guides
