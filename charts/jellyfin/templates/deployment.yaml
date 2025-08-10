@@ -31,7 +31,7 @@ spec:
           command:
             - /jellyfin/jellyfin
           envFrom:
-            - secretRef:
+            - configMapRef:
                 name: {{ .Release.Name }}-env
           ports:
             - name: http

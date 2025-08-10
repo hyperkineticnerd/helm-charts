@@ -19,7 +19,7 @@ spec:
           image: {{ include "jellyseerr.imageString" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
-            - secretRef:
+            - configMapRef:
                 name: {{ .Release.Name }}-env
           ports:
             - containerPort: 5055
