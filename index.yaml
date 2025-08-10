@@ -239,6 +239,16 @@ entries:
   jellyseerr:
   - apiVersion: v2
     appVersion: 1.9.0
+    created: "2025-08-10T15:03:14.972127317Z"
+    description: Installs JellySeerr on Kubernetes
+    digest: b55ad66b38bec02af11637e662a53b74fad5543335a9ff35a460a2f094f98a4f
+    name: jellyseerr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/jellyseerr-0.1.2/jellyseerr-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.9.0
     created: "2025-08-10T00:13:08.392423402Z"
     description: Installs JellySeerr on Kubernetes
     digest: ba03c037a846764d646f16bf1a5ed52bdd1002590ac5c9d64d87e8e07c81138a
@@ -881,4 +891,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/valheim-0.1.0/valheim-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-10T00:13:08.392525944Z"
+generated: "2025-08-10T15:03:14.972202348Z"
