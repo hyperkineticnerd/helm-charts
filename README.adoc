@@ -67,24 +67,12 @@ helm repo add hknlab https://charts.hknlab.io
 |Jellyseerr, Open-source media request and discovery manager for jellyfin
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/jellyseerr[`charts/jellyseerr`]
 
-|Minecraft dedicated server
-|https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/minecraft[`charts/minecraft`]
-
-|Satisfactory dedicated server
-|https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/satisfactory[`charts/satisfactory`]
-
 |===
 
 === In-Development Application Helm Charts
 
 [frame=none, cols="2,1"]
 |===
-
-|7 Days to Die dedicated server
-|https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/7-days-to-die[`charts/7-days-to-die`]
-
-|Astroneer dedicated server
-|https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/astroneer[`charts/astroneer`]
 
 |Audiobookshelf
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/audiobookshelf[`charts/audiobookshelf`]
@@ -95,14 +83,8 @@ helm repo add hknlab https://charts.hknlab.io
 |Configarr, Sync TRaSH Guides + custom configs with Sonarr/Radarr
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/configarr[`charts/configarr`]
 
-|Don't Starve Together dedicated server
-|https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/dont-starve-together[`charts/dont-starve-together`]
-
 |Matrix chat web interface
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/element-web[`charts/element-web`]
-
-|Enshouded dedicated server
-|https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/enshrouded[`charts/enshrouded`]
 
 |Fluidd, Klipper user interface
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/fluidd[`charts/fluidd`]
@@ -131,9 +113,6 @@ helm repo add hknlab https://charts.hknlab.io
 |TP-Link Omada Controller
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/omada[`charts/omada`]
 
-|Palword dedicated server
-|https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/palworld[`charts/palworld`]
-
 |Prowlarr, Indexer manager/proxy
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/prowlarr[`charts/prowlarr`]
 
@@ -146,9 +125,6 @@ helm repo add hknlab https://charts.hknlab.io
 |Redirecterr, Jellyseerr reverse proxy
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/redirecterr[`charts/redirecterr`]
 
-|LOTR: Return to Moria dedicated server
-|https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/return-to-moria[`charts/return-to-moria`]
-
 |SABnzbd, Free and easy binary newsreader
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/sabnzbd[`charts/sabnzbd`]
 
@@ -157,9 +133,6 @@ helm repo add hknlab https://charts.hknlab.io
 
 |Spoolman, self-hosted 3D printer filament spool inventory tracker
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/spoolman[`charts/spoolman`]
-
-|Subnautica dedicated server
-|https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/subnautica[`charts/subnautica`]
 
 |VM of Synology VDSM
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/synology-vdsm[`charts/synology-vdsm`]
@@ -170,17 +143,11 @@ helm repo add hknlab https://charts.hknlab.io
 |Tdarr server
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/tdarr-server[`charts/tdarr-server`]
 
-|The Forest dedicated server
-|https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/the-forest[`charts/the-forest`]
-
 |Unifi Controller
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/unifi[`charts/unifi`]
 
 |Unpackerr, Jellyseerr download extractor
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/unpackerr[`charts/unpackerr`]
-
-|Valheim dedicated server
-|https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/valheim[`charts/valheim`]
 
 |Wizarr, automated user invitation and management system
 |https://github.com/hyperkineticnerd/helm-charts/tree/main/charts/wizarr[`charts/wizarr`]
