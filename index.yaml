@@ -674,6 +674,17 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/readarr-0.1.0/readarr-0.1.0.tgz
     version: 0.1.0
+  redirecterr:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-08-23T17:03:55.967853075Z"
+    description: A Helm chart for Kubernetes
+    digest: 18e982a6e203e5293d77c6c40f2c8785b7e8b262cad836e5fa96ea26c95fcebc
+    name: redirecterr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/redirecterr-0.1.1/redirecterr-0.1.1.tgz
+    version: 0.1.1
   return-to-moria:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -901,4 +912,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/valheim-0.1.0/valheim-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-10T17:23:54.67124457Z"
+generated: "2025-08-23T17:03:55.967924629Z"
