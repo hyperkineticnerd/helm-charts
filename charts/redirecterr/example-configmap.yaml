@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redirecterr-config
+data:
+  config.yaml: |
+    overseerr_url: "https://jellyseerr.hknlab.io/"
+    overseerr_api_token: ""
+
+    approve_on_no_match: True
+
+    instances:
+      radarr: # Custom instance name
+        server_id: 0
+        root_folder: "/media/Movies"
+      sonarr: # Custom instance name
+        server_id: 0
+        root_folder: "/media/Television"
+
+    filters:
+      - media_type: movie
+        apply:
+          - radarr
+      - media_type: tv
+        apply: sonarr
