@@ -1,6 +1,6 @@
 = OpenShift compatable operator of cert-manager
 
-*Current Chart Version*: `0.1.0`
+*Current Chart Version*: `0.1.2`
 
 == Usage 
 
@@ -29,7 +29,7 @@ Create your `myvalues.yaml`.
 issuer:
   cluster: true
   acmeServer: "https://acme-v02.api.letsencrypt.org/directory"
-  email: "sean.nelson.04@gmail.com"
+  email: "REDACTED"
   preferredChain: ""
   privateKeySecretRef: letsencrypt-account-key
   solvers:
