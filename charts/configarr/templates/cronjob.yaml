@@ -20,24 +20,18 @@ spec:
               #   - configMapRef:
               #       name: common-deployment-environment
               volumeMounts:
+              {{- with .Values.volumeMounts }}
+                {{- toYaml . | nindent 16 }}
+              {{- end }}
                 - mountPath: /app/repos # Cache repositories
                   name: app-data
                   subPath: configarr-repos
-                - name: config-volume # Mount specific config
-                  mountPath: /app/config/config.yml
-                  subPath: config.yml
-                - name: secret-volume
-                  mountPath: /app/config/secrets.yml # Mount secrets
-                  subPath: secrets.yml
           volumes:
+          {{- with .Values.volumes }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
             - name: app-data
               emptyDir: {}
               # persistentVolumeClaim:
               #   claimName: media-app-data
-            - name: config-volume
-              configMap:
-                name: configarr-config
-            - name: secret-volume
-              secret:
-                secretName: configarr-secrets
           restartPolicy: Never

@@ -14,12 +14,6 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-secrets:
-  sonarr:
-    api_key: ""
-  radarr:
-    api_key: ""
-
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
@@ -94,17 +88,22 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 # Additional volumes on the output Deployment definition.
-volumes: []
-# - name: foo
-#   secret:
-#     secretName: mysecret
-#     optional: false
+volumes:
+  - name: config-volume
+    configMap:
+      name: configarr-config
+  - name: secret-volume
+    secret:
+      secretName: configarr-secrets
 
 # Additional volumeMounts on the output Deployment definition.
-volumeMounts: []
-# - name: foo
-#   mountPath: "/etc/foo"
-#   readOnly: true
+volumeMounts:
+  - name: config-volume # Mount specific config
+    mountPath: /app/config/config.yml
+    subPath: config.yml
+  - name: secret-volume
+    mountPath: /app/config/secrets.yml # Mount secrets
+    subPath: secrets.yml
 
 nodeSelector: {}
 

@@ -1,1 +1,112 @@
 = Configarr
+
+*Current Chart Version*: `0.1.2`
+
+== Usage 
+
+Add this repo to Helm:
+[source,bash]
+-----
+helm repo add hknlab https://charts.hknlab.io
+-----
+
+Optional, Create Kubernetes Secret and ConfigMap for Configarr API Keys and Configurations:
+[source,yaml]
+-----
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configarr-config
+data:
+  config.yml: |
+    trashGuideUrl: https://github.com/TRaSH-Guides/Guides
+    recyclarrConfigUrl: https://github.com/recyclarr/config-templates
+
+    sonarr:
+      series:
+        base_url: http://sonarr:8989
+        api_key: !secret SONARR_API_KEY
+
+        quality_definition:
+          type: series
+
+        include:
+          - template: sonarr-quality-definition-anime
+          - template: sonarr-quality-definition-series
+
+          - template: sonarr-v4-quality-profile-anime
+          - template: sonarr-v4-quality-profile-web-1080p
+          - template: sonarr-v4-quality-profile-web-2160p
+
+          - template: sonarr-v4-custom-formats-anime
+          - template: sonarr-v4-custom-formats-web-1080p
+          - template: sonarr-v4-custom-formats-web-2160p
+
+        custom_formats: []
+    radarr:
+      movies:
+        base_url: http://radarr:7878
+        api_key: !secret RADARR_API_KEY
+
+        quality_definition:
+          type: movie
+        
+        include:
+          # Comment out any of the following includes to disable them
+          - template: radarr-quality-definition-movie
+
+          - template: radarr-quality-profile-anime
+          - template: radarr-quality-profile-hd-bluray-web
+          - template: radarr-quality-profile-remux-web-1080p
+          - template: radarr-quality-profile-remux-web-2160p
+          - template: radarr-quality-profile-uhd-bluray-web
+
+          - template: radarr-custom-formats-anime
+          - template: radarr-custom-formats-hd-bluray-web
+          - template: radarr-custom-formats-remux-web-1080p
+          - template: radarr-custom-formats-remux-web-2160p
+          - template: radarr-custom-formats-uhd-bluray-web
+
+        custom_formats: []
+-----
+
+[source,yaml]
+-----
+apiVersion: v1
+kind: Secret
+metadata:
+  name: configarr-secrets
+type: Opaque
+stringData:
+  secrets.yml: |
+    SONARR_API_KEY: "REDACTED"
+    RADARR_API_KEY: "REDACTED"
+-----
+
+Create your `myvalues.yaml`.
+[source,bash]
+-----
+# Additional volumes on the output Deployment definition.
+volumes:
+  - name: config-volume
+    configMap:
+      name: configarr-config
+  - name: secret-volume
+    secret:
+      secretName: configarr-secrets
+
+# Additional volumeMounts on the output Deployment definition.
+volumeMounts:
+  - name: config-volume # Mount specific config
+    mountPath: /app/config/config.yml
+    subPath: config.yml
+  - name: secret-volume
+    mountPath: /app/config/secrets.yml # Mount secrets
+    subPath: secrets.yml
+-----
+
+Then, deploy this helm chart:
+[source,bash]
+-----
+helm upgrade -i --create-namespace --namespace servarr configarr hknlab/configarr -f myvalues.yaml
+-----
