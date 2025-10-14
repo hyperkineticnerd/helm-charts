@@ -1,6 +1,6 @@
+---
 {{- if .Values.storage.tv.enabled }}
 {{- if not .Values.storage.tv.existingClaimName }}
----
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:

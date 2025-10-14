@@ -1,6 +1,6 @@
+---
 {{- if .Values.storage.downloads.enabled }}
 {{- if not .Values.storage.downloads.existingClaimName }}
----
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:

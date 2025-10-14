@@ -61,7 +61,6 @@ ingress:
 
 storage:
   config:
-    enable: true
     accessModes: 
      - ReadWriteOnce
     storageSize: 10Gi
