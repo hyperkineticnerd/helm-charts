@@ -93,6 +93,23 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/cert-manager-0.1.0/cert-manager-0.1.0.tgz
     version: 0.1.0
+  cert-manager-operator:
+  - apiVersion: v2
+    appVersion: 1.15.1
+    created: "2025-10-14T14:46:06.220250245Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enable
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.1.1
+    description: A Helm chart for Kubernetes
+    digest: 1a3aab0a0c60b9fcb3171073a399667c5080a1540b5d02f7566d36b680bdae0e
+    name: cert-manager-operator
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/cert-manager-operator-0.1.2/cert-manager-operator-0.1.2.tgz
+    version: 0.1.2
   configarr:
   - apiVersion: v2
     appVersion: 1.13.1
@@ -764,6 +781,16 @@ entries:
   sonarr:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-10-14T14:46:06.355305599Z"
+    description: A Helm chart for Kubernetes
+    digest: 285e322d5958e17ebc32f7ebfd9d9a0c0c0feda55e079c6ba4e92cbc257e2155
+    name: sonarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/sonarr-0.1.1/sonarr-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-04-25T14:25:09.898282491Z"
     description: A Helm chart for Kubernetes
     digest: 6b0731434a6c9ba47ab9d919b0e642b435080f6d7358fc11d93993d50e321323
@@ -906,6 +933,17 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/unifi-0.1.0/unifi-0.1.0.tgz
     version: 0.1.0
+  unpackerr:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-10-14T14:46:06.548281442Z"
+    description: A Helm chart for Kubernetes
+    digest: e4192f516ef73e09f794c8e1ab65fd86100ae39ecb43dbb6b45f7776168696cb
+    name: unpackerr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/unpackerr-0.1.1/unpackerr-0.1.1.tgz
+    version: 0.1.1
   uptime-kuma:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -938,4 +976,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/valheim-0.1.0/valheim-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-29T19:07:35.332018245Z"
+generated: "2025-10-14T14:46:06.54837655Z"
