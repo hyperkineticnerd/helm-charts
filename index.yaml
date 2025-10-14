@@ -759,6 +759,16 @@ entries:
   sabnzbd:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-10-14T16:37:57.099318554Z"
+    description: A Helm chart for Kubernetes
+    digest: e3c5ae2c370d8097ebf4b551e1f4b6171d52ce9083fb272491c6889d4b84b8f6
+    name: sabnzbd
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/sabnzbd-0.1.2/sabnzbd-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-10-14T15:00:42.720897598Z"
     description: A Helm chart for Kubernetes
     digest: dce61b594b5c17435152c2202a5523fc4a55f826240a6c84a621fee02baa1859
@@ -986,4 +996,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/valheim-0.1.0/valheim-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-14T15:00:42.721006251Z"
+generated: "2025-10-14T16:37:57.099416498Z"
