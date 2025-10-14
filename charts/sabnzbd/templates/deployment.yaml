@@ -91,9 +91,9 @@ spec:
             - name: sabnzbd-config
               mountPath: /config
             - name: downloads
-              mountPath: /data/downloads/complete
+              mountPath: /data/completed
             - name: incomplete-downloads
-              mountPath: /data/downloads/incomplete
+              mountPath: /data/incomplete
       volumes:
         # - name: sabnzbd-ini
         #   configMap:
