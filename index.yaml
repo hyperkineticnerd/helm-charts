@@ -996,4 +996,15 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/valheim-0.1.0/valheim-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-14T16:37:57.099416498Z"
+  wizarr:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-10-15T02:50:13.338775263Z"
+    description: A Helm chart for Kubernetes
+    digest: 167c06de45194d210413557d7018a938e08af3d9fb4c7662f3d4d2a6b58ba876
+    name: wizarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
+    version: 0.1.1
+generated: "2025-10-15T02:50:13.338866143Z"
