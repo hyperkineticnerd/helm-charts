@@ -68,6 +68,6 @@ Create the image of the container to use
 {{- if .Values.image.tag }}
 {{- printf "%s:%s" .Values.image.repository .Values.image.tag }}
 {{- else }}
-{{- printf "%s:latest" .Values.image.repository }}
+{{- printf "%s:%s" .Values.image.repository .Chart.AppVersion }}
 {{- end }}
 {{- end }}
