@@ -12,7 +12,7 @@ spec:
   selector:
     matchLabels:
       app: {{ .Release.Name }}
-      version: {{ .Chart.AppVersion }}
+      version: {{ .Chart.AppVersion | quote }}
   template:
     metadata:
       labels:
