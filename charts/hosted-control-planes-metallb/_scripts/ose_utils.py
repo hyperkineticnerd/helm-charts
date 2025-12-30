@@ -7,70 +7,70 @@ import time
 import sys
 
 
-def get_object(object_name: str):
-    object_selector = oc.selector(
-        [f"{object_name}"]
-    )
-    object = None
-    if object_selector.objects():
-        object = object_selector.objects()[0]
-    return object
+class resources:
+    def get(object_name: str):
+        object_selector = oc.selector(
+            [f"{object_name}"]
+        )
+        object = None
+        if object_selector.objects():
+            object = object_selector.objects()[0]
+        return object
+
+    def wait(object_name: str):
+        object_selector = oc.selector(
+            [f"{object_name}"]
+        )
+        object = None
+        if object_selector.objects():
+            object = object_selector.objects()[0]
+        else:
+            time.sleep(20)
+        return object
+
+    def get_status(object: oc.APIObject):
+        return object.model.status
+
+class labels:
+    def get(object: oc.APIObject):
+        return object.model.metadata.labels
+
+    def patch(object: oc.APIObject, key: str, value: str):
+        result = object.patch(
+            {"metadata": {"labels":{key: value}}}, strategy="merge", cmd_args=["-o=yaml"]
+        )
+        return result.status() == 0
 
 
-def wait_object(object_name: str):
-    object_selector = oc.selector(
-        [f"{object_name}"]
-    )
-    object = None
-    if object_selector.objects():
-        object = object_selector.objects()[0]
-    else:
-        time.sleep(20)
-    return object
+class logging:
+    def success_and_exit(message: str):
+        """Print success message and exit"""
+        print()
+        print(f"SUCCESS: {message}")
+        sys.exit(0)
+
+    def error_and_exit(message: str, code: int = 1):
+        """Print and error and exit"""
+        print()
+        print(f"ERROR: {message}")
+        sys.exit(code)
 
 
-def get_annotations(object: oc.APIObject):
-    return object.model.metadata.annotations
+class annotations:
+    def get(object: oc.APIObject):
+        return object.model.metadata.annotations
 
+    def patch(object: oc.APIObject, key: str, value: str):
+        result = object.patch(
+            {"metadata": {"annotations":{key: value}}}, strategy="merge", cmd_args=["-o=yaml"]
+        )
+        return result.status() == 0
 
-def get_labels(object: oc.APIObject):
-    return object.model.metadata.labels
-
-
-def get_status(object: oc.APIObject):
-    return object.model.status
-
-
-def patch_annotations(object: oc.APIObject, key: str, value: str):
-    result = object.patch(
-        {"metadata": {"annotations":{key: value}}}, strategy="merge", cmd_args=["-o=yaml"]
-    )
-    return result.status() == 0
-
-
-def patch_labels(object: oc.APIObject, key: str, value: str):
-    result = object.patch(
-        {"metadata": {"labels":{key: value}}}, strategy="merge", cmd_args=["-o=yaml"]
-    )
-    return result.status() == 0
-
-
-def verify_annotation(object: oc.APIObject, key: str, value: str):
-    while object.model.metadata.annotations[key] is oc.Missing:
-        time.sleep(10)
-        object.refresh()
-    return True
-
-
-def success_and_exit(message: str):
-    """Print success message and exit"""
-    print()
-    print(f"SUCCESS: {message}")
-    sys.exit(0)
-
-
-def error_and_exit(message: str, code: int = 1):
-    """Print and error and exit"""
-    print()
-    print(f"ERROR: {message}")
-    sys.exit(code)
+    def verify(object: oc.APIObject, key: str, value: str):
+        search_key = object.model.metadata.annotations[key]
+        while search_key is oc.Missing:
+            object.refresh()
+            time.sleep(10)
+        if search_key == value:
+            return True
+        return False
