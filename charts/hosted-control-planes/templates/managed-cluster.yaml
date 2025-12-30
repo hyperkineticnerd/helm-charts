@@ -1,0 +1,13 @@
+{{- if .Values.acm.enabled -}}
+apiVersion: cluster.open-cluster-management.io/v1
+kind: ManagedCluster
+metadata:
+  name: {{ .Release.Name }}
+  annotations:
+{{- include "hosted-control-planes.managed-cluster.annotations" . | nindent 4 }}
+  labels:
+    name: {{ .Release.Name }}
+{{- include "hosted-control-planes.managed-cluster.labels" . | nindent 4 }}
+spec:
+  hubAcceptsClient: true
+{{- end -}}

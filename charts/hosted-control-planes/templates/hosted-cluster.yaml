@@ -1,0 +1,8 @@
+apiVersion: hypershift.openshift.io/v1beta1
+kind: HostedCluster
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+{{- include "hosted-control-planes.hosted-cluster.labels" . | nindent 2 }}
+spec:
+{{- include "hosted-control-planes.hosted-cluster.spec" . | nindent 2 }}

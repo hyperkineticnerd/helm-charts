@@ -1,0 +1,64 @@
+#!/usr/bin/python
+
+import openshift_client as oc # pyright: ignore[reportMissingImports]
+import semver # pyright: ignore[reportMissingImports]
+import re
+import time
+import sys
+
+
+def get_object(object_name: str):
+    object_selector = oc.selector(
+        [f"{object_name}"]
+    )
+    object = None
+    if object_selector.objects():
+        object = object_selector.objects()[0]
+    return object
+
+
+def get_annotations(object: oc.APIObject):
+    return object.model.metadata.annotations
+
+
+def get_labels(object: oc.APIObject):
+    return object.model.metadata.labels
+
+
+def get_status(object: oc.APIObject):
+    return object.model.status
+
+
+def patch_annotations(object: oc.APIObject, key: str, value: str):
+    result = object.patch(
+        {"metadata": {"annotations":{key: value}}}, strategy="merge", cmd_args=["-o=yaml"]
+    )
+    return result.status() == 0
+
+
+def patch_labels(object: oc.APIObject, key: str, value: str):
+    result = object.patch(
+        {"metadata": {"labels":{key: value}}}, strategy="merge", cmd_args=["-o=yaml"]
+    )
+    return result.status() == 0
+
+
+def verify_annotation(object: oc.APIObject, key: str, value: str):
+    while object.model.metadata.annotations[key] is oc.Missing:
+        time.sleep(10)
+        object.refresh()
+    return True
+
+
+def success_and_exit(message: str):
+    """Print success message and exit"""
+    print()
+    print(f"SUCCESS: {message}")
+    sys.exit(0)
+
+
+def error_and_exit(message: str, code: int = 1):
+    """Print and error and exit"""
+    print()
+    print(f"ERROR: {message}")
+    sys.exit(code)

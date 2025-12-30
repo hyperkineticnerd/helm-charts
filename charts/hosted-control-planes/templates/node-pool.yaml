@@ -1,0 +1,7 @@
+apiVersion: hypershift.openshift.io/v1beta1
+kind: NodePool
+metadata:
+  name: {{ printf "%s-workers" .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  {{- include "hosted-control-planes.node-pool.spec" . | nindent 2 }}

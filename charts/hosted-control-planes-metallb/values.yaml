@@ -1,0 +1,19 @@
+# Default values for hosted-control-planes.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+cluster:
+  name: ''
+  baseDomain: ''
+  vips:
+    api: ''
+    ingress: ''
+
+oseImage: registry.redhat.io/openshift4/ose-cli:v4.15@sha256:bc35a9fc663baf0d6493cc57e89e77a240a36c43cf38fb78d8e61d3b87cf5cc5
+installRequiredPythonLibraries: true
+
+# If `installRequiredPythonLibraries` is `true` then use this python index to pull required libraries
+pythonIndexURL: https://pypi.org/simple/
+
+# If `installRequiredPythonLibraries` is `true` then use this python extra index to pull required library dependencies
+pythonExtraIndexURL: https://pypi.org/simple/
