@@ -218,6 +218,28 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/fluidd-0.1.0/fluidd-0.1.0.tgz
     version: 0.1.0
+  hosted-control-planes:
+  - apiVersion: v2
+    appVersion: 4.18.30
+    created: "2025-12-30T15:22:51.932057111Z"
+    description: A Helm chart for Kubernetes
+    digest: 8f4848eff08df52958350410d516edb7cae39ed58b7bdd0eb0b0eabedcd9add2
+    name: hosted-control-planes
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/hosted-control-planes-0.1.1/hosted-control-planes-0.1.1.tgz
+    version: 0.1.1
+  hosted-control-planes-metallb:
+  - apiVersion: v2
+    appVersion: 4.18.30
+    created: "2025-12-30T15:22:52.057883204Z"
+    description: A Helm chart for Kubernetes
+    digest: 62ff63763e6b14341aba5bb1a476591e9abb1bbb4e9fd0a94bcbcd7e363fdd85
+    name: hosted-control-planes-metallb
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/hosted-control-planes-metallb-0.1.0/hosted-control-planes-metallb-0.1.0.tgz
+    version: 0.1.0
   jellyfin:
   - apiVersion: v2
     appVersion: 10.11.0
@@ -1027,4 +1049,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2025-10-20T20:53:09.319638508Z"
+generated: "2025-12-30T15:22:52.05798875Z"
