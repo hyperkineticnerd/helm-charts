@@ -17,6 +17,18 @@ def get_object(object_name: str):
     return object
 
 
+def wait_object(object_name: str):
+    object_selector = oc.selector(
+        [f"{object_name}"]
+    )
+    object = None
+    if object_selector.objects():
+        object = object_selector.objects()[0]
+    else:
+        time.sleep(20)
+    return object
+
+
 def get_annotations(object: oc.APIObject):
     return object.model.metadata.annotations
 

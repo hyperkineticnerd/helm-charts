@@ -25,7 +25,7 @@ print(f"*\t- ANNOTATION_KEY: {ANNOTATION_KEY}")
 print(f"*\t- ANNOTATION_VALUE: {ANNOTATION_VALUE}")
 print("********************************************************************")
 
-patch_object = ose_utils.get_object(OBJECT_NAME)
+patch_object = ose_utils.wait_object(OBJECT_NAME)
 print(f"object = {patch_object.model.metadata.name}")
 
 old_annotations = ose_utils.get_annotations(patch_object)
@@ -37,7 +37,7 @@ print(f"result = {add_annotation}")
 new_annotations = ose_utils.get_annotations(patch_object)
 print(f"new annotations = {new_annotations}")
 
-check = ose_utils.verify_annotation(patch_object, ANNOTATION_KEY)
+check = ose_utils.verify_annotation(patch_object, ANNOTATION_KEY, ANNOTATION_VALUE)
 if not check:
     ose_utils.error_and_exit(
         f"ERROR: Failed to get Subscription ({OBJECT_NAME}) UID. This really shouldn't happen."
