@@ -1,0 +1,10 @@
+{{- range .Values.bfdProfiles }}
+---
+apiVersion: metallb.io/v1beta1
+kind: BFDProfile
+metadata:
+  name: {{ .name }}
+  namespace: metallb-system
+spec:
+  {{- .spec | toYaml | nindent 2 }}
+{{- end }}

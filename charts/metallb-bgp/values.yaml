@@ -1,0 +1,26 @@
+# Default values for metallb-bgp.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+bfdProfiles:
+  - name: test
+    spec:
+      receiveInterval: 380
+      transmitInterval: 270
+
+bgpPeers:
+  - name: network-arista-alaska
+    spec:
+      peerAddress: 172.16.0.3
+      myASN: 4200000002
+      peerASN: 4200000002
+      disableMP: false
+      ebgpMultiHop: false
+  - name: network-arista-texas
+    spec:
+      peerAddress: 172.16.0.2
+      myASN: 4200000001
+      peerASN: 4200000001
+      disableMP: false
+      ebgpMultiHop: false
+      bfdProfile: test

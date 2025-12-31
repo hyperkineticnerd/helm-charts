@@ -1,0 +1,10 @@
+{{- range .Values.bgpPeers }}
+---
+apiVersion: metallb.io/v1beta2
+kind: BGPPeer
+metadata:
+  name: {{ .name }}
+  namespace: metallb-system
+spec:
+  {{- .spec | toYaml | nindent 2 }}
+{{- end }}
