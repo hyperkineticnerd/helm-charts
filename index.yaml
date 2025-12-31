@@ -467,6 +467,17 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/matrix-synapse-0.1.0/matrix-synapse-0.1.0.tgz
     version: 0.1.0
+  metallb-bgp:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-31T06:10:41.152701374Z"
+    description: A Helm chart for Kubernetes
+    digest: ed35aaa2fc87d4d10e11b2f1c95b2cdee7a65323314d262c4307390cb8a0dad7
+    name: metallb-bgp
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/metallb-bgp-0.1.0/metallb-bgp-0.1.0.tgz
+    version: 0.1.0
   metallb-operator:
   - apiVersion: v2
     appVersion: 4.18.0
@@ -1096,4 +1107,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2025-12-31T05:36:39.320154154Z"
+generated: "2025-12-31T06:10:41.152798275Z"
