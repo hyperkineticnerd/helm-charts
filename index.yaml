@@ -467,6 +467,23 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/matrix-synapse-0.1.0/matrix-synapse-0.1.0.tgz
     version: 0.1.0
+  metallb-operator:
+  - apiVersion: v2
+    appVersion: 4.18.0
+    created: "2025-12-31T05:36:39.320058094Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enable
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.1.1
+    description: A Helm chart for Kubernetes
+    digest: 6fb77a33cf33d88f71a8b0db0a56b25c0fb99eda9795a0888926627a608fb10d
+    name: metallb-operator
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/metallb-operator-0.1.0/metallb-operator-0.1.0.tgz
+    version: 0.1.0
   metube:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -1079,4 +1096,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2025-12-30T19:33:29.479316153Z"
+generated: "2025-12-31T05:36:39.320154154Z"
