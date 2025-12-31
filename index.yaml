@@ -498,6 +498,17 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/metallb-bgp-0.1.0/metallb-bgp-0.1.0.tgz
     version: 0.1.0
+  metallb-loadbalancer:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-31T06:57:28.991322836Z"
+    description: A Helm chart for Kubernetes
+    digest: 9ad43b77b3b428a2cf2d08d3cf745ab1f774725a92b547c78a8a9f18523fa219
+    name: metallb-loadbalancer
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/metallb-loadbalancer-0.1.0/metallb-loadbalancer-0.1.0.tgz
+    version: 0.1.0
   metallb-operator:
   - apiVersion: v2
     appVersion: 4.18.0
@@ -1127,4 +1138,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2025-12-31T06:26:41.84615249Z"
+generated: "2025-12-31T06:57:28.991413164Z"
