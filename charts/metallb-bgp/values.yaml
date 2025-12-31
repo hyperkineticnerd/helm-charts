@@ -11,7 +11,7 @@ bfdProfiles:
 bgpPeers:
   - name: network-arista-alaska
     spec:
-      peerAddress: 172.16.0.3
+      peerAddress: 172.16.0.2
       myASN: 4200000002
       peerASN: 4200000002
       disableMP: false
