@@ -1,0 +1,18 @@
+# Default values for metallb.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+operator:
+  enable: true
+  name: metallb-operator
+  install:
+    installPlanApproval: Automatic
+  catalog:
+    channel: stable
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  operatorGroup:
+    enable: true
+    namespace: metallb-system
+    additionalNamespaces: []
+    # - cert-manager
