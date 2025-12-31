@@ -1,0 +1,12 @@
+{{- range .Values.advertisements }}
+{{- if (eq .type "BGP") }}
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisement
+metadata:
+  name: {{ .name }}
+  namespace: metallb-system
+spec:
+{{- .spec | toYaml | nindent 2}}
+{{- end }}
+{{- end }}

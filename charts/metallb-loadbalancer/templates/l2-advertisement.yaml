@@ -1,0 +1,12 @@
+{{- range .Values.advertisements }}
+{{- if (eq .type "L2") }}
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: {{ .name }}
+  namespace: metallb-system
+spec:
+{{- .spec | toYaml | nindent 2}}
+{{- end }}
+{{- end }}

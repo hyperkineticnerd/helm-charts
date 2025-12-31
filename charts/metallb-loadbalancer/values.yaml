@@ -1,0 +1,97 @@
+# Default values for metallb-loadbalancer.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+ipAddressPools:
+  - name: cluster-dev-pool
+    labels:
+      hknlab.io/cluster: dev
+      hknlab.io/pool: cluster-dev
+    spec:
+      autoAssign: false
+      avoidBuggyIPs: true
+      addresses:
+        - 172.16.141.0/24
+      serviceAllocation:
+        namespaces:
+          - clusters-dev
+          - openshift-ingress
+  - name: cluster-test-pool
+    labels:
+      hknlab.io/cluster: test
+      hknlab.io/pool: cluster-test
+    spec:
+      autoAssign: false
+      avoidBuggyIPs: true
+      addresses:
+        - 172.16.142.0/24
+      serviceAllocation:
+        namespaces:
+          - clusters-test
+          - clusters-test2
+          - openshift-ingress
+  - name: cluster-prod-pool
+    labels:
+      hknlab.io/cluster: prod
+      hknlab.io/pool: cluster-prod
+    spec:
+      autoAssign: false
+      avoidBuggyIPs: true
+      addresses:
+        - 172.16.143.0/24
+      serviceAllocation:
+        namespaces:
+          - clusters-prod
+          - openshift-ingress
+
+  - name: games-pool
+    labels:
+      hknlab.io/pool: games
+    spec:
+      autoAssign: false
+      avoidBuggyIPs: true
+      addresses:
+        - 172.16.16.0/21
+
+  - name: virtual-pool
+    labels:
+      hknlab.io/pool: virtual
+    spec:
+      autoAssign: false
+      avoidBuggyIPs: true
+      addresses:
+        - 172.16.120.0/21
+
+advertisements:
+- name: cluster-dev
+  type: BGP
+  spec:
+    ipAddressPoolSelectors:
+      - matchLabels:
+          hknlab.io/pool: cluster-dev
+    peers:
+      - network-arista-texas
+- name: cluster-test
+  type: BGP
+  spec:
+    ipAddressPoolSelectors:
+      - matchLabels:
+          hknlab.io/pool: cluster-test
+    peers:
+      - network-arista-texas
+- name: cluster-prod
+  type: BGP
+  spec:
+    ipAddressPoolSelectors:
+      - matchLabels:
+          hknlab.io/pool: cluster-prod
+    peers:
+      - network-arista-texas
+- name: default
+  type: L2
+  spec:
+    ipAddressPoolSelectors:
+      - matchLabels:
+          hknlab.io/pool: virtual
+      - matchLabels:
+          hknlab.io/pool: games
