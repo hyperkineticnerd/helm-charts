@@ -9,13 +9,13 @@ bfdProfiles:
       transmitInterval: 270
 
 bgpPeers:
-  - name: network-arista-alaska
-    spec:
-      peerAddress: 172.16.0.2
-      myASN: 4200000002
-      peerASN: 4200000002
-      disableMP: false
-      ebgpMultiHop: false
+  # - name: network-arista-alaska
+  #   spec:
+  #     peerAddress: 172.16.0.3
+  #     myASN: 4200000002
+  #     peerASN: 4200000002
+  #     disableMP: false
+  #     ebgpMultiHop: false
   - name: network-arista-texas
     spec:
       peerAddress: 172.16.0.2
