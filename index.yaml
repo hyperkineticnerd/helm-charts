@@ -470,6 +470,16 @@ entries:
   metallb-bgp:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-12-31T06:26:41.846047915Z"
+    description: A Helm chart for Kubernetes
+    digest: 231fd306ad33a84df1b1ba5c4cc57d9fe89164ea13a3b65c29fdf910a178ff22
+    name: metallb-bgp
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/metallb-bgp-0.1.2/metallb-bgp-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-12-31T06:15:31.44487058Z"
     description: A Helm chart for Kubernetes
     digest: a575ebdde7081486faaddc5270ed9fc79495f8ad8a1782175e2d5f3393b4b23a
@@ -1117,4 +1127,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2025-12-31T06:15:31.444976464Z"
+generated: "2025-12-31T06:26:41.84615249Z"
