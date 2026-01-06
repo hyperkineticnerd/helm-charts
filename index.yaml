@@ -232,6 +232,21 @@ entries:
   hosted-control-planes-metallb:
   - apiVersion: v2
     appVersion: 4.18.30
+    created: "2026-01-06T22:30:01.070520772Z"
+    dependencies:
+    - alias: patch
+      name: openshift-patching-jobs
+      repository: ""
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 4aeca798954ac6e0a4105c137d27b7acdb62320f9ccc3c2164b7cd786372d79b
+    name: hosted-control-planes-metallb
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/hosted-control-planes-metallb-0.1.4/hosted-control-planes-metallb-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 4.18.30
     created: "2025-12-30T19:33:29.479222017Z"
     description: A Helm chart for Kubernetes
     digest: f641677a53c18b59e8f748858cdd87920d513b6f918262f334b604f5b3954a5e
@@ -1138,4 +1153,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2025-12-31T06:57:28.991413164Z"
+generated: "2026-01-06T22:30:01.070679277Z"
