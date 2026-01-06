@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ printf "clusters-%s-metallb-ingress" .Release.Name }}
+  name: {{ printf "clusters-%s-metallb-ingress" $.Release.Name }}
   namespace: openshift-ingress
   annotations:
-    metallb.io/loadBalancerIPs: {{ .Values.cluster.vips.ingress }}
+    metallb.io/loadBalancerIPs: {{ $.Values.cluster.vips.ingress }}
 spec:
   ports:
     - name: http

@@ -1,8 +1,12 @@
+{{- range $resource, $data := $.Values.resources }}
+{{- if $data.annotations }}
+{{- range $key, $value := $data.annotations }}
+---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: annotate-kas-service
-  namespace: {{ printf "%s-%s" .Release.Namespace .Release.Name }}
+  generateName: {{ printf "annot-%s-%s-" ($resource | replace "/" "-" | replace "." "" | lower) ( $key | replace "/" "-" | replace "." "-" | lower) | trunc 60 }}
+  namespace: {{ printf "%s-%s" $.Release.Namespace $.Release.Name }}
   annotations:
     helm.sh/hook: post-install,post-upgrade
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
@@ -28,16 +32,16 @@ spec:
               python3 /scripts/annotate.py
           imagePullPolicy: Always
           env:
-            - name: ANNOTATION_KEY
-              value: metallb.io/loadBalancerIPs
-            - name: ANNOTATION_VALUE
-              value: {{ .Values.cluster.vips.api | quote }}
             - name: NAMESPACE
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
             - name: RESOURCE
-              value: services/kube-apiserver
+              value: {{ $resource }}
+            - name: ANNOTATION_KEY
+              value: {{ $key }}
+            - name: ANNOTATION_VALUE
+              value: {{ $value | default "''" }}
           volumeMounts:
           - name: python-scripts
             mountPath: /scripts
@@ -49,3 +53,6 @@ spec:
       dnsPolicy: ClusterFirst
       serviceAccount: patch-services-sa
       serviceAccountName: patch-services-sa
+{{- end }}
+{{- end }}
+{{- end }}

@@ -8,3 +8,5 @@ data:
 {{ tpl ( $.Files.Get "_scripts/ose_utils.py" ) $ | indent 4 }}
   annotate.py: |-
 {{ tpl ( $.Files.Get "_scripts/annotate.py" ) $ | indent 4 }}
+  label.py: |-
+{{ tpl ( $.Files.Get "_scripts/label.py" ) $ | indent 4 }}
