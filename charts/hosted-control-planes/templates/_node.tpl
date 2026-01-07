@@ -38,6 +38,7 @@ kubevirt:
   attachDefaultNetwork: true
 {{- end }}
 
+
 {{/*
 NodePool.replicas
 */}}
