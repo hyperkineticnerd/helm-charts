@@ -1,0 +1,9 @@
+apiVersion: k8s.ovn.org/v1
+kind: ClusterUserDefinedNetwork
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  namespaceSelector:
+  {{- include "network-configuration-udn.cudn-spec.namespaceSelector" . | nindent 4 }}
+  network:
+  {{- include "network-configuration-udn.cudn-spec.network" . | nindent 4 }}

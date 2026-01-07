@@ -1,0 +1,7 @@
+apiVersion: k8s.ovn.org/v1
+kind: UserDefinedNetwork
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  {{- include "network-configuration-udn.udn-spec.network" . | nindent 2 }}
