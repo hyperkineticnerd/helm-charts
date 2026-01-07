@@ -612,6 +612,17 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/netbox-0.1.0/netbox-0.1.0.tgz
     version: 0.1.0
+  network-configuration:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-01-07T05:22:18.929435742Z"
+    description: A Helm chart for Kubernetes
+    digest: 12211912ad622d5dcab52fe6abe3ae31959b6fade4aca4e3be13b15dbe040603
+    name: network-configuration
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/network-configuration-0.1.0/network-configuration-0.1.0.tgz
+    version: 0.1.0
   network-configuration-cudn:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -622,6 +633,17 @@ entries:
     type: application
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/network-configuration-cudn-0.1.0/network-configuration-cudn-0.1.0.tgz
+    version: 0.1.0
+  network-configuration-node:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-01-07T05:22:19.050243239Z"
+    description: A Helm chart for Kubernetes
+    digest: 546f0e3631e637df1192dc13958edd3ca07b4fe7884cdfd9ed69f65c71c1d099
+    name: network-configuration-node
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/network-configuration-node-0.1.0/network-configuration-node-0.1.0.tgz
     version: 0.1.0
   network-configuration-udn:
   - apiVersion: v2
@@ -1185,4 +1207,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-01-07T05:19:06.355476004Z"
+generated: "2026-01-07T05:22:19.050376537Z"
