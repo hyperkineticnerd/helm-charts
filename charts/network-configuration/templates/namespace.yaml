@@ -1,0 +1,11 @@
+{{- if .Values.namespace.create -}}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: games-minecraft
+  labels:
+    {{- range $key, $value := .Values.namespace.labels -}}
+    {{ $key | nindent 4 }}: {{ $value | quote }}
+    {{- end }}
+spec: {}
+{{- end -}}
