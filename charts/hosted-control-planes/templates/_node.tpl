@@ -4,7 +4,7 @@ NodePool.spec
 {{- define "hosted-control-planes.node-pool.spec" -}}
 arch: amd64
 clusterName: {{ .Release.Name }}
-replicas: 2
+{{- include "hosted-control-planes.node-pool.replicas" . }}
 management:
 {{- include "hosted-control-planes.node-pool.management" . | nindent 4 }}
 platform:
@@ -14,7 +14,7 @@ release:
 {{- end }}
 
 {{/*
-NodePool.platform
+NodePool.management
 */}}
 {{- define "hosted-control-planes.node-pool.management" -}}
 autoRepair: false
@@ -36,4 +36,15 @@ kubevirt:
     persistent:
       size: 32Gi
   attachDefaultNetwork: true
+{{- end }}
+
+{{/*
+NodePool.replicas
+*/}}
+{{- define "hosted-control-planes.node-pool.replicas" -}}
+{{- if .Values.nodePool.replicas }}
+replicas: {{ .Values.nodePool.replicas }}
+{{- else }}
+replicas: 2
+{{- end }}
 {{- end }}
