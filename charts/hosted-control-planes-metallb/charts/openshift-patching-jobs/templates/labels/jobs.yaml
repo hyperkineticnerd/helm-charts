@@ -5,7 +5,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: {{ printf "label-%s-%s-" ($resource | replace "/" "-" | replace "." "" | lower) ($key | replace "/" "-" | replace "." "-" | lower) | trunc 60 }}
+  generateName: {{ printf "label-%s-%s-" ($resource | replace "/" "" | replace "." "" | lower | trunc 10 ) ($key | replace "/" "" | replace "." "" | lower | trunc 10 ) | trunc 30 }}
   namespace: {{ printf "%s-%s" $.Release.Namespace $.Release.Name }}
   annotations:
     helm.sh/hook: post-install,post-upgrade
