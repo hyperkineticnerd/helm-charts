@@ -1,3 +1,4 @@
+{{- $jobImage := $.Values.oseImage }}
 {{- range $resource, $data := $.Values.resources }}
 {{- if $data.annotations }}
 {{- range $key, $value := $data.annotations }}
@@ -20,7 +21,7 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: annotate
-          image: {{ $.Values.oseImage }}
+          image: {{ $jobImage }}
           command: ["/bin/sh","-c"]
           args:
             - >-
