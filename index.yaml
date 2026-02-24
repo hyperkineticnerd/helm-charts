@@ -218,6 +218,17 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/fluidd-0.1.0/fluidd-0.1.0.tgz
     version: 0.1.0
+  home-assistant-otbr:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-02-24T01:52:30.02656953Z"
+    description: A Helm chart for Kubernetes
+    digest: f81155554174b3b4180e237b8527e1c5c7b236df4286257997daa39c9a46afd9
+    name: home-assistant-otbr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/home-assistant-otbr-0.1.0/home-assistant-otbr-0.1.0.tgz
+    version: 0.1.0
   hosted-control-planes:
   - apiVersion: v2
     appVersion: 4.18.30
@@ -326,6 +337,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/hosted-control-planes-metallb-0.1.0/hosted-control-planes-metallb-0.1.0.tgz
     version: 0.1.0
   jellyfin:
+  - apiVersion: v2
+    appVersion: 10.11.6
+    created: "2026-02-24T01:52:30.168093651Z"
+    description: Installs Jellyfin Media Server on Kubernetes
+    digest: 44d6ce038f808043cd0eafb580e2cee2adf74cc762a3e65fe7b987aa9ef54f99
+    name: jellyfin
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/jellyfin-0.1.9/jellyfin-0.1.9.tgz
+    version: 0.1.9
   - apiVersion: v2
     appVersion: 10.11.0
     created: "2025-10-20T20:53:09.319528833Z"
@@ -1237,4 +1258,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-01-14T14:54:21.538989078Z"
+generated: "2026-02-24T01:52:30.168232327Z"
