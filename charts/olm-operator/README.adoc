@@ -22,16 +22,16 @@ operator:
   enable: true
   name: my-operator
   install:
-  installPlanApproval: Automatic
+    installPlanApproval: Automatic
   catalog:
-  channel: stable
-  source: my-operator-index
-  sourceNamespace: olm
+    channel: stable
+    source: my-operator-index
+    sourceNamespace: olm
   operatorGroup:
-  enable: true
-  namespace: my-operator-namespace
-  additionalNamespaces: # []
-    - my-managed-namespace
+    enable: true
+    namespace: my-operator-namespace
+    additionalNamespaces: # []
+      - my-managed-namespace
 -----
 
 Use the empty list (`[]`) to denote that the operator watches all namespaces. Otherwise, list namespaces that the operator watches.
