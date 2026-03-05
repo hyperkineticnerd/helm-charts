@@ -1,0 +1,63 @@
+# Default values for logging.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+global:
+  namespace:
+    enabled: false
+  ui:
+    enabled: false
+
+loki:
+  enabled: true
+  name: loki-operator
+  namespace:
+    enabled: true
+    name: openshift-operators-redhat
+  install:
+    installPlanApproval: Automatic
+  catalog:
+    channel: stable-6.4
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  operatorGroup:
+    enable: true
+    additionalNamespaces: []
+
+logging:
+  enabled: true
+  name: cluster-logging
+  namespace:
+    enabled: true
+    name: openshift-logging
+  install:
+    installPlanApproval: Automatic
+  catalog:
+    channel: stable-6.4
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  operatorGroup:
+    enable: true
+    additionalNamespaces: []
+
+  config: {}
+
+  clusterRoles:
+    - logging-collector-logs-writer
+    - collect-application-logs
+    - collect-infrastructure-logs
+
+observability:
+  enabled: false
+  name: cluster-logging
+  install:
+    installPlanApproval: Automatic
+  catalog:
+    channel: stable-6.4
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  operatorGroup:
+    enable: true
+    namespace: openshift-logging
+    additionalNamespaces: []
+
