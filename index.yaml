@@ -1273,6 +1273,40 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/return-to-moria-0.1.0/return-to-moria-0.1.0.tgz
     version: 0.1.0
+  rhacm:
+  - apiVersion: v2
+    appVersion: 2.15.0
+    created: "2026-03-05T22:07:05.797415087Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: 2b9800aaed6ffc3f665efbc6752eab3dcac7b2225ffff10b68a51bd391d369e4
+    name: rhacm
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-0.1.0/rhacm-0.1.0.tgz
+    version: 0.1.0
+  rhacs:
+  - apiVersion: v2
+    appVersion: 4.9.3
+    created: "2026-03-05T22:07:05.915230058Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: 2c9da6006d6513089ee76b1ece5e8f2159e5754569cdcabbd44570ad3ad1c85a
+    name: rhacs
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-0.1.0/rhacs-0.1.0.tgz
+    version: 0.1.0
   rhbk:
   - apiVersion: v2
     appVersion: 26.0.9
@@ -1305,6 +1339,23 @@ entries:
     type: application
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhbk-0.1.0/rhbk-0.1.0.tgz
+    version: 0.1.0
+  rhdh:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-03-05T22:07:06.034933754Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: 19f03fbc641b282d6349ae39ff95a2db5dd51ca4258f071ac2fafd416692dc2e
+    name: rhdh
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhdh-0.1.0/rhdh-0.1.0.tgz
     version: 0.1.0
   sabnzbd:
   - apiVersion: v2
@@ -1573,4 +1624,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-03-05T22:06:09.675505749Z"
+generated: "2026-03-05T22:07:06.035121505Z"
