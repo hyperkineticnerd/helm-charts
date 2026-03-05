@@ -1,6 +1,6 @@
 = Operator Lifecycle Manager operator template chart
 
-*Current Chart Version*: `0.2.1`
+*Current Chart Version*: `0.2.2`
 
 == Usage
 
@@ -10,7 +10,7 @@
 dependencies:
   - name: olm-operator
     repository: https://charts.hknlab.io
-    version: 0.2.1
+    version: 0.2.2
     alias: operator
     condition: operator.enable
 -----
