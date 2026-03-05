@@ -4,14 +4,25 @@
 
 operator:
   enable: true
-  channel: stable-v1
-  installPlanApproval: Automatic
+
   name: external-dns-operator
-  namespace: external-dns-operator
-  source: redhat-operators
-  sourceNamespace: openshift-marketplace
-  additionalNamespaces:
-    - external-dns-operator
+
+  namespace:
+    enabled: true
+    name: external-dns-operator
+
+  install:
+    installPlanApproval: Automatic
+
+  catalog:
+    channel: stable-v1
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+
+  operatorGroup:
+    enabled: true
+    additionalNamespaces:
+      - external-dns-operator
 
 provider:
   type: Cloudflare
