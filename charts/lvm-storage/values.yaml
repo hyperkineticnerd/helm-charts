@@ -3,14 +3,24 @@
 # Declare variables to be passed into your templates.
 
 operator:
-  channel: stable-4.16
-  installPlanApproval: Automatic
+  enabled: true
   name: lvms-operator
+
   namespace:
-  source: redhat-operators
-  sourceNamespace: openshift-marketplace
-  additionalNamespaces: # []
-    - openshift-storage
+    enabled: true
+    name: openshift-lvm-storage
+
+  install:
+    installPlanApproval: Automatic
+
+  catalog:
+    channel: stable-4.20
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+
+  operatorGroup:
+    additionalNamespaces: # []
+      - openshift-lvm-storage
 
 deviceClasses:
   - name: vg1

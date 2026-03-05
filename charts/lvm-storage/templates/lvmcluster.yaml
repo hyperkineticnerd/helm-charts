@@ -3,7 +3,7 @@ apiVersion: lvm.topolvm.io/v1alpha1
 kind: LVMCluster
 metadata:
   name: lvms-vg1
-  namespace: openshift-storage
+  namespace: {{ .Values.operator.namespace.name }}
 spec:
   storage:
 {{- with .Values.deviceClasses -}}
