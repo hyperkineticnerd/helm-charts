@@ -1,5 +1,9 @@
 operator:
+  enabled: true
   name: openshift-gitops-operator
+  namespace:
+    enabled: true
+    name: openshift-gitops-operator
   install:
     installPlanApproval: Automatic
   catalog:
@@ -7,8 +11,7 @@ operator:
     source: redhat-operators
     sourceNamespace: openshift-marketplace
   operatorGroup:
-    enable: true
-    namespace: openshift-gitops-operator
+    enabled: true
     additionalNamespaces: []
 
 enableSpec: False
