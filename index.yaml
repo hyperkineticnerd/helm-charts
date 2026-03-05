@@ -11,6 +11,23 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/7-days-to-die-0.1.0/7-days-to-die-0.1.0.tgz
     version: 0.1.0
+  aap:
+  - apiVersion: v2
+    appVersion: 2.6.0
+    created: "2026-03-05T19:38:11.111130975Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: c2ea1f7a44f619aacaca9e9032e083a1a6e0dc6e59d3936a9468ef96fbfe82f3
+    name: aap
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/aap-0.1.0/aap-0.1.0.tgz
+    version: 0.1.0
   astroneer:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -1308,4 +1325,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-03-05T19:33:37.312094411Z"
+generated: "2026-03-05T19:38:11.111271077Z"
