@@ -12,7 +12,7 @@ dependencies:
     repository: https://charts.hknlab.io
     version: 0.2.5
     alias: operator
-    condition: operator.enable
+    condition: operator.enabled
 -----
 
 .`values.yaml`
