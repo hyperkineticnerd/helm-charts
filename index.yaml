@@ -918,6 +918,22 @@ entries:
   nvidia:
   - apiVersion: v2
     appVersion: v25.10
+    created: "2026-03-05T23:31:54.771561136Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: c27d98e966ea7219a3a79fb701ec4cfbf25f8f8e8361d4c033f4cec6081c490c
+    name: nvidia
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/nvidia-0.1.2/nvidia-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: v25.10
     created: "2026-03-05T20:55:23.533995881Z"
     dependencies:
     - alias: operator
@@ -1640,4 +1656,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-03-05T23:14:31.259223515Z"
+generated: "2026-03-05T23:31:54.771721296Z"
