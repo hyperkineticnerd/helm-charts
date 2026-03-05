@@ -4,6 +4,6 @@ metadata:
   annotations:
   name: gpu-cluster-policy
 spec:
-{{- with .Values.clusterPolicySpec -}}
-{{ toYaml . }}
+{{- with .Values.clusterPolicySpec }}
+  {{- toYaml . | nindent 2 }}
 {{- end }}
