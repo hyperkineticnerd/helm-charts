@@ -1156,6 +1156,32 @@ entries:
     version: 0.1.0
   openshift-servicemesh:
   - apiVersion: v2
+    appVersion: 2.6.14
+    created: "2026-03-05T21:55:19.218308062Z"
+    dependencies:
+    - alias: istio
+      condition: istio.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    - alias: kiali
+      condition: kiali.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    - alias: jaeger
+      condition: jaeger.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: 61cca5be0a07358cd068c4fc5049a3ee58d533f58bf73b719674003beb0ae831
+    name: openshift-servicemesh
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-servicemesh-0.1.1/openshift-servicemesh-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 2.4.4
     created: "2025-04-25T14:25:08.92239787Z"
     dependencies:
@@ -1531,4 +1557,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-03-05T21:18:01.235700737Z"
+generated: "2026-03-05T21:55:19.218462Z"
