@@ -1,0 +1,19 @@
+# Default values for monitoring.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+operator:
+  enabled: true
+  name: cluster-observability-operator
+  namespace:
+    enabled: true
+    name: openshift-cluster-observability-operator
+  install:
+    installPlanApproval: Automatic
+  catalog:
+    channel: stable
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  operatorGroup:
+    enabled: true
+    additionalNamespaces: []
