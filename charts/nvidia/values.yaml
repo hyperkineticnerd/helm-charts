@@ -1,13 +1,19 @@
 operator:
-  enable: true
-  channel: v24.9
-  installPlanApproval: Automatic
+  enabled: true
   name: gpu-operator-certified
-  namespace: nvidia-gpu-operator
-  source: certified-operators
-  sourceNamespace: openshift-marketplace
-  additionalNamespaces:
-    - nvidia-gpu-operator
+  namespace:
+    enabled: true
+    name: nvidia-gpu-operator
+  install:
+    installPlanApproval: Automatic
+  catalog:
+    channel: v25.10
+    source: certified-operators
+    sourceNamespace: openshift-marketplace
+  operatorGroup:
+    enabled: true
+    additionalNamespaces:
+      - nvidia-gpu-operator
 
 clusterPolicySpec:
   daemonsets:
