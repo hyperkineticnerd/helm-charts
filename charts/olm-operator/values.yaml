@@ -10,6 +10,7 @@ namespace:
   enabled: true
   name: my-operator-namespace
   annotations: {}
+    # argocd.argoproj.io/sync-wave: "-75"
   labels: {}
 
 install:
@@ -22,9 +23,16 @@ catalog:
 
 operatorGroup:
   enabled: true
-  name: my-operator
-  namespace: my-operator-namespace
   additionalNamespaces: # []
     - my-managed-namespace
+  upgradeStrategy: ''
+  annotations: {}
+    # argocd.argoproj.io/sync-wave: "-70"
+  labels: {}
+
+subscription:
+  annotations: {}
+    # argocd.argoproj.io/sync-wave: "-65"
+  labels: {}
 
 config: {}

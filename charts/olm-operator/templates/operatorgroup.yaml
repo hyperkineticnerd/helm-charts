@@ -3,14 +3,20 @@
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
-  name: {{ printf "%s-operatorgroup" .Values.name }}
-  namespace: {{ .Values.operatorGroup.namespace }}
+  generateName: {{ .Values.name }}-
+  namespace: {{ .Values.namespace.name }}
+  {{- with .Values.operatorGroup.annotations }}
   annotations:
-    argocd.argoproj.io/sync-wave: "-70"
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.operatorGroup.labels }}
+  labels: 
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
 {{- with .Values.operatorGroup.additionalNamespaces }}
   targetNamespaces:
     {{ toYaml . }}
 {{- end }}
-  upgradeStrategy: Default
+  upgradeStrategy: {{ default "Default" .Values.operatorGroup.upgradeStrategy }}
 {{- end }}
