@@ -1,0 +1,17 @@
+
+operator:
+  enabled: true
+  name: advanced-cluster-management
+  namespace: 
+    enabled: true
+    name: open-cluster-management
+  install:
+    installPlanApproval: Automatic
+  catalog:
+    channel: release-2.15
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  operatorGroup:
+    enabled: true
+    additionalNamespaces: # []
+      - open-cluster-management

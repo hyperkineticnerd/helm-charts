@@ -1,0 +1,19 @@
+# Default values for rhdh.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+operator:
+  enabled: true
+  name: rhdh
+  namespace:
+    enabled: true
+    name: rhdh-operator
+  install:
+    installPlanApproval: Automatic
+  catalog:
+    channel: fast
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  operatorGroup:
+    enabled: true
+    additionalNamespaces: []

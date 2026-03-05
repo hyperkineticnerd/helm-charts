@@ -1,0 +1,12 @@
+﻿apiVersion: platform.stackrox.io/v1alpha1
+kind: Central
+metadata:
+  annotations:
+    feature-defaults.platform.stackrox.io/scannerV4: Enabled
+  name: stackrox-central-services
+  namespace: stackrox
+spec:
+  central:
+    exposure:
+      route:
+        enabled: true
