@@ -3,18 +3,25 @@
 # Declare variables to be passed into your templates.
 
 operator:
-  enable: true
+  enabled: true
+
   name: openshift-cert-manager-operator
+
+  namespace:
+    enabled: true
+    name: cert-manager-operator
+
   install:
     installPlanApproval: Automatic
+
   catalog:
     channel: stable-v1
     source: redhat-operators
     sourceNamespace: openshift-marketplace
+
   operatorGroup:
     enable: true
-    namespace: cert-manager-operator
-    additionalNamespaces: {}
+    additionalNamespaces: []
     # - cert-manager
 
 issuer:
