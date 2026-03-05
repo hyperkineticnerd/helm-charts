@@ -1,0 +1,17 @@
+
+operator:
+  enabled: true
+  name: multicluster-engine
+  namespace:
+    enabled: true
+    name: multicluster-engine
+  install:
+    installPlanApproval: Automatic
+  catalog:
+    channel: stable-2.10
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  operatorGroup:
+    enabled: true
+    additionalNamespaces:
+      - multicluster-engine
