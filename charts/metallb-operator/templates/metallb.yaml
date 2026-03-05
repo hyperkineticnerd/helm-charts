@@ -2,5 +2,5 @@ apiVersion: metallb.io/v1beta1
 kind: MetalLB
 metadata:
   name: metallb
-  namespace: metallb-system
+  namespace: {{ .Values.operator.namespace.name }}
 spec: {}

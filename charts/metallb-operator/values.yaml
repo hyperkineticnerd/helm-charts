@@ -3,8 +3,11 @@
 # Declare variables to be passed into your templates.
 
 operator:
-  enable: true
+  enabled: true
   name: metallb-operator
+  namespace:
+    enabled: true
+    name: metallb-system
   install:
     installPlanApproval: Automatic
   catalog:
@@ -12,7 +15,6 @@ operator:
     source: redhat-operators
     sourceNamespace: openshift-marketplace
   operatorGroup:
-    enable: true
-    namespace: metallb-system
+    enabled: true
     additionalNamespaces: []
     # - cert-manager
