@@ -1276,6 +1276,22 @@ entries:
   rhbk:
   - apiVersion: v2
     appVersion: 26.0.9
+    created: "2026-03-05T22:06:09.675337846Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: 26eddf980dd52c391795ae7d46286bb24fa00fa88c954f365ea2abfa6af39f4f
+    name: rhbk
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhbk-0.1.1/rhbk-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 26.0.9
     created: "2025-04-25T14:25:09.56901769Z"
     dependencies:
     - alias: operator
@@ -1557,4 +1573,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-03-05T21:55:19.218462Z"
+generated: "2026-03-05T22:06:09.675505749Z"
