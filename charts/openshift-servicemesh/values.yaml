@@ -2,26 +2,33 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-jaeger:
-  channel: stable
-  installPlanApproval: Automatic
-  name: jaeger-product
-  source: redhat-operators
-  sourceNamespace: openshift-marketplace
-  overrideOperatorNamespace: openshift-distributed-tracing
-
 kiali:
-  channel: stable
-  installPlanApproval: Automatic
   name: kiali-ossm
-  source: redhat-operators
-  sourceNamespace: openshift-marketplace
-  # overrideOperatorNamespace: openshift-distributed-tracing
+  install:
+    installPlanApproval: Automatic
+  catalog:
+    channel: stable
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
 
 istio:
-  channel: stable
-  installPlanApproval: Automatic
   name: servicemeshoperator
-  source: redhat-operators
-  sourceNamespace: openshift-marketplace
-  # overrideOperatorNamespace: openshift-distributed-tracing
+  install:
+    installPlanApproval: Automatic
+  catalog:
+    channel: stable
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+
+jaeger:
+  enabled: false
+  name: jaeger-product
+  install:
+    installPlanApproval: Automatic
+  catalog:
+    channel: stable
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+  operatorGroup:
+    additionalNamespaces: # []
+      - openshift-distributed-tracing
