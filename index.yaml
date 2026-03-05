@@ -732,6 +732,23 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/minecraft-0.1.0/minecraft-0.1.0.tgz
     version: 0.1.0
+  multicluster-engine:
+  - apiVersion: v2
+    appVersion: 2.10.0
+    created: "2026-03-05T20:43:21.61078948Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: fbcf9d33a2147790efce1c7408f9ca7a56adf5fa1edd88b748791ddb34590cfa
+    name: multicluster-engine
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/multicluster-engine-0.1.0/multicluster-engine-0.1.0.tgz
+    version: 0.1.0
   netbox:
   - apiVersion: v2
     appVersion: 4.2.5
@@ -1433,4 +1450,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-03-05T20:39:15.588861Z"
+generated: "2026-03-05T20:43:21.610942947Z"
