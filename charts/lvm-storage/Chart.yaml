@@ -3,7 +3,7 @@ name: lvm-storage
 description: A Helm chart for Kubernetes
 
 type: application
-version: 0.1.1
+version: 0.1.2
 appVersion: "4.20.0"
 
 dependencies:
@@ -11,4 +11,4 @@ dependencies:
     repository: https://charts.hknlab.io
     version: 0.2.5
     alias: operator
-    condition: operator.enable
+    condition: operator.enabled
