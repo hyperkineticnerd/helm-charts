@@ -1,0 +1,33 @@
+# Default values for aap.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+operator:
+  enabled: true
+
+  name: ansible-automation-platform-operator
+
+  namespace:
+    enabled: true
+    name: aap
+    annotations:
+      argocd.argoproj.io/sync-wave: "-75"
+
+  install:
+    installPlanApproval: Automatic
+
+  catalog:
+    channel: stable-2.6
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
+
+  operatorGroup:
+    enabled: true
+    additionalNamespaces:
+     - aap
+    annotations:
+      argocd.argoproj.io/sync-wave: "-70"
+
+  subscription:
+    annotations:
+      argocd.argoproj.io/sync-wave: "-65"

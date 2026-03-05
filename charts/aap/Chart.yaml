@@ -1,0 +1,14 @@
+apiVersion: v2
+name: aap
+description: A Helm chart for Kubernetes
+
+type: application
+version: 0.1.0
+appVersion: "2.6.0"
+
+dependencies:
+  - name: olm-operator
+    repository: https://charts.hknlab.io
+    version: 0.2.5
+    alias: operator
+    condition: operator.enabled
