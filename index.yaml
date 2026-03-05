@@ -868,6 +868,22 @@ entries:
     version: 0.1.0
   nmstate:
   - apiVersion: v2
+    appVersion: 4.20.0
+    created: "2026-03-05T20:55:23.386612862Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: c413de2b794afa6e679774d2bc470aba84874b5b36494b35a4aa15e9d8d68aaa
+    name: nmstate
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/nmstate-0.1.1/nmstate-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 1.16.0
     created: "2025-04-25T14:25:08.295471164Z"
     dependencies:
@@ -884,6 +900,22 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/nmstate-0.1.0/nmstate-0.1.0.tgz
     version: 0.1.0
   nvidia:
+  - apiVersion: v2
+    appVersion: v25.10
+    created: "2026-03-05T20:55:23.533995881Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: 3524a242fd564c7251aa8a77f888eeaadc376ab977b53628ab0bce74075f4008
+    name: nvidia
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/nvidia-0.1.1/nvidia-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: v24.9
     created: "2025-04-25T14:25:08.397507217Z"
@@ -1467,4 +1499,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-03-05T20:45:42.833541355Z"
+generated: "2026-03-05T20:55:23.534148417Z"
