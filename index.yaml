@@ -528,7 +528,50 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/lidarr-0.1.0/lidarr-0.1.0.tgz
     version: 0.1.0
+  logging:
+  - apiVersion: v2
+    appVersion: 6.4.2
+    created: "2026-03-05T20:34:34.981761004Z"
+    dependencies:
+    - alias: loki
+      condition: loki.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    - alias: logging
+      condition: logging.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    - alias: observability
+      condition: observability.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: a5ea6dded4fd37078cd7305f3da904de40dac944d892bd78173b2f7f4458bbac
+    name: logging
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/logging-0.1.0/logging-0.1.0.tgz
+    version: 0.1.0
   lvm-storage:
+  - apiVersion: v2
+    appVersion: 4.20.0
+    created: "2026-03-05T20:34:35.216252417Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enable
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: eb0d5f04917292099eb005449c901a3639279dfa35dfcebba9f42d8e86037399
+    name: lvm-storage
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/lvm-storage-0.1.1/lvm-storage-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: 4.16.0
     created: "2025-04-25T14:25:07.463269391Z"
@@ -635,6 +678,22 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/metallb-loadbalancer-0.1.0/metallb-loadbalancer-0.1.0.tgz
     version: 0.1.0
   metallb-operator:
+  - apiVersion: v2
+    appVersion: 4.20.0
+    created: "2026-03-05T20:34:35.427346549Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: be5c719594db8114ae672bd5f60ff80239d0eaf6cf711743d4d39f4d37d33e2f
+    name: metallb-operator
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/metallb-operator-0.1.1/metallb-operator-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: 4.18.0
     created: "2025-12-31T05:36:39.320058094Z"
@@ -1357,4 +1416,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-03-05T19:43:42.921373689Z"
+generated: "2026-03-05T20:34:35.427441166Z"
