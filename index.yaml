@@ -815,6 +815,23 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/network-configuration-udn-0.1.0/network-configuration-udn-0.1.0.tgz
     version: 0.1.0
+  nfd:
+  - apiVersion: v2
+    appVersion: 4.20.0
+    created: "2026-03-05T20:39:15.588743875Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: b28f2f85fe7dfd79c8b4f81cd5994f0fca34e6cba11fe4536723c65602f6468f
+    name: nfd
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/nfd-0.1.0/nfd-0.1.0.tgz
+    version: 0.1.0
   nmstate:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -1416,4 +1433,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-03-05T20:34:35.427441166Z"
+generated: "2026-03-05T20:39:15.588861Z"
