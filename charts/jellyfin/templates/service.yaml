@@ -9,6 +9,7 @@ metadata:
     service: server
 spec:
   type: {{ .Values.service.type }}
+  clusterIP: None
   selector:
     app: {{ .Release.Name }}
   ports:
