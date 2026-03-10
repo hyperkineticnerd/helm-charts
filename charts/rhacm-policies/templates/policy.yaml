@@ -1,0 +1,24 @@
+{{- range $name, $policy := .Values.policies }}
+{{- $policyName := $name }}
+{{- $policySpec := $policy.spec }}
+{{- $policyAnnotations := $policy.annotations }}
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: Policy
+metadata:
+  name: {{ $policyName }}
+  namespace: open-cluster-management-policies
+{{- with $policyAnnotations }}
+  annotations:
+    {{- . | toYaml | nindent 4 }}
+{{- end }}
+spec:
+{{- with $policySpec }}
+  {{- . | toYaml | nindent 2 }}
+{{- end }}
+  policy-templates:
+  {{- range $template := $policy.policyTemplates }}
+    - objectDefinition:
+      {{- $.Files.Get $template | nindent 8 }}
+  {{- end }}
+{{- end }}

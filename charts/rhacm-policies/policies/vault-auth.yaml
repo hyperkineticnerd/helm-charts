@@ -1,0 +1,27 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: ConfigurationPolicy
+metadata:
+  name: policy-vault-auth-secret
+spec:
+  pruneObjectBehavior: None
+  remediationAction: inform
+  severity: high
+  namespaceSelector:
+    include:
+      - openshift-gitops
+  object-templates:
+    - complianceType: musthave
+      objectDefinition:
+        apiVersion: v1
+        kind: Secret
+        metadata:
+          name: vault-auth
+          namespace: openshift-gitops
+          annotations:
+            managed-by: argocd.argoproj.io
+          labels:
+            argocd.argoproj.io/secret-type: repository
+        type: Opaque
+        data:
+          role_id: '{{hub fromSecret "" "vault-auth" "role_id" hub}}'
+          secret_id: '{{hub fromSecret "" "vault-auth" "secret_id" hub}}'

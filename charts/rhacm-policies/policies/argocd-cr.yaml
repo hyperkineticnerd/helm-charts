@@ -1,0 +1,99 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: ConfigurationPolicy
+metadata:
+  name: spoke-policy-argocd
+spec:
+  object-templates:
+    - complianceType: musthave
+      ignore:
+        - spec.controller.resources
+        - spec.ha.resources
+        - spec.rbac.policy
+        - spec.repo.resources
+        - spec.redis.resources
+        - spec.resourceExclusions
+        - spec.resourceTrackingMethod
+      objectDefinition:
+        apiVersion: argoproj.io/v1beta1
+        kind: ArgoCD
+        metadata:
+          name: openshift-gitops
+          namespace: openshift-gitops
+        spec:
+          applicationSet:
+            resources:
+              limits:
+                cpu: "2"
+                memory: 1Gi
+              requests:
+                cpu: 250m
+                memory: 512Mi
+            webhookServer:
+              ingress:
+                enabled: false
+              route:
+                enabled: false
+          controller:
+            processors: {}
+            resources: {}
+            sharding: {}
+          grafana:
+            enabled: false
+            ingress:
+              enabled: false
+            resource: {}
+            route:
+              enabled: false
+          ha:
+            enabled: false
+            resources: {}
+          initialSSHKnownHosts: {}
+          monitoring:
+            enabled: false
+          notifications:
+            enabled: false
+          prometheus:
+            enabled: false
+            ingress:
+              enabled: false
+            route:
+              enabled: false
+          rbac:
+            defaultPolicy: ""
+            scopes: "[groups]"
+          redis:
+            resources: {}
+          repo:
+            resources: {}
+          server:
+            autoscale:
+              enabled: false
+            grpc:
+              ingress:
+                enabled: false
+            resources:
+              limits:
+                cpu: 500m
+                memory: 256Mi
+              requests:
+                cpu: 125m
+                memory: 128Mi
+            route:
+              enabled: true
+            service:
+              type: ""
+          sso:
+            provider: dex
+            dex:
+              openShiftOAuth: true
+              resources:
+                limits:
+                  cpu: 500m
+                  memory: 256Mi
+                requests:
+                  cpu: 250m
+                  memory: 128Mi
+          tls:
+            ca: {}
+  remediationAction: inform
+  severity: critical

@@ -1,0 +1,45 @@
+# Default values for rhacm-policies.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+policies:
+  policy-name:
+    annotations: {}
+    spec:
+      disabled: false
+      remediationAction: inform
+    policyTemplates: [] # files to ingest
+
+
+
+placements:
+  placement-name:
+    spec:
+      clusterSets:
+        - global
+      predicates:
+        - requiredClusterSelector:
+            labelSelector:
+              matchExpressions:
+                - key: name
+                  operator: NotIn
+                  values:
+                    - local-cluster
+      tolerations:
+        - key: cluster.open-cluster-management.io/unreachable
+          operator: Exists
+        - key: cluster.open-cluster-management.io/unavailable
+          operator: Exists
+
+
+
+placementBindings:
+  placement-binding-name:
+    placementRef:
+      apiGroup: cluster.open-cluster-management.io
+      kind: Placement
+      name: placement-name
+    subjects:
+      - apiGroup: policy.open-cluster-management.io
+        kind: Policy
+        name: policy-name
