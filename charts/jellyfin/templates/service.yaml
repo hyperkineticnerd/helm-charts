@@ -9,7 +9,9 @@ metadata:
     service: server
 spec:
   type: {{ .Values.service.type }}
+{{- if eq .Values.service.type "ClusterIP" }}
   clusterIP: None
+{{- end }}
   selector:
     app: {{ .Release.Name }}
   ports:
