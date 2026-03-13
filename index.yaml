@@ -1294,6 +1294,16 @@ entries:
   radarr:
   - apiVersion: v2
     appVersion: 6.0.4.10291
+    created: "2026-03-13T13:41:02.642206522Z"
+    description: A Helm chart for Kubernetes
+    digest: 679f71a8f92436bbfd1a6850666b334c7e51e11c869999f70eb2749d1c797cc0
+    name: radarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/radarr-0.1.2/radarr-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 6.0.4.10291
     created: "2026-03-13T13:38:32.238745107Z"
     description: A Helm chart for Kubernetes
     digest: e5b5fda194adee6e73f2075877eb7adc96b00f96daf58496c4cc5b0a4819184a
@@ -1717,4 +1727,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-03-13T13:38:32.38533607Z"
+generated: "2026-03-13T13:41:02.642386196Z"
