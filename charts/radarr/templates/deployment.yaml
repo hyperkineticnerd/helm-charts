@@ -37,6 +37,9 @@ spec:
             allowPrivilegeEscalation: true
             runAsNonRoot: false
           volumeMounts:
+          {{- with $.Values.volumeMounts }}
+          {{- . | toYaml | nindent 12 }}
+          {{- end }}
             - name: radarr-config
               mountPath: /config
             - name: downloads
@@ -44,6 +47,9 @@ spec:
             - name: movies
               mountPath: /movies
       volumes:
+      {{- with $.Values.volumes }}
+      {{- . | toYaml | nindent 8 }}
+      {{- end }}
         - name: radarr-config
           persistentVolumeClaim:
             claimName: {{ printf "%s-config" .Release.Name }}
