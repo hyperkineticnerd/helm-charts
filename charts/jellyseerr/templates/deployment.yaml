@@ -19,6 +19,8 @@ spec:
           image: {{ include "jellyseerr.imageString" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
+            - secretRef:
+                name: seerr-database
             - configMapRef:
                 name: {{ .Release.Name }}-env
           ports:
