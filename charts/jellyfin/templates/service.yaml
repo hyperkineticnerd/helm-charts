@@ -19,12 +19,16 @@ spec:
     protocol: TCP
     port: 8096
     targetPort: 8096
-    # nodePort: 8096
+{{- if eq .Values.service.type "NodePort" }}
+    nodePort: 8096
+{{- end }}
   - name: https
     protocol: TCP
     port: 8920
     targetPort: 8920
-    # nodePort: 8920
+{{- if eq .Values.service.type "NodePort" }}
+    nodePort: 8920
+{{- end }}
   - name: dlna
     protocol: UDP
     port: 1900
