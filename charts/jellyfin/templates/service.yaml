@@ -1,34 +1,36 @@
+{{- $fullName := include "jellyfin.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ $fullName }}
   namespace: {{ .Release.Namespace }}
   labels:
     app: {{ .Release.Name }}
     service: server
 spec:
   type: {{ .Values.service.type }}
-{{- if eq .Values.service.type "ClusterIP" }}
+  {{- if eq .Values.service.type "ClusterIP" }}
   clusterIP: None
-{{- end }}
+  {{- end }}
   selector:
     app: {{ .Release.Name }}
   ports:
   - name: http
     protocol: TCP
     port: 8096
-    targetPort: 8096
-{{- if eq .Values.service.type "NodePort" }}
-    nodePort: 8096
-{{- end }}
+    targetPort: {{ .Values.service.port }}
+    {{- if eq .Values.service.type "NodePort" }}
+    nodePort: {{ .Values.service.port }}
+    {{- end }}
   - name: https
     protocol: TCP
     port: 8920
     targetPort: 8920
-{{- if eq .Values.service.type "NodePort" }}
+    {{- if eq .Values.service.type "NodePort" }}
     nodePort: 8920
-{{- end }}
+    {{- end }}
   - name: dlna
     protocol: UDP
     port: 1900
