@@ -408,6 +408,16 @@ entries:
   jellyfin:
   - apiVersion: v2
     appVersion: 10.12.0
+    created: "2026-04-15T20:09:20.30985676Z"
+    description: Installs Jellyfin Media Server on Kubernetes
+    digest: c3c03ad91ba171aef7cc4396e2aa22be4ebca35f2486fbf13291e1fa8ec3cd2c
+    name: jellyfin
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/jellyfin-0.2.2/jellyfin-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 10.12.0
     created: "2026-03-22T16:28:29.366076809Z"
     description: Installs Jellyfin Media Server on Kubernetes
     digest: 15ffd4ebd1b79414816c46c308e0f5ecbb589a507a26545586a157d51556f3e4
@@ -1276,6 +1286,17 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-gitops-0.1.0/openshift-gitops-0.1.0.tgz
     version: 0.1.0
+  openshift-patching-jobs:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-04-15T20:09:20.452397508Z"
+    description: A Helm chart for Kubernetes
+    digest: f323bffb25aa70aa84b869b274962a81b2d582cd55b4b35c93eade02731a7128
+    name: openshift-patching-jobs
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-patching-jobs-0.1.2/openshift-patching-jobs-0.1.2.tgz
+    version: 0.1.2
   openshift-servicemesh:
   - apiVersion: v2
     appVersion: 2.6.14
@@ -1827,4 +1848,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-03-22T16:28:29.366312599Z"
+generated: "2026-04-15T20:09:20.452784069Z"
