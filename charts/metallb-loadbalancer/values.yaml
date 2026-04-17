@@ -87,11 +87,20 @@ advertisements:
           hknlab.io/pool: cluster-prod
     peers:
       - network-arista-texas
-- name: default
-  type: L2
+- name: games
+  type: BGP
   spec:
     ipAddressPoolSelectors:
       - matchLabels:
-          hknlab.io/pool: virtual
-      - matchLabels:
           hknlab.io/pool: games
+    peers:
+      - network-arista-texas
+
+# - name: default
+#   type: L2
+#   spec:
+#     ipAddressPoolSelectors:
+#       - matchLabels:
+#           hknlab.io/pool: virtual
+#       - matchLabels:
+#           hknlab.io/pool: games
