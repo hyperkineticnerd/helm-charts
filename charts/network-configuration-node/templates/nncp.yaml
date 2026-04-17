@@ -1,0 +1,88 @@
+{{- $releaseNamespace := .Release.Namespace -}}
+{{- with .Values.hosts -}}
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: {{ .host }}
+  namespace: {{ $releaseNamespace }}
+spec:
+  capture:
+    management-port1: 'interfaces.permanent-mac-address == ""'
+    management-port2: 'interfaces.permanent-mac-address == ""'
+    storage-port1: 'interfaces.permanent-mac-address == ""'
+    storage-port2: 'interfaces.permanent-mac-address == ""'
+    vmnet-port1: 'interfaces.permanent-mac-address == ""'
+    vmnet-port2: 'interfaces.permanent-mac-address == ""'
+  desiredState:
+    interfaces:
+      - name: '{{ capture.management-port1.interfaces.0.name }}'
+        type: ethernet
+        state: up
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: '{{ capture.management-port2.interfaces.0.name }}'
+        type: ethernet
+        state: up
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: '{{ capture.storage-port1.interfaces.0.name }}'
+        type: ethernet
+        state: up
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: '{{ capture.storage-port2.interfaces.0.name }}'
+        type: ethernet
+        state: up
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: '{{ capture.storage-port1.interfaces.0.name }}'
+        type: ethernet
+        state: up
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: '{{ capture.storage-port2.interfaces.0.name }}'
+        type: ethernet
+        state: up
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: bond-management
+        type: bond
+        state: up
+        link-aggregation:
+          mode: 802.3ad
+          port:
+            - '{{ capture.management-port1.interfaces.0.name }}'
+            - '{{ capture.management-port2.interfaces.0.name }}'
+      - name: bond-vmnet
+        type: bond
+        state: up
+        link-aggregation:
+          mode: 802.3ad
+          port:
+            - '{{ capture.vmnet-port1.interfaces.0.name }}'
+            - '{{ capture.vmnet-port2.interfaces.0.name }}'
+      - name: vlan-management
+        type: vlan
+        state: up
+        vlan:
+          base-iface: bond-management
+          id: 140
+      - name: vlan-vmnet
+        type: vlan
+        state: up
+        vlan:
+          base-iface: bond-vmnet
+          id: 140
+{{- end -}}

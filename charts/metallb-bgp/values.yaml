@@ -18,7 +18,7 @@ bgpPeers:
   #     ebgpMultiHop: false
   - name: network-arista-texas-openshift
     spec:
-      myASN: 4200000001
+      myASN: 4200000002
       peerASN: 4200000001
       peerAddress: 172.16.140.254
       sourceAddress: 172.16.140.1
@@ -28,7 +28,7 @@ bgpPeers:
 
   - name: network-arista-texas-gaming
     spec:
-      myASN: 4200000001
+      myASN: 4200000003
       peerASN: 4200000001
       peerAddress: 172.16.16.254
       sourceAddress: 172.16.16.1
