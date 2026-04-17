@@ -35,3 +35,4 @@ bgpPeers:
       disableMP: false
       ebgpMultiHop: false
       bfdProfile: test
+      vrf: gaming
