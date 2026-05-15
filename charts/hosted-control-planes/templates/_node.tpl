@@ -34,7 +34,7 @@ kubevirt:
   rootVolume:
     type: Persistent
     persistent:
-      size: 32Gi
+      size: 120Gi
   attachDefaultNetwork: true
 {{- end }}
 
