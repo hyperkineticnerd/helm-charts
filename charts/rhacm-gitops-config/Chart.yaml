@@ -1,0 +1,6 @@
+apiVersion: v2
+name: rhacm-gitops-config
+description: Integration between GitOps and RHACM
+type: application
+version: 0.1.0
+appVersion: "2.16.0"
