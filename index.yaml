@@ -1583,6 +1583,16 @@ entries:
   rhacm-policies:
   - apiVersion: v2
     appVersion: 4.20.0
+    created: "2026-06-18T16:06:09.553330369Z"
+    description: A Helm chart for Kubernetes
+    digest: 7ec485a8abe189b78086b50484037237f85523b96a6be46b6da780642f0e5d4e
+    name: rhacm-policies
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-policies-0.1.1/rhacm-policies-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 4.20.0
     created: "2026-03-10T02:52:41.176582467Z"
     description: A Helm chart for Kubernetes
     digest: 3983d0cb8d13dcc3c0db8770396812859389df5a55db7101d7b6fb01988e9fbe
@@ -1945,4 +1955,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-06-18T16:04:42.592684314Z"
+generated: "2026-06-18T16:06:09.553540199Z"
