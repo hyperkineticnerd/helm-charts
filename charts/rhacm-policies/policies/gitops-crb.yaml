@@ -1,8 +1,10 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: ConfigurationPolicy
 metadata:
-  name: spoke-gitops-crd
+  name: spoke-gitops-crb
 spec:
+  remediationAction: inform
+  severity: high
   object-templates:
     - complianceType: musthave
       objectDefinition:
@@ -21,5 +23,3 @@ spec:
           - kind: ServiceAccount
             namespace: openshift-gitops
             name: openshift-gitops-applicationset-controller
-  remediationAction: inform
-  severity: high        
