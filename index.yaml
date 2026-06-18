@@ -1551,6 +1551,16 @@ entries:
   rhacm-gitops-config:
   - apiVersion: v2
     appVersion: 2.16.0
+    created: "2026-06-18T16:04:42.315933827Z"
+    description: Integration between GitOps and RHACM
+    digest: f9cf379a47b66137d31b489e0761a81a4f3f0a51250039dfcb4fc3f76d233c67
+    name: rhacm-gitops-config
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-gitops-config-0.1.2/rhacm-gitops-config-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 2.16.0
     created: "2026-06-17T01:51:15.402816739Z"
     description: Integration between GitOps and RHACM
     digest: 49c5a0a4bc191f42c546026eb93cec98a69c3679a13d09d55a7980f1554b5149
@@ -1558,6 +1568,17 @@ entries:
     type: application
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-gitops-config-0.1.0/rhacm-gitops-config-0.1.0.tgz
+    version: 0.1.0
+  rhacm-managedclusterset:
+  - apiVersion: v2
+    appVersion: 2.16.0
+    created: "2026-06-18T16:04:42.592364951Z"
+    description: Deploy ManagedClusterSets and ManagedClusterSetBindings
+    digest: c20fb4e6ff851c44c715da646e2d259388ae97a81220fd0358a3c89a13f639ce
+    name: rhacm-managedclusterset
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-managedclusterset-0.1.0/rhacm-managedclusterset-0.1.0.tgz
     version: 0.1.0
   rhacm-policies:
   - apiVersion: v2
@@ -1924,4 +1945,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-06-17T01:51:15.403059382Z"
+generated: "2026-06-18T16:04:42.592684314Z"
