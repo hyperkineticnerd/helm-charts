@@ -34,10 +34,52 @@ sshKey:
 */}}
 {{- define "hosted-control-planes.hosted-cluster.configuration" -}}
 configuration:
-  ingress:
-    loadBalancer: {}
-  network:
-    serviceNodePortRange: 2048-32767
+{{- include "hosted-control-planes.hosted-cluster.configuration.ingress" . | nindent 2 }}
+{{- include "hosted-control-planes.hosted-cluster.configuration.network" . | nindent 2 }}
+{{- include "hosted-control-planes.hosted-cluster.configuration.oauth" . | nindent 2 }}
+{{- end }}
+
+{{/*
+*/}}
+{{- define "hosted-control-planes.hosted-cluster.configuration.ingress" -}}
+ingress:
+  loadBalancer: {}
+{{- end }}
+
+
+{{/*
+*/}}
+{{- define "hosted-control-planes.hosted-cluster.configuration.network" -}}
+network:
+  serviceNodePortRange: 2048-32767
+{{- end }}
+
+
+{{/*
+*/}}
+{{- define "hosted-control-planes.hosted-cluster.configuration.oauth" -}}
+oauth:
+  identityProviders:
+{{- with .Values.oauth }}
+    - name: {{ .name }}
+      type: LDAP
+      mappingMethod: claim
+      ldap:
+        url: {{ .url }}
+        insecure: false
+        bindDN: {{ .bindDN }}
+        bindPassword:
+          name: {{ .externalSecretName }}
+        attributes:
+          email:
+            - mail
+          id:
+            - dn
+          name:
+            - cn
+          preferredUsername:
+            - uid
+{{- end -}}
 {{- end }}
 
 
