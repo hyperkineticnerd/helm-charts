@@ -301,6 +301,16 @@ entries:
   hosted-control-planes:
   - apiVersion: v2
     appVersion: 4.18.30
+    created: "2026-06-22T15:37:45.912584009Z"
+    description: A Helm chart for Kubernetes
+    digest: b3cca5ae859fc6d422659fb98b5c22a80308dc56e6c4b997bb049aea0bbb604f
+    name: hosted-control-planes
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/hosted-control-planes-0.1.4/hosted-control-planes-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 4.18.30
     created: "2026-05-15T04:23:43.751125403Z"
     description: A Helm chart for Kubernetes
     digest: 14807a7dc41ed473bc17bbe25ea790fecd18c4527300443070efcfee8fbe7cc3
@@ -1286,6 +1296,17 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-0.1.0/openshift-0.1.0.tgz
     version: 0.1.0
+  openshift-configuration:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-06-22T15:37:46.131508759Z"
+    description: A Helm chart for Kubernetes
+    digest: b0b737e16737b1ea17375f26f7e1a002ca05f6b31ee1224840f24fc5313c86cb
+    name: openshift-configuration
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-configuration-0.1.0/openshift-configuration-0.1.0.tgz
+    version: 0.1.0
   openshift-gitops:
   - apiVersion: v2
     appVersion: 4.20.0
@@ -1965,4 +1986,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-06-22T13:34:10.855965632Z"
+generated: "2026-06-22T15:37:46.132175285Z"
