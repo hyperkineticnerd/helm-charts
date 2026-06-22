@@ -1551,6 +1551,16 @@ entries:
   rhacm-gitops-config:
   - apiVersion: v2
     appVersion: 2.16.0
+    created: "2026-06-22T13:34:10.855834355Z"
+    description: Integration between GitOps and RHACM
+    digest: 0dc5e25b23d7e1f089d1d56c0e0bf0fb040cb3faf8857e5f738c377aa17651d0
+    name: rhacm-gitops-config
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-gitops-config-0.1.3/rhacm-gitops-config-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 2.16.0
     created: "2026-06-18T16:04:42.315933827Z"
     description: Integration between GitOps and RHACM
     digest: f9cf379a47b66137d31b489e0761a81a4f3f0a51250039dfcb4fc3f76d233c67
@@ -1955,4 +1965,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-06-18T16:06:09.553540199Z"
+generated: "2026-06-22T13:34:10.855965632Z"
