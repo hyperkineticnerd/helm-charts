@@ -1,0 +1,9 @@
+{{- $npStart := $.Values.nodeport.start | default "30000"  | toString -}}
+{{- $npEnd   := $.Values.nodeport.end   | default "32767" | toString -}}
+---
+# apiVersion: config.openshift.io/v1
+# kind: Network
+# metadata:
+#   name: cluster
+# spec:
+#   serviceNodePortRange: {{ printf "%s-%s" $npStart $npEnd | quote }}

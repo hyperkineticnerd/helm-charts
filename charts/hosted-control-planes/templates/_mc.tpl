@@ -38,4 +38,7 @@ cluster.open-cluster-management.io/clusterset: {{ .Values.clusterSet.name | quot
 {{- end }}
 cloud: BareMetal
 vendor: OpenShift
+{{- range $k,$v := .Values.additionalLabels }}
+{{ $k }}: {{ $v }}
+{{- end -}}
 {{- end }}

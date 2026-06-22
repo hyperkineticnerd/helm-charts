@@ -1,0 +1,27 @@
+---
+# apiVersion: config.openshift.io/v1
+# kind: OAuth
+# metadata:
+#   annotations:
+#     argocd.argoproj.io/sync-options: Delete=false,ServerSideApply=true
+#   name: cluster
+# spec:
+#   identityProviders:
+#     - name: {{ .Values.oauth.name | quote }}
+#       type: LDAP
+#       mappingMethod: claim
+#       ldap:
+#         url: {{ .Values.oauth.url | quote }}
+#         insecure: false
+#         bindDN: {{ .Values.oauth.bindDN | quote }}
+#         bindPassword:
+#           name: {{ .Values.oauth.externalSecretName | quote }}
+#         attributes:
+#           email:
+#             - email
+#           id:
+#             - dn
+#           name:
+#             - cn
+#           preferredUsername:
+#             - uid

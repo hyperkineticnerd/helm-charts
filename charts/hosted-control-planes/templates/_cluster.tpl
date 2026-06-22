@@ -36,6 +36,8 @@ sshKey:
 configuration:
   ingress:
     loadBalancer: {}
+  network:
+    serviceNodePortRange: 2048-32767
 {{- end }}
 
 
