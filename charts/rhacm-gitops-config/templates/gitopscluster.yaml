@@ -5,10 +5,18 @@ metadata:
   namespace: openshift-gitops
 spec:
   argoServer:
-    cluster: notused
     argoNamespace: openshift-gitops
+    cluster: local-cluster
+  createBlankClusterSecrets: false
+  createPolicyTemplate: true
+  gitopsAddon:
+    argoCDAgent:
+      enabled: false
+      propagateHubCA: true
+    enabled: false
+    overrideExistingConfigs: true
   placementRef:
-    kind: Placement
     apiVersion: cluster.open-cluster-management.io/v1beta1
-    name: gitops-clusters
+    kind: Placement
+    name: all-openshift-clusters-except-local
     namespace: openshift-gitops
