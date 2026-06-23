@@ -51,6 +51,19 @@ ingress:
 */}}
 {{- define "hosted-control-planes.hosted-cluster.configuration.network" -}}
 network:
+  networkType: OVNKubernetes
+  clusterNetwork:
+    - cidr: 10.132.0.0/14
+  serviceNetwork:
+    - 172.31.0.0/16
+  networkDiagnostics:
+    mode: ''
+    sourcePlacement:
+      nodeSelector: {}
+      tolerations: []
+    targetPlacement:
+      nodeSelector: {}
+      tolerations: []
   serviceNodePortRange: 2048-32767
 {{- end }}
 
