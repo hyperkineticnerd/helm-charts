@@ -58,6 +58,7 @@ network:
 {{/*
 */}}
 {{- define "hosted-control-planes.hosted-cluster.configuration.oauth" -}}
+{{- if .Values.oauth.enabled -}}
 oauth:
   identityProviders:
 {{- with .Values.oauth }}
@@ -79,6 +80,7 @@ oauth:
             - cn
           preferredUsername:
             - uid
+{{- end -}}
 {{- end -}}
 {{- end }}
 

@@ -44,3 +44,6 @@ ha:
 
 acm:
   enabled: true
+
+oauth:
+  enabled: false
