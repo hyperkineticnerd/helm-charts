@@ -301,6 +301,16 @@ entries:
   hosted-control-planes:
   - apiVersion: v2
     appVersion: 4.18.30
+    created: "2026-06-23T02:36:41.650228091Z"
+    description: A Helm chart for Kubernetes
+    digest: beb4d7986f3a6c902102836673af1cec528337b694d71934dd0d49eaa19ebbef
+    name: hosted-control-planes
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/hosted-control-planes-0.1.7/hosted-control-planes-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: 4.18.30
     created: "2026-06-23T00:53:14.587441137Z"
     description: A Helm chart for Kubernetes
     digest: 2fcba5243854940361acd2dc271b944453d98e004958a6550faf55c435d3276a
@@ -2006,4 +2016,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-06-23T00:53:14.587658917Z"
+generated: "2026-06-23T02:36:41.650483263Z"
