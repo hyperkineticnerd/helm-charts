@@ -40,6 +40,7 @@ platform:
     attachDefaultNetwork: true
 {{- end -}}
 
+
 {{/*
 NodePool.nodeLabels
 */}}
@@ -48,6 +49,7 @@ NodePool.nodeLabels
 nodeLabels: {{ . }}
 {{- end -}}
 {{- end -}}
+
 
 {{/*
 NodePool.taints
