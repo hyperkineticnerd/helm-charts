@@ -39,11 +39,28 @@ configuration:
 {{- include "hosted-control-planes.hosted-cluster.configuration.oauth" . | nindent 2 }}
 {{- end }}
 
+
+{{/*
+*/}}
+{{- define "hosted-control-planes.hosted-cluster.configuration.apiserver" -}}
+apiServer:
+  servingCerts:
+    namedCertificates:
+    - names:
+      - {{ printf "api.%s.%s" .Values.clusterName .Values.domain }}
+      servingCertificate:
+        name: {{ .Values.apiServer.certSecret }}
+{{- end }}
+
+
 {{/*
 */}}
 {{- define "hosted-control-planes.hosted-cluster.configuration.ingress" -}}
 ingress:
-  loadBalancer: {}
+  appsDomain: ''
+  domain: ''
+  loadBalancer:
+    platform: {}
 {{- end }}
 
 

@@ -21,7 +21,8 @@ release:
   image: quay.io/openshift-release-dev/ocp-release:4.18.30-multi
 
 nodePool:
-  replicas: 3
+  - name: hcp-workers
+    replicas: 3
 
 issuer:
   url: kubernetes.default.svc

@@ -3,49 +3,57 @@ NodePool.spec
 */}}
 {{- define "hosted-control-planes.node-pool.spec" -}}
 arch: amd64
-clusterName: {{ .Release.Name }}
-{{- include "hosted-control-planes.node-pool.replicas" . }}
-management:
-{{- include "hosted-control-planes.node-pool.management" . | nindent 4 }}
-platform:
-{{- include "hosted-control-planes.node-pool.platform" . | nindent 4 }}
+clusterName: {{ .name }}
+replicas: {{ .replicas | default "2" }}
 release:
-  image: {{ .Values.release.image }}
-{{- end }}
+  image: {{ .releaseImage }}
+{{ include "hosted-control-planes.node-pool.management" . }}
+{{ include "hosted-control-planes.node-pool.platform" . }}
+{{ include "hosted-control-planes.node-pool.nodeLabels" . }}
+{{ include "hosted-control-planes.node-pool.taints" . }}
+{{- end -}}
 
 {{/*
 NodePool.management
 */}}
 {{- define "hosted-control-planes.node-pool.management" -}}
-autoRepair: false
-upgradeType: Replace
-{{- end }}
+management:
+  autoRepair: false
+  upgradeType: Replace
+{{- end -}}
 
 
 {{/*
 NodePool.platform
 */}}
 {{- define "hosted-control-planes.node-pool.platform" -}}
-type: KubeVirt
-kubevirt:
-  compute:
-    cores: 4
-    memory: 16Gi
-  rootVolume:
-    type: Persistent
-    persistent:
-      size: 120Gi
-  attachDefaultNetwork: true
-{{- end }}
-
+platform:
+  type: KubeVirt
+  kubevirt:
+    compute:
+      cores: 4
+      memory: 16Gi
+    rootVolume:
+      type: Persistent
+      persistent:
+        size: 120Gi
+    attachDefaultNetwork: true
+{{- end -}}
 
 {{/*
-NodePool.replicas
+NodePool.nodeLabels
 */}}
-{{- define "hosted-control-planes.node-pool.replicas" -}}
-{{- if .Values.nodePool.replicas }}
-replicas: {{ .Values.nodePool.replicas }}
-{{- else }}
-replicas: 2
-{{- end }}
-{{- end }}
+{{- define "hosted-control-planes.node-pool.nodeLabels" -}}
+{{- with .nodeLabels -}}
+nodeLabels: {{ . }}
+{{- end -}}
+{{- end -}}
+
+{{/*
+NodePool.taints
+*/}}
+{{- define "hosted-control-planes.node-pool.taints" -}}
+{{- with .taints -}}
+taints: {{ . }}
+{{- end -}}
+{{- end -}}
