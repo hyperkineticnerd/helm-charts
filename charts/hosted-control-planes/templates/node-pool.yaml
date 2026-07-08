@@ -1,6 +1,7 @@
 {{- $namespace := $.Release.Namespace -}}
 {{- range $pool := $.Values.nodePool -}}
 {{- $_ := set $pool "releaseImage" $.Values.release.image -}}
+{{- $_ := set $pool "clusterName" $.Values.cluster.name -}}
 apiVersion: hypershift.openshift.io/v1beta1
 kind: NodePool
 metadata:

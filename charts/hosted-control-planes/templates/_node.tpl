@@ -3,7 +3,7 @@ NodePool.spec
 */}}
 {{- define "hosted-control-planes.node-pool.spec" -}}
 arch: amd64
-clusterName: {{ .name }}
+clusterName: {{ .clusterName }}
 replicas: {{ .replicas | default "2" }}
 release:
   image: {{ .releaseImage }}
