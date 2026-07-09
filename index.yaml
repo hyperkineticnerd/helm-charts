@@ -1359,6 +1359,16 @@ entries:
   openshift-configuration:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-07-09T19:15:12.888228514Z"
+    description: A Helm chart for Kubernetes
+    digest: f4310b3a0a35775350489e49e6baf03c77da55ad0117292b7a1bfe3ec205c184
+    name: openshift-configuration
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-configuration-0.1.1/openshift-configuration-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-06-22T15:37:46.131508759Z"
     description: A Helm chart for Kubernetes
     digest: b0b737e16737b1ea17375f26f7e1a002ca05f6b31ee1224840f24fc5313c86cb
@@ -2087,4 +2097,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-07-09T17:36:54.525350065Z"
+generated: "2026-07-09T19:15:12.888427732Z"
