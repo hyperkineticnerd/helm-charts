@@ -1,0 +1,12 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: {{ .Values.clusterName | default $.Release.Name }}
+  namespace: openshift-gitops
+spec:
+  destinations:
+    - namespace: '*'
+      server: {{ .Values.clusterApiServer }}
+{{- include  "rhacm-gitops-project.project.source-repos" . | nindent 2 }}
+{{- include  "rhacm-gitops-project.project.cluster-resource-whitelist" . | nindent 2 }}
