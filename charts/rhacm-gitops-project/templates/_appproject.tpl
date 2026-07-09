@@ -5,7 +5,7 @@ Loop through sourceRepos
 {{- if $.Values.sourceRepos }}
 sourceRepos:
 {{- range $key,$value := $.Values.sourceRepos }}
-  - {{ $value | quote }}
+  - {{ $value | squote }}
 {{- end }}
 {{- end }}
 {{- end -}}
@@ -18,7 +18,11 @@ Loop through clusterResourceWhitelist
 {{- if $.Values.clusterResourceWhitelist }}
 clusterResourceWhitelist:
 {{- range $key,$value := $.Values.clusterResourceWhitelist }}
-  - {{ $value }}
+  - group: {{ $value.group | squote }}
+    kind: {{ $value.kind | squote }}
+    {{- if $value.name }}
+    name: {{ $value.name | squote }}
+    {{- end }}
 {{- end }}
 {{- end }}
 {{- end -}}
