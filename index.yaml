@@ -1663,6 +1663,16 @@ entries:
   rhacm-gitops-project:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-07-09T17:36:54.525188644Z"
+    description: A Helm chart for Kubernetes
+    digest: ad1742eaa4801bea938cbc5583616fb61f1f2bc0a7b4f84ab40b8c3872f53f9c
+    name: rhacm-gitops-project
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-gitops-project-0.1.1/rhacm-gitops-project-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-07-09T17:11:47.634846616Z"
     description: A Helm chart for Kubernetes
     digest: fe75fe080ef13783794219a201d369ef70e92e435e660658ceffd3aa48530da5
@@ -2077,4 +2087,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-07-09T17:11:47.63503578Z"
+generated: "2026-07-09T17:36:54.525350065Z"
