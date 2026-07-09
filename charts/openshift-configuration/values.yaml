@@ -3,17 +3,20 @@
 # Declare variables to be passed into your templates.
 
 nodeport:
+  enabled: false
   start: 30000
   end: 32767
 
-# banner:
-#   location: ''
-#   text: ''
-#   color: ''
-#   backgroundColor: ''
+banner:
+  enabled: true
+  location: ''
+  text: ''
+  color: ''
+  backgroundColor: ''
 
-# oauth:
-#   name: ''
-#   url: ''
-#   bindDN: ''
-#   externalSecretName: ''
+oauth:
+  enabled: false
+  name: ''
+  url: ''
+  bindDN: ''
+  externalSecretName: ''
