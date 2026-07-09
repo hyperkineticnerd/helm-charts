@@ -8,18 +8,11 @@ metadata:
   labels:
   {{- range $key,$value := $values.labels -}}
   {{ printf "%s: %s" $key $value | nindent 4 }}
-  {{- end }}
+  {{- end -}}
 {{- end }}
 spec:
-{{- if $values.managedNamespaces -}}
   managedNamespaces:
-    - name: test
-{{- end -}}
-{{- if $values.clusterSelector -}}
+    {{- $values.managedNamespaces }}
   clusterSelector:
-    selectorType: LabelSelector
-    labelSelector:
-      matchLabels:
-        vendor: OpenShift
-{{- end -}}
+    {{- $values.clusterSelector }}
 {{- end }}

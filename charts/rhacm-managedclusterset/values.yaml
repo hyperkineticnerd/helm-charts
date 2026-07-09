@@ -22,8 +22,16 @@ managedClustersSets:
   labels:
     environment: testing
     env: test
-  managedNamespaces: []
-  clusterSelector: {}
+  managedNamespaces:
+    - name: test
+  clusterSelector:
+    selectorType: LabelSelector
+    labelSelector:
+      matchExpressions:
+        - key: vendor
+          operator: In
+          values:
+            - OpenShift
 
 - name: prod
   labels:
