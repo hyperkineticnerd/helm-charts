@@ -1663,6 +1663,16 @@ entries:
   rhacm-managedclusterset:
   - apiVersion: v2
     appVersion: 2.16.0
+    created: "2026-07-09T15:44:31.334346992Z"
+    description: Deploy ManagedClusterSets
+    digest: d091f09dc22c1b7ddd52e56571dfe86754a1d1bb9e1d9d683eb3b11ff94e6356
+    name: rhacm-managedclusterset
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-managedclusterset-0.2.1/rhacm-managedclusterset-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 2.16.0
     created: "2026-07-09T14:51:02.940608734Z"
     description: Deploy ManagedClusterSets
     digest: e9f6be0b123f9644772cd1fc33bf3580f10ed5747cf90fd628f160fc84af4031
@@ -2056,4 +2066,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-07-09T14:51:02.940763931Z"
+generated: "2026-07-09T15:44:31.334519936Z"
