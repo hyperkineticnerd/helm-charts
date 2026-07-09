@@ -1,2 +1,6 @@
+## Basic Helm Chart ignore list
 Chart.lock
 charts/**/*.tgz
+
+## Explicitly add charts as needed
+charts/**

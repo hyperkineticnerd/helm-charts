@@ -1,23 +1,25 @@
-# ---
-# apiVersion: cluster.open-cluster-management.io/v1beta2
-# kind: ManagedClusterSet
-# metadata:
-#   name: example-clusterset
-# spec:
-#   # used to specify a list of namespaces that will be automatically created on each member cluster
-#   managedNamespaces:
-#     - name: my-clusterset-ns1
-#   clusterSelector:
-#     selectorType: ExclusiveClusterSetLabel
-
-# ---
-# apiVersion: cluster.open-cluster-management.io/v1beta2
-# kind: ManagedClusterSet
-# metadata:
-#   name: example-openshift-clusterset
-# spec:
-#   clusterSelector:
-#     selectorType: LabelSelector
-#     labelSelector:
-#       matchLabels:
-#         vendor: OpenShift
+{{- range $clusters,$values := $.Values.managedClustersSets }}
+---
+apiVersion: cluster.open-cluster-management.io/v1beta2
+kind: ManagedClusterSet
+metadata:
+  name: {{ $values.name }}
+{{- if $values.labels }}
+  labels:
+  {{- range $key,$value := $values.labels -}}
+  {{ printf "%s: %s" $key $value | nindent 4 }}
+  {{- end }}
+{{- end }}
+spec:
+{{- if $values.managedNamespaces -}}
+  managedNamespaces:
+    - name: test
+{{- end -}}
+{{- if $values.clusterSelector -}}
+  clusterSelector:
+    selectorType: LabelSelector
+    labelSelector:
+      matchLabels:
+        vendor: OpenShift
+{{- end -}}
+{{- end }}

@@ -1,3 +1,33 @@
 # Default values for rhacm-managedclusterset.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+
+managedClustersSets:
+# - name: global
+#   labels: {}
+#   managedNamespaces: []
+
+# - name: default
+#   labels: {}
+#   managedNamespaces: []
+
+- name: dev
+  labels:
+    environment: development
+    env: dev
+  managedNamespaces: []
+  clusterSelector: {}
+
+- name: test
+  labels:
+    environment: testing
+    env: test
+  managedNamespaces: []
+  clusterSelector: {}
+
+- name: prod
+  labels:
+    environment: production
+    env: prod
+  managedNamespaces: []
+  clusterSelector: {}
