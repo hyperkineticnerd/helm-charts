@@ -1445,6 +1445,16 @@ entries:
   openshift-ingress-config:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-07-27T23:50:23.266182616Z"
+    description: A Helm chart for Kubernetes
+    digest: cd2ad5cb4f0b7206eeb5b90c7a0ef011c1fb850a72549164410a87819529fb9c
+    name: openshift-ingress-config
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-ingress-config-0.1.1/openshift-ingress-config-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-07-27T20:26:41.709887877Z"
     description: A Helm chart for Kubernetes
     digest: 115b7514944745b28de425bae16c00b8c57e03398cfebe9802fd5ecec3c66fb5
@@ -2108,4 +2118,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-07-27T20:26:41.710113053Z"
+generated: "2026-07-27T23:50:23.26636704Z"
