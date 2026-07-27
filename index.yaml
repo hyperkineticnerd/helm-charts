@@ -1442,6 +1442,17 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-gitops-0.1.0/openshift-gitops-0.1.0.tgz
     version: 0.1.0
+  openshift-ingress-config:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-07-27T20:26:41.709887877Z"
+    description: A Helm chart for Kubernetes
+    digest: 115b7514944745b28de425bae16c00b8c57e03398cfebe9802fd5ecec3c66fb5
+    name: openshift-ingress-config
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-ingress-config-0.1.0/openshift-ingress-config-0.1.0.tgz
+    version: 0.1.0
   openshift-patching-jobs:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -2097,4 +2108,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-07-09T19:15:12.888427732Z"
+generated: "2026-07-27T20:26:41.710113053Z"
