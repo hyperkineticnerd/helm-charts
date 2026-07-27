@@ -6,4 +6,4 @@ metadata:
     argocd.argoproj.io/sync-options: Delete=false,ServerSideApply=true
 spec:
   trustedCA:
-    name: {{ .Values.clusterProxy.existingSecret }}
+    name: {{ .Values.clusterProxy.existingSecret | default "" | quote }}

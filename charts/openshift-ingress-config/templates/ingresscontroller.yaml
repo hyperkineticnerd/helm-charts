@@ -7,4 +7,4 @@ metadata:
     argocd.argoproj.io/sync-options: Delete=false,ServerSideApply=true
 spec:
   defaultCertificate:
-    name: {{ .Values.ingressController.existingSecret }}
+    name: {{ .Values.ingressController.existingSecret | default "" | quote }}
