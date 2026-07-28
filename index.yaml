@@ -53,6 +53,16 @@ entries:
   bazarr:
   - apiVersion: v2
     appVersion: 1.4.5
+    created: "2026-07-28T15:51:12.144357277Z"
+    description: A Helm chart for Kubernetes
+    digest: 66784ee748c7d62b94d28136237fb30e9d1af19286d895df8987f73b5f195dc9
+    name: bazarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/bazarr-0.1.2/bazarr-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.4.5
     created: "2026-03-16T05:36:38.836475756Z"
     description: A Helm chart for Kubernetes
     digest: 051a04d1bdbb1d8ce9d28f6b987e6f6f00ed0358574a1225730b664aa0ed6229
@@ -2128,4 +2138,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-07-28T03:58:49.622031525Z"
+generated: "2026-07-28T15:51:12.144630728Z"
