@@ -3,8 +3,8 @@
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
-  generateName: {{ .Values.name }}-
-  name: {{ printf "%s-%s" .Values.name ( randAlphaNum 8 | lower ) }}
+  # generateName: {{ .Values.name }}-
+  name: {{ printf "%s-%s" .Values.name "opgroup" }}
   namespace: {{ .Values.namespace.name }}
   {{- with .Values.operatorGroup.annotations }}
   annotations:
