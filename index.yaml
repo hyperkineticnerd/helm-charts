@@ -1786,6 +1786,22 @@ entries:
     version: 0.1.0
   rhacs:
   - apiVersion: v2
+    appVersion: 4.11.1
+    created: "2026-07-29T13:34:27.162076294Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.2.5
+    description: A Helm chart for Kubernetes
+    digest: 710c23938021b1166f7ca0e5600f6469f3b76d27ab1ac08eba610ecec31f9cb1
+    name: rhacs
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-0.1.1/rhacs-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 4.9.3
     created: "2026-03-05T22:07:05.915230058Z"
     dependencies:
@@ -2170,4 +2186,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-07-29T03:38:13.251869757Z"
+generated: "2026-07-29T13:34:27.162275762Z"
