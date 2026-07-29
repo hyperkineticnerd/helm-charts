@@ -3,4 +3,4 @@ Chart.lock
 charts/**/*.tgz
 
 ## Explicitly add charts as needed
-# charts/**
+charts/**
