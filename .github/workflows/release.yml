@@ -30,8 +30,8 @@ jobs:
       #     GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
       - name: Add Helm Repos
-          run: |
-            helm repo add hknlab https://charts.hknlab.io
+        run: |
+          helm repo add hknlab https://charts.hknlab.io
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.7.0
