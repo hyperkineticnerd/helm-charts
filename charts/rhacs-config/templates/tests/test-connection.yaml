@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "rhacs-config.fullname" . }}-test-connection"
+  labels:
+    {{- include "rhacs-config.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "rhacs-config.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
