@@ -8,7 +8,7 @@ image:
   repository: ghcr.io/wizarrrr/wizarr
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
@@ -71,14 +71,14 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
+livenessProbe: {}
+  # httpGet:
+  #   path: /
+  #   port: http
+readinessProbe: {}
+  # httpGet:
+  #   path: /
+  #   port: http
 
 autoscaling:
   enabled: false
