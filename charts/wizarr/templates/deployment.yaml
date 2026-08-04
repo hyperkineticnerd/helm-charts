@@ -1,7 +1,9 @@
+---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "wizarr.fullname" . }}
+  namespace: {{ .Release.Namespace }}
   labels:
     {{- include "wizarr.labels" . | nindent 4 }}
 spec:
@@ -36,6 +38,9 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            - configMapRef:
+                name: {{ printf "%s-env" .Release.Name }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
@@ -48,17 +53,10 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: config
-              mountPath: /data/database
+              mountPath: /data
           {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
           {{- end }}
-      volumes:
-        - name: config
-          persistentVolumeClaim:
-            claimName: {{ printf "%s-config" .Release.Name }}
-      {{- with .Values.volumes }}
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -71,3 +69,27 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: {{ printf "%s-config" .Release.Name }}
+      {{- with .Values.volumes }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+  # volumeClaimTemplates:
+  #   - metadata:
+  #       name: server
+  #     spec:
+  #       accessModes: [ "ReadWriteOnce" ]
+  #       volumeMode: Filesystem
+  #       resources:
+  #         requests:
+  #           storage: 5Gi
+  #   - metadata:
+  #       name: config
+  #     spec:
+  #       accessModes: [ "ReadWriteOnce" ]
+  #       volumeMode: Filesystem
+  #       resources:
+  #         requests:
+  #           storage: 3Gi
