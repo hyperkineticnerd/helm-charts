@@ -2199,6 +2199,16 @@ entries:
   wizarr:
   - apiVersion: v2
     appVersion: v2026.7.1
+    created: "2026-08-04T18:02:11.672463801Z"
+    description: A Helm chart for Kubernetes
+    digest: 32c3ad1d8719c385c01a4f3cb6a2e3392459e23876409492848be33b1e7a7430
+    name: wizarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.4/wizarr-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: v2026.7.1
     created: "2026-08-04T17:37:05.399066518Z"
     description: A Helm chart for Kubernetes
     digest: ce63b4e1c5fed2052d28ccdb4d6c1fe7a82d4f15f79627641d83af48404341bc
@@ -2227,4 +2237,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-08-04T17:37:05.399228837Z"
+generated: "2026-08-04T18:02:11.672695204Z"
