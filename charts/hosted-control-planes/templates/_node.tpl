@@ -13,6 +13,7 @@ release:
 {{ include "hosted-control-planes.node-pool.taints" . }}
 {{- end -}}
 
+
 {{/*
 NodePool.management
 */}}
@@ -45,10 +46,10 @@ platform:
 NodePool.nodeLabels
 */}}
 {{- define "hosted-control-planes.node-pool.nodeLabels" -}}
-{{ with .nodeLabels }}
+{{- with .nodeLabels -}}
 nodeLabels: 
-  {{ . | toYaml | nindent 2 }}
-{{ end }}
+  {{- . | toYaml | nindent 2 }}
+{{- end -}}
 {{- end -}}
 
 
@@ -56,8 +57,8 @@ nodeLabels:
 NodePool.taints
 */}}
 {{- define "hosted-control-planes.node-pool.taints" -}}
-{{ with .taints }}
+{{- with .taints -}}
 taints: 
-  {{ . | toYaml | nindent 2 }}
-{{ end }}
+  {{- . | toYaml | nindent 2 }}
+{{- end -}}
 {{- end -}}
