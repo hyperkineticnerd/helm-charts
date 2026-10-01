@@ -1,0 +1,14 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: init-bundle-sa-rolebinding
+  namespace: stackrox
+roleRef:
+  apiGroup: rbac.authorization.k8s.io/v1
+  kind: Role
+  name: init-bundle-sa-role
+subjects:
+  - kind: ServiceAccount
+    name: init-bundle-sa
+    namespace: stackrox
