@@ -1871,6 +1871,16 @@ entries:
   rhacs-config:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-01T19:26:02.428210521Z"
+    description: A Helm chart for Kubernetes
+    digest: e8011ff133b990a9dfd695caabd807adacf44d6788cff144d0cd60e066aa045b
+    name: rhacs-config
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-config-0.2.1/rhacs-config-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-07-29T03:06:26.418400326Z"
     description: A Helm chart for Kubernetes
     digest: b48bf9489616bb95ec024f3f3ce6b683a471632a43fee8408872bb8f2404e0de
@@ -1879,7 +1889,26 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-config-0.2.0/rhacs-config-0.2.0.tgz
     version: 0.2.0
+  rhacs-config-central-declarative:
+  - apiVersion: v2
+    created: "2026-10-01T19:26:02.58870307Z"
+    digest: f6305ae53bd605b517ae58709339da17a23719d2038d5b19cdd17ea76226e240
+    name: rhacs-config-central-declarative
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-config-central-declarative-0.1.0/rhacs-config-central-declarative-0.1.0.tgz
+    version: 0.1.0
   rhacs-secured-cluster:
+  - apiVersion: v2
+    appVersion: 4.11.1
+    created: "2026-10-01T19:26:02.765869399Z"
+    description: A Helm chart for Kubernetes
+    digest: fd840537579a0f209949be9a71ea3938d7852f018886de799df5b8d9d9b78895
+    name: rhacs-secured-cluster
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-secured-cluster-0.1.1/rhacs-secured-cluster-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: 4.11.1
     created: "2026-07-30T17:40:33.926454276Z"
@@ -2267,4 +2296,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-09-16T21:15:20.141977521Z"
+generated: "2026-10-01T19:26:02.766136905Z"
