@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+    name: init-bundle-sa
+    namespace: stackrox
+imagePullSecrets:
+  - name: pull-secret
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+    name: init-bundle-sa-role
+    namespace: stackrox
+rules:
+    - apiGroup: [""]
+      resources: ["secrets"]
+      verbs: ["get", "create", "update", "patch"]
+
+---
+apiVersion:
+kind: RoleBinding
+  name: init-bundle-sa-rolebinding
+  namespace: stackrox
+roleRef:
+  apiGroup: rbac.authorization.k8s.io/v1
+  kind: Role
+  name: init-bundle-sa-role
+subjects:
+  - kind: ServiceAccount
+    name: init-bundle-sa
+    namespace: stackrox

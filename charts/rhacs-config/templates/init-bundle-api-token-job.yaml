@@ -1,0 +1,41 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: generate-rhacs-api-token
+  namespace: stackrox
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      serviceAccountName: init-bundle-sa
+      containers:
+        - name: generate-token
+          image: registry.redhat.io/openshift4/ose-cli:v4.15
+          command:
+            - /bin/bash
+            - -c
+            - |
+              set -e
+
+              CENTRAL_PASSWORD=$(oc get secret central-httpasswd -n stackrox -o jsonpath='{.data.password}' | base64 -d)
+
+              RESPONSE=$(curl -k -s -X POST -u "admin:${CENTRAL_PASSWORD}" \
+                https://central.stackrox.svc:443/v1/apitokens/generate \
+                -H "Content-Type: application/json" \
+                -d '{"name": "argo-init-bundle-token", "roles": ["Admin"]}')
+
+              TOKEN=$(echo "$RESPONSE" | python3 -c "import sys, json; print(json.load(sys.stdin).get('token', ''))")
+
+              if [ -z "$TOKEN" ] || [ "$TOKEN" == "null" ]; then
+                echo "Failed to generate API token. Response was:"
+                echo "$RESPONSE"
+                exit 1
+              fi
+
+              oc create secret generic rhacs-api-token \
+                --from-literal=token="$TOKEN" \
+                -n stackrox \
+                --dry-run=client -o yaml | oc apply -f -

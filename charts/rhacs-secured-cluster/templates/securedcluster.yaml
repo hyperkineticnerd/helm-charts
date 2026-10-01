@@ -9,3 +9,11 @@ metadata:
 spec:
   clusterName: {{ .Values.clusterName }}
   centralEndpoint: {{ .Values.centralEndpoint }}
+  admissionControl:
+    listenOnCreates: true
+    listenOnUpdates: true
+    bypass: BreakGlassAnnotation
+  scannerV4:
+    scannerComponent: AutoSense
+  # clusterLabels:
+  #   environment: {{ .Values.environment | default "production" }}

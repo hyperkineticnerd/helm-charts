@@ -1,0 +1,41 @@
+apiVersion: batch/v1
+kind: Job
+  name: create-cluster-init-bundle
+  namespace: stackrox
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      serviceAccountName: init-bundle-sa
+      containers:
+        - name: create-bundle
+          image: registry.redhat.io/openshift4/ose-cli:v4.15
+          env:
+            - name: ROX_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: rhacs-api-token
+                  key: token
+            - name: ROX_CENTRAL_ADDRESS
+              value: "central.stackrox.svc:443"
+          command:
+            - /bin/bash
+            - -c 
+            - |
+              set -e
+
+              curl -k -f -sSL -H "Authorization: Bearer ${ROX_API_TOKEN}" \
+                "https://${ROX_CENTRAL_ADDRESS}/api/cli/download/roxctl-linux" \
+                - /tmp/roxctl
+
+              chmod +x /tmp/roxctl
+
+              /tmp/roxctl central init-bundles generate hub-init-bundle-{{now|htmlDate}} \
+                -e "$ROX_CENTRAL_ADDRESS" \
+                --output-secrets /tmp/bundle-{{now|htmlDate}}.yaml \
+                --insecure-skip-tls-verify
+
+              oc apply -f /tmp/bundle-{{now|htmlDate}}.yaml -n stackrox

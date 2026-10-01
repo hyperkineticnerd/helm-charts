@@ -1,0 +1,6 @@
+minimumRole: Analyst
+centralEndpoint: central.stackrox.svc:443
+# centralReencryptEndpoint: central-reencrypt-stackrox.apps.aap04-t-dc1.octfcu.org:443
+groups:
+- name: cluster-admins
+  role: Admin
