@@ -1871,6 +1871,16 @@ entries:
   rhacs-config:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-01T20:45:19.727879528Z"
+    description: A Helm chart for Kubernetes
+    digest: 08497dd670c49832f8549727f1f11c970cf53c5d25918db612d899802495fc3e
+    name: rhacs-config
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-config-0.2.2/rhacs-config-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-10-01T19:26:02.428210521Z"
     description: A Helm chart for Kubernetes
     digest: e8011ff133b990a9dfd695caabd807adacf44d6788cff144d0cd60e066aa045b
@@ -2296,4 +2306,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-10-01T19:26:02.766136905Z"
+generated: "2026-10-01T20:45:19.728114577Z"
