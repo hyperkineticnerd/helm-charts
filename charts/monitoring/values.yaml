@@ -17,3 +17,6 @@ operator:
   operatorGroup:
     enabled: true
     additionalNamespaces: []
+
+serviceAccount:
+  create: false

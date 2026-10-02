@@ -4,3 +4,6 @@ charts/**/*.tgz
 
 ## Explicitly add charts as needed
 charts/**
+
+## VSCode ignore list
+.vscode/**
