@@ -1,7 +1,7 @@
 name: Release OCI Helm Charts
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   push:
     branches:
       - main
@@ -49,7 +49,7 @@ jobs:
         with:
           charts_dir: charts
           config: cr.yaml
-          oci_registry_url: oci://ghcr.io/${{ github.repository_owner }}/charts
+          oci_registry_url: oci://ghcr.io/${{ github.repository_owner }}/helm-charts
           # oci_username: ${{ github.actor }}
           # oci_password: ${{ secrets.GITHUB_TOKEN }}
         env:
