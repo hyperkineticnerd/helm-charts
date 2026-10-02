@@ -9,16 +9,16 @@ appVersion: "2.6.14"
 dependencies:
   - name: olm-operator
     repository: https://charts.hknlab.io
-    version: 0.8.0
+    version: 0.3.0
     alias: istio
     condition: istio.enabled
   - name: olm-operator
     repository: https://charts.hknlab.io
-    version: 0.8.0
+    version: 0.3.0
     alias: kiali
     condition: kiali.enabled
   - name: olm-operator
     repository: https://charts.hknlab.io
-    version: 0.8.0
+    version: 0.3.0
     alias: jaeger
     condition: jaeger.enabled
