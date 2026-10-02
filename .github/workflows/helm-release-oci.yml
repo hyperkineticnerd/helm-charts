@@ -48,6 +48,7 @@ jobs:
       - name: Install chart-releaser
         uses: helm/chart-releaser-action@main
         with:
+          version: v1.8.1
           # charts_dir: charts
           # config: cr.yaml
           # oci_registry_url: oci://ghcr.io/${{ github.repository_owner }}/charts
