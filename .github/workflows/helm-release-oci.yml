@@ -45,13 +45,30 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Run chart-releaser
+      - name: Install chart-releaser
         uses: helm/chart-releaser-action@main
         with:
-          charts_dir: charts
-          config: cr.yaml
-          oci_registry_url: oci://ghcr.io/${{ github.repository_owner }}/charts
-          skip_upload: true
-          skip_existing: false
+          # charts_dir: charts
+          # config: cr.yaml
+          # oci_registry_url: oci://ghcr.io/${{ github.repository_owner }}/charts
+          # skip_upload: true
+          # skip_existing: false
+          # options: "--force"
+          install_only: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Package charts
+        run: |
+          for chart in charts/*/; do
+            echo "Packaging chart $chart"
+            cr package "$chart" \
+              --package-path .cr-release-packages \
+              --config cr.yaml
+          done
+
+      - name: Push charts
+        run: |
+          cr push \
+            --registry-url "oci://ghcr.io/${{ github.repository_owner }}/charts" \
+            --package-path .cr-release-packages
