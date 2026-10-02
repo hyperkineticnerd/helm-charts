@@ -1133,6 +1133,16 @@ entries:
   network-configuration-node:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T14:54:46.786323886Z"
+    description: A Helm chart for Kubernetes
+    digest: 9e720375cfff01ca5299bc816f9286651e522e82bb39bb739ad59e658afc67b8
+    name: network-configuration-node
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/network-configuration-node-0.1.2/network-configuration-node-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-04-17T03:59:13.069499628Z"
     description: A Helm chart for Kubernetes
     digest: ed31a2f57daefbfc604feaa4fe671cc316d5959343ec42d52af0db1117acfde5
@@ -2338,4 +2348,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-10-02T14:03:38.981599967Z"
+generated: "2026-10-02T14:54:46.786545391Z"
