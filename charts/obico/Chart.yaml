@@ -9,12 +9,12 @@ appVersion: "1.1.5"
 
 dependencies:
   - name: valkey
-    version: 0.8.0
+    version: 3.0.2
     repository: https://charts.bitnami.com/bitnami
     alias: valkey
     condition: valkey.enabled
   - name: postgresql
-    version: 0.8.0
+    version: 16.6.3
     repository: https://charts.bitnami.com/bitnami
     alias: postgresql
     condition: postgresql.enabled
