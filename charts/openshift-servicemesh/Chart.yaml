@@ -3,7 +3,7 @@ name: openshift-servicemesh
 description: A Helm chart for Kubernetes
 
 type: application
-version: 0.1.1
+version: 0.8.0
 appVersion: "2.6.14"
 
 dependencies:
