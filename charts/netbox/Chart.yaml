@@ -25,10 +25,10 @@ appVersion: "4.2.5"
 
 dependencies:
 - name: postgresql
-  version: "15.5.37"
+  version: 0.8.0
   repository: https://charts.bitnami.com/bitnami
   condition: postgresql.enabled
 - name: valkey
-  version: "3.0.2"
+  version: 0.8.0
   repository: https://charts.bitnami.com/bitnami
   condition: valkey.enabled

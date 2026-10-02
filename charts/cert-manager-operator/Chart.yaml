@@ -9,6 +9,6 @@ appVersion: "1.15.1"
 dependencies:
   - name: olm-operator
     repository: https://charts.hknlab.io
-    version: 0.2.5
+    version: 0.8.0
     alias: operator
     condition: operator.enabled

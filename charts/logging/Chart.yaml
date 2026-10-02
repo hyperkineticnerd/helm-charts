@@ -9,18 +9,18 @@ appVersion: "6.4.2"
 dependencies:
   - name: olm-operator
     repository: https://charts.hknlab.io
-    version: 0.2.5
+    version: 0.8.0
     alias: loki
     condition: loki.enabled
 
   - name: olm-operator
     repository: https://charts.hknlab.io
-    version: 0.2.5
+    version: 0.8.0
     alias: logging
     condition: logging.enabled
 
   - name: olm-operator
     repository: https://charts.hknlab.io
-    version: 0.2.5
+    version: 0.8.0
     alias: observability
     condition: observability.enabled
