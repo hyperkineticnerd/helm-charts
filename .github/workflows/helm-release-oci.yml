@@ -48,10 +48,10 @@ jobs:
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@main
         with:
-          # charts_dir: charts
-          # config: cr.yaml
+          charts_dir: charts
+          config: cr.yaml
           oci_registry_url: oci://ghcr.io/${{ github.repository_owner }}/charts
-          # skip_upload: false
-          # skip_existing: false
+          skip_upload: false
+          skip_existing: false
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
