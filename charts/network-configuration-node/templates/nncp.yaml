@@ -15,42 +15,42 @@ spec:
     vmnet-port2: 'interfaces.permanent-mac-address == ""'
   desiredState:
     interfaces:
-      - name: '{{ capture.management-port1.interfaces.0.name }}'
+      - name: "{{ `{{ capture.management-port1.interfaces.0.name }}` }}"
         type: ethernet
         state: up
         ipv4:
           enabled: false
         ipv6:
           enabled: false
-      - name: '{{ capture.management-port2.interfaces.0.name }}'
+      - name: "{{ `{{ capture.management-port2.interfaces.0.name }}` }}"
         type: ethernet
         state: up
         ipv4:
           enabled: false
         ipv6:
           enabled: false
-      - name: '{{ capture.storage-port1.interfaces.0.name }}'
+      - name: "{{ `{{ capture.storage-port1.interfaces.0.name }}` }}"
         type: ethernet
         state: up
         ipv4:
           enabled: false
         ipv6:
           enabled: false
-      - name: '{{ capture.storage-port2.interfaces.0.name }}'
+      - name: "{{ `{{ capture.storage-port2.interfaces.0.name }}` }}"
         type: ethernet
         state: up
         ipv4:
           enabled: false
         ipv6:
           enabled: false
-      - name: '{{ capture.storage-port1.interfaces.0.name }}'
+      - name: "{{ `{{ capture.storage-port1.interfaces.0.name }}` }}"
         type: ethernet
         state: up
         ipv4:
           enabled: false
         ipv6:
           enabled: false
-      - name: '{{ capture.storage-port2.interfaces.0.name }}'
+      - name: "{{ `{{ capture.storage-port2.interfaces.0.name }}` }}"
         type: ethernet
         state: up
         ipv4:
@@ -63,16 +63,16 @@ spec:
         link-aggregation:
           mode: 802.3ad
           port:
-            - '{{ capture.management-port1.interfaces.0.name }}'
-            - '{{ capture.management-port2.interfaces.0.name }}'
+            - "{{ `{{ capture.management-port1.interfaces.0.name }}` }}"
+            - "{{ `{{ capture.management-port2.interfaces.0.name }}` }}"
       - name: bond-vmnet
         type: bond
         state: up
         link-aggregation:
           mode: 802.3ad
           port:
-            - '{{ capture.vmnet-port1.interfaces.0.name }}'
-            - '{{ capture.vmnet-port2.interfaces.0.name }}'
+            - "{{ `{{ capture.vmnet-port1.interfaces.0.name }}` }}"
+            - "{{ `{{ capture.vmnet-port2.interfaces.0.name }}` }}"
       - name: vlan-management
         type: vlan
         state: up
