@@ -14,6 +14,22 @@ entries:
   aap:
   - apiVersion: v2
     appVersion: 2.6.0
+    created: "2026-10-02T17:25:28.505081842Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 08cfe204294b2625549e81d56994578daefbc85824bffa68596e8acaad55fca9
+    name: aap
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/aap-0.8.0/aap-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 2.6.0
     created: "2026-03-05T19:38:11.111130975Z"
     dependencies:
     - alias: operator
@@ -42,6 +58,16 @@ entries:
   audiobookshelf:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:28.676104192Z"
+    description: A Helm chart for Kubernetes
+    digest: e80d23972ba494ad69675ecb12b0288d96bc1f50346d1878c3dc817e7031acbe
+    name: audiobookshelf
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/audiobookshelf-0.8.0/audiobookshelf-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-04-25T14:25:06.087548001Z"
     description: A Helm chart for Kubernetes
     digest: fd428fa027d11694d12a75b768793727fd2dd1e8b4611907c9890a662a652db1
@@ -51,6 +77,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/audiobookshelf-0.1.0/audiobookshelf-0.1.0.tgz
     version: 0.1.0
   bazarr:
+  - apiVersion: v2
+    appVersion: 1.4.5
+    created: "2026-10-02T17:25:28.831565036Z"
+    description: A Helm chart for Kubernetes
+    digest: 6c779e2cc7818f7f74ef5a470fbff59a7fb886e79afec3a8e188607e046a093d
+    name: bazarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/bazarr-0.8.0/bazarr-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 1.4.5
     created: "2026-07-28T15:51:12.144357277Z"
@@ -133,6 +169,22 @@ entries:
   cert-manager-operator:
   - apiVersion: v2
     appVersion: 1.15.1
+    created: "2026-10-02T17:25:29.001332499Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: afeeba658f37dc275f33cfce0b4f70878b24cf557fe2501a927fe03a3a76b0fc
+    name: cert-manager-operator
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/cert-manager-operator-0.8.0/cert-manager-operator-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.15.1
     created: "2026-03-05T19:43:07.264528006Z"
     dependencies:
     - alias: operator
@@ -164,6 +216,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/cert-manager-operator-0.1.2/cert-manager-operator-0.1.2.tgz
     version: 0.1.2
   configarr:
+  - apiVersion: v2
+    appVersion: 1.13.1
+    created: "2026-10-02T17:25:29.157205519Z"
+    description: A Helm chart for Kubernetes
+    digest: 248f5e3fbdfc4b5f280825d69ec36f7bb02f3a21ad376479b7bc01e6a8e0c2fd
+    name: configarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/configarr-0.8.0/configarr-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 1.13.1
     created: "2025-08-24T15:25:43.335239133Z"
@@ -208,6 +270,16 @@ entries:
   element-web:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:29.356955557Z"
+    description: A Helm chart for Kubernetes
+    digest: b73112ac4a7957e093cef267efaf937cac196e6565974b27ba7297a1cda24c3b
+    name: element-web
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/element-web-0.8.0/element-web-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-04-25T14:25:06.609252107Z"
     description: A Helm chart for Kubernetes
     digest: ac1187cc059821aae598721b8a9dafe0fca0ea955cec9f3a99dccbd7d9ac9741
@@ -228,6 +300,22 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/enshrouded-0.1.0/enshrouded-0.1.0.tgz
     version: 0.1.0
   external-dns:
+  - apiVersion: v2
+    appVersion: 1.3.0
+    created: "2026-10-02T17:25:29.568740408Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 03c1b579774998bd9d541d40dd4bf263e431b3cc45579de81d70f2dc98c77640
+    name: external-dns
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/external-dns-0.8.0/external-dns-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 1.3.0
     created: "2026-03-05T19:43:42.921263593Z"
@@ -279,6 +367,16 @@ entries:
   fluidd:
   - apiVersion: v2
     appVersion: 1.1.5
+    created: "2026-10-02T17:25:29.840528772Z"
+    description: A Helm chart for Kubernetes
+    digest: e0c1bdfeb91b0a3c5b031f4f1e0a68f8bddbfbbb42cc14a4776b325d33b3059e
+    name: fluidd
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/fluidd-0.8.0/fluidd-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.1.5
     created: "2026-03-16T05:36:39.031896922Z"
     description: A Helm chart for Kubernetes
     digest: 47e3c153d3f7f57cd9ceeb968430563aad20d5e7994e62cd4aeea82faa35942d
@@ -300,6 +398,16 @@ entries:
   home-assistant-otbr:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:30.047814544Z"
+    description: A Helm chart for Kubernetes
+    digest: 526babbd8920d7095a46760b6219802f61784f960e9350cebce40bd446469c69
+    name: home-assistant-otbr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/home-assistant-otbr-0.8.0/home-assistant-otbr-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-02-24T01:52:30.02656953Z"
     description: A Helm chart for Kubernetes
     digest: f81155554174b3b4180e237b8527e1c5c7b236df4286257997daa39c9a46afd9
@@ -309,6 +417,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/home-assistant-otbr-0.1.0/home-assistant-otbr-0.1.0.tgz
     version: 0.1.0
   hosted-control-planes:
+  - apiVersion: v2
+    appVersion: 4.18.30
+    created: "2026-10-02T17:25:30.23727882Z"
+    description: A Helm chart for Kubernetes
+    digest: 1be2fa9d660940b5f3eab94b78c4cdc848421e50fa6a4de7194aac9953347d8d
+    name: hosted-control-planes
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/hosted-control-planes-0.8.0/hosted-control-planes-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 4.18.30
     created: "2026-09-16T21:15:20.14171615Z"
@@ -422,6 +540,21 @@ entries:
   hosted-control-planes-metallb:
   - apiVersion: v2
     appVersion: 4.18.30
+    created: "2026-10-02T17:25:30.542730077Z"
+    dependencies:
+    - alias: patch
+      name: openshift-patching-jobs
+      repository: ""
+      version: 0.8.0
+    description: A Helm chart for Kubernetes
+    digest: 0f02297e0c97c543a02ee921af0b0a95ff8186afd6bfebb74eb45937d3af9835
+    name: hosted-control-planes-metallb
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/hosted-control-planes-metallb-0.8.0/hosted-control-planes-metallb-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 4.18.30
     created: "2026-04-17T03:59:12.719951017Z"
     dependencies:
     - alias: patch
@@ -521,6 +654,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/hosted-control-planes-metallb-0.1.0/hosted-control-planes-metallb-0.1.0.tgz
     version: 0.1.0
   jellyfin:
+  - apiVersion: v2
+    appVersion: 10.12.0
+    created: "2026-10-02T17:25:30.758849009Z"
+    description: Installs Jellyfin Media Server on Kubernetes
+    digest: 6347128967c71862420bba3e1da684088ac335d956bf38741b2a7a2c7d12f728
+    name: jellyfin
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/jellyfin-0.8.0/jellyfin-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 10.12.0
     created: "2026-07-09T03:26:19.899567892Z"
@@ -684,6 +827,16 @@ entries:
   jellyseerr:
   - apiVersion: v2
     appVersion: 1.9.0
+    created: "2026-10-02T17:25:30.928342889Z"
+    description: Installs JellySeerr on Kubernetes
+    digest: b3a670ab66d9c210630d1285925c903052c19c1c368556600f7353c74a016f60
+    name: jellyseerr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/jellyseerr-0.8.0/jellyseerr-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.9.0
     created: "2026-03-16T05:36:39.212366887Z"
     description: Installs JellySeerr on Kubernetes
     digest: ca165b041d892708eb563485e90fec922fe41837e64c42d51cc73c2044736409
@@ -725,6 +878,16 @@ entries:
   lidarr:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:31.115782945Z"
+    description: A Helm chart for Kubernetes
+    digest: be33325e4ed3db200019761674bca2524dfb39ee7f9518eb6c5a7d61e7256882
+    name: lidarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/lidarr-0.8.0/lidarr-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-03-16T05:36:39.425858891Z"
     description: A Helm chart for Kubernetes
     digest: 6fd774b75541ade96d4c0bbd99145ac04868655042a50195165475113c3b7a59
@@ -744,6 +907,32 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/lidarr-0.1.0/lidarr-0.1.0.tgz
     version: 0.1.0
   logging:
+  - apiVersion: v2
+    appVersion: 6.4.2
+    created: "2026-10-02T17:25:31.265533494Z"
+    dependencies:
+    - alias: loki
+      condition: loki.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    - alias: logging
+      condition: logging.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    - alias: observability
+      condition: observability.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 436ab65f54f75c045edeb743c54fd4afda45976656db23d0ff4031a0c58ff6f9
+    name: logging
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/logging-0.8.0/logging-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 6.4.2
     created: "2026-03-05T20:34:34.981761004Z"
@@ -771,6 +960,22 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/logging-0.1.0/logging-0.1.0.tgz
     version: 0.1.0
   lvm-storage:
+  - apiVersion: v2
+    appVersion: 4.20.0
+    created: "2026-10-02T17:25:31.471533871Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 890572f4469d002b7a93364046503cf2c09e6b4d37956a49aa6bf9ff0bdaf6ff
+    name: lvm-storage
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/lvm-storage-0.8.0/lvm-storage-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 4.20.0
     created: "2026-03-05T23:14:31.259088952Z"
@@ -822,6 +1027,16 @@ entries:
   mainsail:
   - apiVersion: v2
     appVersion: 1.1.5
+    created: "2026-10-02T17:25:31.656333148Z"
+    description: A Helm chart for Kubernetes
+    digest: 4a89e235eaaa275d56790a3cf5f461dfce07e476247e7752c4062aad44973650
+    name: mainsail
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/mainsail-0.8.0/mainsail-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.1.5
     created: "2026-03-16T05:36:39.625744541Z"
     description: A Helm chart for Kubernetes
     digest: cbce318d6ab96d0dc386eebf9b268f7246b4f973a5c9db958898a627dd3a7069
@@ -841,6 +1056,30 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/mainsail-0.1.0/mainsail-0.1.0.tgz
     version: 0.1.0
   matrix-dendrite:
+  - apiVersion: v2
+    appVersion: 0.13.8
+    created: "2026-10-02T17:25:31.898697529Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 14.2.3
+    description: Dendrite Matrix Homeserver
+    digest: 74de75790c94015759030455e37210b096c1aeb32f0cf594b18454b650c55ee3
+    home: https://github.com/matrix-org/dendrite
+    icon: https://avatars.githubusercontent.com/u/8418310?s=48&v=4
+    keywords:
+    - matrix
+    - chat
+    - homeserver
+    - dendrite
+    name: matrix-dendrite
+    sources:
+    - https://github.com/matrix-org/dendrite
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/matrix-dendrite-0.8.0/matrix-dendrite-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 0.13.8
     created: "2025-04-25T14:25:07.724908652Z"
@@ -868,6 +1107,16 @@ entries:
   matrix-synapse:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:32.050624057Z"
+    description: A Helm chart for Kubernetes
+    digest: ed769ae523957c0ce062f5aba9517466b02a5677c05837273dd88e699ad985f4
+    name: matrix-synapse
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/matrix-synapse-0.8.0/matrix-synapse-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-04-25T14:25:07.845803607Z"
     description: A Helm chart for Kubernetes
     digest: 152dd466529b17155ed7e278a42094c6855c64a943a5ed48e3462d19ca4e1fe8
@@ -877,6 +1126,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/matrix-synapse-0.1.0/matrix-synapse-0.1.0.tgz
     version: 0.1.0
   metallb-bgp:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-10-02T17:25:32.251863436Z"
+    description: A Helm chart for Kubernetes
+    digest: 76cf9d250db354b639864442c880379c1d9f8db6173f258533339875920fcebe
+    name: metallb-bgp
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/metallb-bgp-0.8.0/metallb-bgp-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2026-04-17T03:59:12.882119175Z"
@@ -930,6 +1189,16 @@ entries:
   metallb-loadbalancer:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:32.45067471Z"
+    description: A Helm chart for Kubernetes
+    digest: 441f7afa3aeb6073189e44304834fa1637133feb1817a96f6008add416d79f44
+    name: metallb-loadbalancer
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/metallb-loadbalancer-0.8.0/metallb-loadbalancer-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-04-17T03:45:15.020203801Z"
     description: A Helm chart for Kubernetes
     digest: e8592828e86a46a3eaa317601e35344db5d34884fe43c247979c95d13c4c88aa
@@ -949,6 +1218,22 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/metallb-loadbalancer-0.1.0/metallb-loadbalancer-0.1.0.tgz
     version: 0.1.0
   metallb-operator:
+  - apiVersion: v2
+    appVersion: 4.20.0
+    created: "2026-10-02T17:25:32.660702735Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: b6a7c3b4bcdd74253fb0d5c361ca0eddac2afc67f0fa22a0fb7881f11ad79d40
+    name: metallb-operator
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/metallb-operator-0.8.0/metallb-operator-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 4.20.0
     created: "2026-03-05T20:34:35.427346549Z"
@@ -984,6 +1269,16 @@ entries:
   metube:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:32.853866595Z"
+    description: A Helm chart for Kubernetes
+    digest: ffcc7df94f258419663a829765cf9c35282ac3ca66dd79fc0ae7c587e21de3eb
+    name: metube
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/metube-0.8.0/metube-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-04-25T14:25:07.960750008Z"
     description: A Helm chart for Kubernetes
     digest: 7a30cc2a17d259b60c3d000bf5a007f4ce554d33df0a8b1fec69051e7a07aa19
@@ -1004,6 +1299,22 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/minecraft-0.1.0/minecraft-0.1.0.tgz
     version: 0.1.0
   monitoring:
+  - apiVersion: v2
+    appVersion: 1.3.1
+    created: "2026-10-02T17:25:33.025942219Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 74740866b9b6515d265033679f8ff3c9b30ccea8bfe3426c504fdf962be7af0a
+    name: monitoring
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/monitoring-0.8.0/monitoring-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 1.3.1
     created: "2026-10-02T14:03:38.981273798Z"
@@ -1055,6 +1366,22 @@ entries:
   multicluster-engine:
   - apiVersion: v2
     appVersion: 2.10.0
+    created: "2026-10-02T17:25:33.207534211Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: d5a3ddf884cdba1647e8558015e7ef3afbac8a3039538f227c7a0fee548199b2
+    name: multicluster-engine
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/multicluster-engine-0.8.0/multicluster-engine-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 2.10.0
     created: "2026-03-05T20:43:21.61078948Z"
     dependencies:
     - alias: operator
@@ -1070,6 +1397,25 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/multicluster-engine-0.1.0/multicluster-engine-0.1.0.tgz
     version: 0.1.0
   netbox:
+  - apiVersion: v2
+    appVersion: 4.2.5
+    created: "2026-10-02T17:25:33.48789331Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 15.5.37
+    - condition: valkey.enabled
+      name: valkey
+      repository: https://charts.bitnami.com/bitnami
+      version: 3.0.2
+    description: A Helm chart for Kubernetes
+    digest: a2043e1bf549d0166b98d7c9929762af3572cf6466fdd2dcc216612006b38d4a
+    name: netbox
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/netbox-0.8.0/netbox-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 4.2.5
     created: "2025-04-27T17:30:53.136491848Z"
@@ -1111,6 +1457,16 @@ entries:
   network-configuration:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:33.709922444Z"
+    description: A Helm chart for Kubernetes
+    digest: 648da84c82a18912d7e1a240e71a07c04719d5b24f1b55309a14d01d26235b2e
+    name: network-configuration
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/network-configuration-0.8.0/network-configuration-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-10-02T15:02:22.92445791Z"
     description: A Helm chart for Kubernetes
     digest: ce15df12ff1d08e9c052818253a1cd3cd85cd71c6c3539ead253a64a4b8a3246
@@ -1132,6 +1488,16 @@ entries:
   network-configuration-cudn:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:33.913546098Z"
+    description: A Helm chart for Kubernetes
+    digest: abbf90476a6626a314ae75878868e8f900b00aa6217c3d6b5d3767c298960ab2
+    name: network-configuration-cudn
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/network-configuration-cudn-0.8.0/network-configuration-cudn-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-01-07T05:19:06.130113364Z"
     description: A Helm chart for Kubernetes
     digest: bb65e69e00eec2e705ff36f0257cbb195c46ca922f7dac1e660efce5f32846fd
@@ -1141,6 +1507,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/network-configuration-cudn-0.1.0/network-configuration-cudn-0.1.0.tgz
     version: 0.1.0
   network-configuration-node:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-10-02T17:25:34.066539872Z"
+    description: A Helm chart for Kubernetes
+    digest: b853d4dc4320c61281e029b124a759eb2c93c4a960913efa23214ae8cb7e987a
+    name: network-configuration-node
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/network-configuration-node-0.8.0/network-configuration-node-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2026-10-02T14:54:46.786323886Z"
@@ -1174,6 +1550,16 @@ entries:
   network-configuration-udn:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:34.277853834Z"
+    description: A Helm chart for Kubernetes
+    digest: f59ed95155dd22917a6d51bef069ceebe717b1fb493c8bf05c0c90c602f64cbf
+    name: network-configuration-udn
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/network-configuration-udn-0.8.0/network-configuration-udn-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-01-07T05:19:06.355368933Z"
     description: A Helm chart for Kubernetes
     digest: c47fef1a43ab17f3f22402424ef2ebace49cf3f5389046e4ffd3b3e01db69189
@@ -1183,6 +1569,22 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/network-configuration-udn-0.1.0/network-configuration-udn-0.1.0.tgz
     version: 0.1.0
   nfd:
+  - apiVersion: v2
+    appVersion: 4.20.0
+    created: "2026-10-02T17:25:34.443419087Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 5e7a42ccaa7fedac882c50d8d5e4b94a01615a54e529660ab6c72c9a734aa774
+    name: nfd
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/nfd-0.8.0/nfd-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 4.20.0
     created: "2026-03-05T20:39:15.588743875Z"
@@ -1200,6 +1602,22 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/nfd-0.1.0/nfd-0.1.0.tgz
     version: 0.1.0
   nmstate:
+  - apiVersion: v2
+    appVersion: 4.20.0
+    created: "2026-10-02T17:25:34.674234342Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 48298c9d832009dda456dd6e2fd0182a884a95cf129e7a112b74811b7671057f
+    name: nmstate
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/nmstate-0.8.0/nmstate-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 4.20.0
     created: "2026-03-05T20:55:23.386612862Z"
@@ -1233,6 +1651,22 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/nmstate-0.1.0/nmstate-0.1.0.tgz
     version: 0.1.0
   nvidia:
+  - apiVersion: v2
+    appVersion: v25.10
+    created: "2026-10-02T17:25:34.849559449Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 8dee2873b80d72576be2b9ea7fecd1281ccb2f42e523acea12900635b952d85e
+    name: nvidia
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/nvidia-0.8.0/nvidia-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: v25.10
     created: "2026-03-05T23:31:54.771561136Z"
@@ -1282,6 +1716,27 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/nvidia-0.1.0/nvidia-0.1.0.tgz
     version: 0.1.0
   obico:
+  - apiVersion: v2
+    appVersion: 1.1.5
+    created: "2026-10-02T17:25:35.055496414Z"
+    dependencies:
+    - alias: valkey
+      condition: valkey.enabled
+      name: valkey
+      repository: https://charts.bitnami.com/bitnami
+      version: 3.0.2
+    - alias: postgresql
+      condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.6.3
+    description: A Helm chart for Kubernetes
+    digest: c8eca47b8846659d8ae8e7836a2b8603f442bd61df0b78db6c429cc8697366c8
+    name: obico
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/obico-0.8.0/obico-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 1.1.5
     created: "2025-04-27T16:02:34.151906016Z"
@@ -1346,6 +1801,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/obico-0.1.0/obico-0.1.0.tgz
     version: 0.1.0
   olm-operator:
+  - apiVersion: v2
+    appVersion: 4.20.0
+    created: "2026-10-02T17:25:35.222640791Z"
+    description: A Helm chart for Kubernetes
+    digest: 1c50ee94b8436219a81c113650ea5cb0592fb41dcbefe85e4667a1378dd3e408
+    name: olm-operator
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/olm-operator-0.8.0/olm-operator-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 4.20.0
     created: "2026-07-29T14:15:05.684932862Z"
@@ -1429,6 +1894,16 @@ entries:
   omada:
   - apiVersion: v2
     appVersion: 5.15.8.2
+    created: "2026-10-02T17:25:35.383075462Z"
+    description: A Helm chart for Kubernetes
+    digest: e685ebf3016247fc92c22791305996fad10e2d55617e58fff74c6389d1359f5a
+    name: omada
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/omada-0.8.0/omada-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 5.15.8.2
     created: "2025-04-25T14:25:08.732657304Z"
     description: A Helm chart for Kubernetes
     digest: 5d09ca5625d0c9f36403c95937716ad66d90e61301c5656d60b2a3e4465fca7b
@@ -1440,6 +1915,16 @@ entries:
   openshift:
   - apiVersion: v2
     appVersion: 4.12.0
+    created: "2026-10-02T17:25:35.59480019Z"
+    description: A Helm chart library for OpenShift
+    digest: b0aee3ae610e9873f22063dfdd49e882444dfe46215c8aad7fa09e4250b738a5
+    name: openshift
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-0.8.0/openshift-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 4.12.0
     created: "2025-04-25T14:25:08.826822196Z"
     description: A Helm chart library for OpenShift
     digest: 0523a38b0ea8ef7757c6e204b9cf797d072903fb7daab67d5ac9f0b5f6f91e47
@@ -1449,6 +1934,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-0.1.0/openshift-0.1.0.tgz
     version: 0.1.0
   openshift-configuration:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-10-02T17:25:35.756183831Z"
+    description: A Helm chart for Kubernetes
+    digest: 94095288f799cf8c339884b36fd5f6997771cb52747d735f2b9f619c08eea590
+    name: openshift-configuration
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-configuration-0.8.0/openshift-configuration-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2026-07-09T19:15:12.888228514Z"
@@ -1470,6 +1965,22 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-configuration-0.1.0/openshift-configuration-0.1.0.tgz
     version: 0.1.0
   openshift-gitops:
+  - apiVersion: v2
+    appVersion: 1.19.2
+    created: "2026-10-02T17:25:35.971119539Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 3b1700a649567a4241fad2fc41a323bfead17bebfca181a96e9d8fe3be32704f
+    name: openshift-gitops
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-gitops-0.8.0/openshift-gitops-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 4.20.0
     created: "2026-03-05T21:18:01.23555983Z"
@@ -1537,6 +2048,16 @@ entries:
   openshift-ingress-config:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:36.10479277Z"
+    description: A Helm chart for Kubernetes
+    digest: 9c48df3995f64d51afd84fc214caf9a1c1c9efc5c8c7e0ac6fa743e5c688e975
+    name: openshift-ingress-config
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-ingress-config-0.8.0/openshift-ingress-config-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-07-28T03:58:49.62180625Z"
     description: A Helm chart for Kubernetes
     digest: d9729120979d9276329666044ed6bdb230a1b950856da6e8c1eb4e88a5e6ea15
@@ -1568,6 +2089,16 @@ entries:
   openshift-patching-jobs:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:36.251758078Z"
+    description: A Helm chart for Kubernetes
+    digest: 40205b7e76b5f00e2a5b71d678bf541d4c32914da2e9b27cafa57442d43437a6
+    name: openshift-patching-jobs
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-patching-jobs-0.8.0/openshift-patching-jobs-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-04-15T20:09:20.452397508Z"
     description: A Helm chart for Kubernetes
     digest: f323bffb25aa70aa84b869b274962a81b2d582cd55b4b35c93eade02731a7128
@@ -1577,6 +2108,32 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-patching-jobs-0.1.2/openshift-patching-jobs-0.1.2.tgz
     version: 0.1.2
   openshift-servicemesh:
+  - apiVersion: v2
+    appVersion: 2.6.14
+    created: "2026-10-02T17:25:36.456462139Z"
+    dependencies:
+    - alias: istio
+      condition: istio.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    - alias: kiali
+      condition: kiali.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    - alias: jaeger
+      condition: jaeger.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 279de755c4dcffa34e07d237e08cbc40fbdcddbf8d6fcac51bb95641f310116d
+    name: openshift-servicemesh
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/openshift-servicemesh-0.8.0/openshift-servicemesh-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 2.6.14
     created: "2026-03-05T21:55:19.218308062Z"
@@ -1643,6 +2200,16 @@ entries:
   prowlarr:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:36.631736556Z"
+    description: A Helm chart for Kubernetes
+    digest: 9180eb514d227c372dfca4f620848cb979e62f95d7bbfca8e132505e3ebba317
+    name: prowlarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/prowlarr-0.8.0/prowlarr-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-03-16T05:36:39.828192129Z"
     description: A Helm chart for Kubernetes
     digest: 10b606fbf919d72bb3013be61578acd7f5b07c74f7c7a4178a6678c61dcda6b9
@@ -1662,6 +2229,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/prowlarr-0.1.0/prowlarr-0.1.0.tgz
     version: 0.1.0
   radarr:
+  - apiVersion: v2
+    appVersion: 6.0.4.10291
+    created: "2026-10-02T17:25:36.932984768Z"
+    description: A Helm chart for Kubernetes
+    digest: e1b663370711c407c365bebe1fd8af4fe413319afe6d74242bc4943bdfc2467e
+    name: radarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/radarr-0.8.0/radarr-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 6.0.4.10291
     created: "2026-03-13T16:56:44.542262697Z"
@@ -1705,6 +2282,16 @@ entries:
   readarr:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:37.11571639Z"
+    description: A Helm chart for Kubernetes
+    digest: 2dec6b19191267576ad1ee91b09dd3d6ec3bf99156b389a11cb0a39b5a2ac193
+    name: readarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/readarr-0.8.0/readarr-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-03-16T05:36:40.031431438Z"
     description: A Helm chart for Kubernetes
     digest: 2cdf84ff7ce3281d885932cb84f2c86529e2de2977528aacfe36d6514a94745d
@@ -1724,6 +2311,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/readarr-0.1.0/readarr-0.1.0.tgz
     version: 0.1.0
   redirecterr:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-10-02T17:25:37.290679502Z"
+    description: A Helm chart for Kubernetes
+    digest: da27945676d386a897db8a63736cab7f38ad845668d14084b872d2a6c398a8ed
+    name: redirecterr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/redirecterr-0.8.0/redirecterr-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2025-08-23T17:03:55.967853075Z"
@@ -1748,6 +2345,22 @@ entries:
   rhacm:
   - apiVersion: v2
     appVersion: 2.15.0
+    created: "2026-10-02T17:25:37.496328931Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 052a109c298a81bfe52e983294c55952f0c3863959416ab6aa9274900fc69a67
+    name: rhacm
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-0.8.0/rhacm-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 2.15.0
     created: "2026-03-05T22:07:05.797415087Z"
     dependencies:
     - alias: operator
@@ -1763,6 +2376,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-0.1.0/rhacm-0.1.0.tgz
     version: 0.1.0
   rhacm-gitops-config:
+  - apiVersion: v2
+    appVersion: 2.16.0
+    created: "2026-10-02T17:25:37.684873208Z"
+    description: Integration between GitOps and RHACM
+    digest: 863c2797b9d5563799c8853560d9835f87379200ae9292fc9c060ffc2dfc7b60
+    name: rhacm-gitops-config
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-gitops-config-0.8.0/rhacm-gitops-config-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 2.16.0
     created: "2026-06-22T13:34:10.855834355Z"
@@ -1796,6 +2419,16 @@ entries:
   rhacm-gitops-project:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:37.870597851Z"
+    description: A Helm chart for Kubernetes
+    digest: 2af8142bbaa745585f1f668aea44aaf53712bb98bcf7ea4f4bda2b4c75df5e0d
+    name: rhacm-gitops-project
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-gitops-project-0.8.0/rhacm-gitops-project-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-07-09T17:36:54.525188644Z"
     description: A Helm chart for Kubernetes
     digest: ad1742eaa4801bea938cbc5583616fb61f1f2bc0a7b4f84ab40b8c3872f53f9c
@@ -1815,6 +2448,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-gitops-project-0.1.0/rhacm-gitops-project-0.1.0.tgz
     version: 0.1.0
   rhacm-managedclusterset:
+  - apiVersion: v2
+    appVersion: 2.16.0
+    created: "2026-10-02T17:25:38.020173681Z"
+    description: Deploy ManagedClusterSets
+    digest: 709b7cd6a4405e3ab60867daa07fda4f2ae3ab3d7e77bfa86477ef18d4de93c1
+    name: rhacm-managedclusterset
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-managedclusterset-0.8.0/rhacm-managedclusterset-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 2.16.0
     created: "2026-07-09T15:44:31.334346992Z"
@@ -1848,6 +2491,16 @@ entries:
   rhacm-policies:
   - apiVersion: v2
     appVersion: 4.20.0
+    created: "2026-10-02T17:25:38.209665782Z"
+    description: A Helm chart for Kubernetes
+    digest: f5d9c41206afc70b6ee3b4efa03b81fad6d00bd22aa753f9e925dcbf560e3184
+    name: rhacm-policies
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-policies-0.8.0/rhacm-policies-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 4.20.0
     created: "2026-06-18T16:06:09.553330369Z"
     description: A Helm chart for Kubernetes
     digest: 7ec485a8abe189b78086b50484037237f85523b96a6be46b6da780642f0e5d4e
@@ -1867,6 +2520,22 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacm-policies-0.1.0/rhacm-policies-0.1.0.tgz
     version: 0.1.0
   rhacs:
+  - apiVersion: v2
+    appVersion: 4.11.1
+    created: "2026-10-02T17:25:39.399968587Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 86606e78812b67fa64df49363686e2adcc2ba3ee5184bcd202a2f3ce13aca87c
+    name: rhacs
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-0.8.0/rhacs-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 4.11.1
     created: "2026-07-29T13:34:27.162076294Z"
@@ -1923,6 +2592,16 @@ entries:
   rhacs-config:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:39.553352361Z"
+    description: A Helm chart for Kubernetes
+    digest: 7477709ef40a27b1959ffc6d04cdf55ee163960f8e8a347259b3b16c40d439bc
+    name: rhacs-config
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-config-0.8.0/rhacs-config-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-10-01T20:45:19.727879528Z"
     description: A Helm chart for Kubernetes
     digest: 08497dd670c49832f8549727f1f11c970cf53c5d25918db612d899802495fc3e
@@ -1953,6 +2632,14 @@ entries:
     version: 0.2.0
   rhacs-config-central-declarative:
   - apiVersion: v2
+    created: "2026-10-02T17:25:39.740294453Z"
+    digest: 5e5c72906899437101611525032a3e76c7f8ce847da79225c040c38f8f21eec3
+    name: rhacs-config-central-declarative
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-config-central-declarative-0.8.0/rhacs-config-central-declarative-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
     created: "2026-10-02T15:02:23.126869694Z"
     digest: c796f43cc91bd3a3b2fbd9bb19be89a4ef46759706583bc7ae0e8e963c0ddabb
     name: rhacs-config-central-declarative
@@ -1969,6 +2656,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-config-central-declarative-0.1.0/rhacs-config-central-declarative-0.1.0.tgz
     version: 0.1.0
   rhacs-secured-cluster:
+  - apiVersion: v2
+    appVersion: 4.11.1
+    created: "2026-10-02T17:25:39.930837642Z"
+    description: A Helm chart for Kubernetes
+    digest: e82457c58e3ede828a97888153043d205c6f340b4007c2a7eee8dc8dda72c2e1
+    name: rhacs-secured-cluster
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-secured-cluster-0.8.0/rhacs-secured-cluster-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 4.11.1
     created: "2026-10-01T19:26:02.765869399Z"
@@ -1990,6 +2687,22 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-secured-cluster-0.1.0/rhacs-secured-cluster-0.1.0.tgz
     version: 0.1.0
   rhbk:
+  - apiVersion: v2
+    appVersion: 26.0.9
+    created: "2026-10-02T17:25:40.103832052Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 5aa06cd306ff983968323f0e099b5e6be85b6ade4afb0b7d5ed39c8235dba0cd
+    name: rhbk
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhbk-0.8.0/rhbk-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 26.0.9
     created: "2026-03-05T22:06:09.675337846Z"
@@ -2025,6 +2738,22 @@ entries:
   rhdh:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:40.371188893Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: ba5ced51a9bb63c27a59bd5893decc73e5942f3ff6a988e15b0e320989397c4d
+    name: rhdh
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhdh-0.8.0/rhdh-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-03-05T22:07:06.034933754Z"
     dependencies:
     - alias: operator
@@ -2040,6 +2769,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhdh-0.1.0/rhdh-0.1.0.tgz
     version: 0.1.0
   sabnzbd:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-10-02T17:25:40.516259588Z"
+    description: A Helm chart for Kubernetes
+    digest: 75036127c8fb35d176948f74052290965af432c002607d76dbc4fc45b5a4c60a
+    name: sabnzbd
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/sabnzbd-0.8.0/sabnzbd-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2025-10-14T16:37:57.099318554Z"
@@ -2084,6 +2823,16 @@ entries:
   sonarr:
   - apiVersion: v2
     appVersion: 4.0.16.2944
+    created: "2026-10-02T17:25:40.707723676Z"
+    description: A Helm chart for Kubernetes
+    digest: 2bf2597eb929e9ff288a5f1a2069e82f492fab0f3bf4370a0c1f328142b484e8
+    name: sonarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/sonarr-0.8.0/sonarr-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 4.0.16.2944
     created: "2026-03-13T16:56:44.715273222Z"
     description: A Helm chart for Kubernetes
     digest: 0832e6e272f348329255d36ff08a19dc1646554bfdb728142ab7d11a10e88345
@@ -2123,6 +2872,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
   spoolman:
+  - apiVersion: v2
+    appVersion: 0.22.1
+    created: "2026-10-02T17:25:41.051163343Z"
+    description: A Helm chart for Kubernetes
+    digest: ae32dafb5b3e915dad8c3560e027697874037aa9283032eb43bbc59775c7c729
+    name: spoolman
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/spoolman-0.8.0/spoolman-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 0.22.1
     created: "2025-08-09T23:29:49.793480509Z"
@@ -2167,6 +2926,16 @@ entries:
   synology-vdsm:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:41.215792342Z"
+    description: A Helm chart for Kubernetes
+    digest: 9485076aaa6b3f0d41a4ffefbc65c69c85ca20d5920d5e98c04ca3e61593aeaf
+    name: synology-vdsm
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/synology-vdsm-0.8.0/synology-vdsm-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-04-25T14:25:10.309312883Z"
     description: A Helm chart for Kubernetes
     digest: bc04ef40084b24d39b187c436491383e34a410452ee0cf0e8513ad8c57d00e88
@@ -2176,6 +2945,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/synology-vdsm-0.1.0/synology-vdsm-0.1.0.tgz
     version: 0.1.0
   tdarr-node:
+  - apiVersion: v2
+    appVersion: 2.35.02
+    created: "2026-10-02T17:25:41.373638181Z"
+    description: A Helm chart for Kubernetes
+    digest: 6c59811bbd4734d3d3018f8f4177ee8c920f843bcd2f1b5382f5226562586ebb
+    name: tdarr-node
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/tdarr-node-0.8.0/tdarr-node-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 2.35.02
     created: "2025-08-09T23:29:49.930762575Z"
@@ -2197,6 +2976,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/tdarr-node-0.1.0/tdarr-node-0.1.0.tgz
     version: 0.1.0
   tdarr-server:
+  - apiVersion: v2
+    appVersion: 2.35.02
+    created: "2026-10-02T17:25:41.599616319Z"
+    description: A Helm chart for Kubernetes
+    digest: ffc0c6e856611e329de1b3e044b765b8a47777e3aae591381fdb9a7a8cf750d2
+    name: tdarr-server
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/tdarr-server-0.8.0/tdarr-server-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 2.35.02
     created: "2025-08-09T23:29:50.083155021Z"
@@ -2229,6 +3018,22 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/the-forest-0.1.0/the-forest-0.1.0.tgz
     version: 0.1.0
   trident:
+  - apiVersion: v2
+    appVersion: 25.6.2
+    created: "2026-10-02T17:25:41.813926951Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: olm-operator
+      repository: https://charts.hknlab.io
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: ddb27da73dff3fd1ac78f755fdab89f9b1471115ab6648984d81298ddc872ccc
+    name: trident
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/trident-0.8.0/trident-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 25.6.2
     created: "2026-03-05T21:14:45.754580019Z"
@@ -2264,6 +3069,16 @@ entries:
   unifi:
   - apiVersion: v2
     appVersion: v9.0.108
+    created: "2026-10-02T17:25:41.974442633Z"
+    description: A Helm chart for Kubernetes
+    digest: 6f745aecba32740bbb631de838a7b767343564bb1cad74b473b8f4a15c03da4a
+    name: unifi
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/unifi-0.8.0/unifi-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: v9.0.108
     created: "2025-04-25T14:25:11.157762773Z"
     description: A Helm chart for Kubernetes
     digest: 50da800009fb3e9e2610c1db1a4560c48497c0456088e9a6e0c99841bbbf4f66
@@ -2275,6 +3090,16 @@ entries:
   unpackerr:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T17:25:42.174664992Z"
+    description: A Helm chart for Kubernetes
+    digest: 076cecb35baf690458099e07a99d3dd7cfb53262343d574e230dc0bf0a3bf550
+    name: unpackerr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/unpackerr-0.8.0/unpackerr-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-10-14T14:46:06.548281442Z"
     description: A Helm chart for Kubernetes
     digest: e4192f516ef73e09f794c8e1ab65fd86100ae39ecb43dbb6b45f7776168696cb
@@ -2284,6 +3109,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/unpackerr-0.1.1/unpackerr-0.1.1.tgz
     version: 0.1.1
   uptime-kuma:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-10-02T17:25:42.3287649Z"
+    description: A Helm chart for Kubernetes
+    digest: 13def46baaefa07a7d74468081be959d63e21c1e0c82eff11cd11ff8f0ad326a
+    name: uptime-kuma
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/uptime-kuma-0.8.0/uptime-kuma-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2025-05-27T13:49:20.117229678Z"
@@ -2316,6 +3151,16 @@ entries:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/valheim-0.1.0/valheim-0.1.0.tgz
     version: 0.1.0
   wizarr:
+  - apiVersion: v2
+    appVersion: v2026.7.1
+    created: "2026-10-02T17:25:42.485817082Z"
+    description: A Helm chart for Kubernetes
+    digest: a9f7625b0ebb0b926939376fce7170e5c272c44af727b4e0cfdb6e01b0b0b4ee
+    name: wizarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.8.0/wizarr-0.8.0.tgz
+    version: 0.8.0
   - apiVersion: v2
     appVersion: v2026.7.1
     created: "2026-08-04T18:29:02.902724743Z"
@@ -2366,4 +3211,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-10-02T15:02:23.127014541Z"
+generated: "2026-10-02T17:25:42.486423802Z"
