@@ -1111,6 +1111,16 @@ entries:
   network-configuration:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-10-02T15:02:22.92445791Z"
+    description: A Helm chart for Kubernetes
+    digest: ce15df12ff1d08e9c052818253a1cd3cd85cd71c6c3539ead253a64a4b8a3246
+    name: network-configuration
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/network-configuration-0.1.1/network-configuration-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-01-07T05:22:18.929435742Z"
     description: A Helm chart for Kubernetes
     digest: 12211912ad622d5dcab52fe6abe3ae31959b6fade4aca4e3be13b15dbe040603
@@ -1943,6 +1953,14 @@ entries:
     version: 0.2.0
   rhacs-config-central-declarative:
   - apiVersion: v2
+    created: "2026-10-02T15:02:23.126869694Z"
+    digest: c796f43cc91bd3a3b2fbd9bb19be89a4ef46759706583bc7ae0e8e963c0ddabb
+    name: rhacs-config-central-declarative
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhacs-config-central-declarative-0.1.1/rhacs-config-central-declarative-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     created: "2026-10-01T19:26:02.58870307Z"
     digest: f6305ae53bd605b517ae58709339da17a23719d2038d5b19cdd17ea76226e240
     name: rhacs-config-central-declarative
@@ -2348,4 +2366,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-10-02T14:54:46.786545391Z"
+generated: "2026-10-02T15:02:23.127014541Z"
