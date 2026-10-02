@@ -49,12 +49,13 @@ jobs:
         uses: helm/chart-releaser-action@v1.7.0
         with:
           charts_dir: charts
-          config: cr.yaml
-          # skip_upload: true
-          # skip_existing: false
+          # config: cr.yaml
+          skip_upload: true
           oci_registry_url: oci://ghcr.io/${{ github.repository_owner }}/helm-charts
           # oci_username: ${{ github.actor }}
           # oci_password: ${{ secrets.GITHUB_TOKEN }}
+          config: |
+            skip_existing: false
           options: "--force"
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
