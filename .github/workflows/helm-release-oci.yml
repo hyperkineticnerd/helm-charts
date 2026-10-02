@@ -50,10 +50,11 @@ jobs:
         with:
           charts_dir: charts
           config: cr.yaml
-          skip_upload: true
-          skip_existing: false
+          # skip_upload: true
+          # skip_existing: false
           oci_registry_url: oci://ghcr.io/${{ github.repository_owner }}/helm-charts
           # oci_username: ${{ github.actor }}
           # oci_password: ${{ secrets.GITHUB_TOKEN }}
+          options: "--force"
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
