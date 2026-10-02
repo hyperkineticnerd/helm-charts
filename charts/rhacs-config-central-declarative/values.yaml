@@ -4,3 +4,7 @@ centralEndpoint: central.stackrox.svc:443
 groups:
 - name: cluster-admins
   role: Admin
+
+central:
+  declarative:
+    enabled: false
