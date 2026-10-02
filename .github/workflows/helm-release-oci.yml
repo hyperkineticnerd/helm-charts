@@ -1,18 +1,22 @@
-name: Release Charts
+name: Release Helm Charts
 
 on:
   workflow_dispatch:
   push:
     branches:
       - main
+    paths:
+      - 'charts/**'
 
 jobs:
   release:
     # depending on default permission settings for your org (contents being read-only or read-write for workloads), you will have to add permissions
     # see: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
+    runs-on: ubuntu-latest
     permissions:
       contents: write
-    runs-on: ubuntu-latest
+      pages: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -24,7 +28,7 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
-      # - name: Install Helm
+      # - name: Set up Helm
       #   uses: azure/setup-helm@v4
       #   env:
       #     GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
@@ -33,9 +37,18 @@ jobs:
         run: |
           helm repo add hknlab https://charts.hknlab.io
 
+      - name: Log in to the OCI registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.7.0
         with:
+          charts_dir: charts
           skip_existing: true
+          oci_registry_url: oci://ghcr.io/${{ github.repository_owner }}//charts
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
