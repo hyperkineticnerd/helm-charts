@@ -15,8 +15,10 @@ jobs:
     # see: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       pages: write
+      packages: write
+      attestations: write
 
     steps:
       - name: Checkout
