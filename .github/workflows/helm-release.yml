@@ -2,6 +2,11 @@ name: Release Helm Charts
 
 on:
   workflow_dispatch: {}
+  workflow_run:
+    workflows:
+      - Lint Helm Charts
+    types:
+      - completed
 
 jobs:
   release:
@@ -31,6 +36,7 @@ jobs:
       - name: Add Helm Repos
         run: |
           helm repo add hknlab https://charts.hknlab.io
+          helm repo update
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.7.0
@@ -38,3 +44,6 @@ jobs:
           skip_existing: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+  release-oci:
+    uses: ./.github/workflows/helm-release.oci.yml@main
