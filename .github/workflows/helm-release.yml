@@ -51,8 +51,8 @@ jobs:
 
   # release-oci:
   #   needs: release
-  #   # runs-on: ubuntu-latest
-  #   # if: ${{ needs.release.outputs.changed_charts != '' }}
+  #   runs-on: ubuntu-latest
+  #   if: ${{ needs.release.outputs.changed_charts != '' }}
   #   steps:
       - name: Log in to the OCI registry
         uses: docker/login-action@v4.6.0
