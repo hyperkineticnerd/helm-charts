@@ -7,6 +7,12 @@ on:
       - "Helm Lint"
     types:
       - completed
+  push:
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'charts/**'
 
 jobs:
   release:
@@ -16,7 +22,7 @@ jobs:
     permissions:
       contents: write
       pages: write
-      packages: write
+      packages: write # needed to write OCI Releases
 
     steps:
       - name: Checkout
