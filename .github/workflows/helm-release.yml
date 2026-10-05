@@ -46,4 +46,4 @@ jobs:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
   release-oci:
-    uses: ./.github/workflows/helm-release-oci.yml@main
+    uses: ./.github/workflows/helm-release-oci.yml
