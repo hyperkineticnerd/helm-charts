@@ -1,10 +1,10 @@
-name: Release Helm Charts
+name: Helm Release
 
 on:
   workflow_dispatch: {}
   workflow_run:
     workflows:
-      - "Lint Helm Charts"
+      - "Helm Lint"
     types:
       - completed
 

@@ -1,4 +1,4 @@
-name: Release OCI Helm Charts
+name: Helm Release OCI
 
 on:
   workflow_dispatch: {}
