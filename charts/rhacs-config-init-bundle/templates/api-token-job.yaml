@@ -21,7 +21,7 @@ spec:
             - |
               set -e
 
-              CENTRAL_PASSWORD=$(oc get secret central-htpasswd -n stackrox -o jsonpath='{.data.password}' | base64 -d)
+              CENTRAL_PASSWORD=$(oc get secret central-httpasswd -n stackrox -o jsonpath='{.data.password}' | base64 -d)
 
               RESPONSE=$(curl -k -s -X POST -u "admin:${CENTRAL_PASSWORD}" \
                 https://central.stackrox.svc:443/v1/apitokens/generate \
