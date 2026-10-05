@@ -33,6 +33,7 @@ jobs:
       - name: Add Helm Repos
         run: |
           helm repo add hknlab https://charts.hknlab.io
+          helm repo update
 
       - name: List charts
         run: |
