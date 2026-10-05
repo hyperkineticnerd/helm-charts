@@ -31,7 +31,7 @@ spec:
 
               curl -k -f -sSL -H "Authorization: Bearer ${ROX_API_TOKEN}" \
                 "https://${ROX_CENTRAL_ADDRESS}/api/cli/download/roxctl-linux" \
-                - /tmp/roxctl
+                -o /tmp/roxctl
 
               chmod +x /tmp/roxctl
 
