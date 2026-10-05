@@ -8,7 +8,7 @@ rules:
   - apiGroups: 
       - ""
     resources: 
-      - "Secrets"
+      - "ecrets"
     verbs:
       - "get"
       - "create"
