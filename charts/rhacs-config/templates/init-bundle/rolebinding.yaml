@@ -5,7 +5,7 @@ metadata:
   name: init-bundle-sa-rolebinding
   namespace: stackrox
 roleRef:
-  apiGroup: rbac.authorization.k8s.io/v1
+  apiGroup: rbac.authorization.k8s.io
   kind: Role
   name: init-bundle-sa-role
 subjects:
