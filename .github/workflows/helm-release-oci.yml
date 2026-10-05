@@ -15,9 +15,9 @@ jobs:
     # see: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      pages: write
-      packages: write
+      contents: write # needed to create tags
+      pages: write # needed to write HTTP Release index.yaml
+      packages: write # needed to write OCI Releases
       attestations: write
 
     steps:
