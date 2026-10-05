@@ -39,6 +39,7 @@ jobs:
       - name: Add Helm Repos
         run: |
           helm repo add hknlab https://charts.hknlab.io
+          helm repo update
 
       - name: Log in to the OCI registry
         uses: docker/login-action@v4.6.0
