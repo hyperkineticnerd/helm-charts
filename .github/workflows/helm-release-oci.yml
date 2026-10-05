@@ -8,12 +8,12 @@ on:
   #     - Release Helm Charts
   #   types:
   #     - completed
-  push:
-    branches:
-      - main
-  pull_request:
-    paths:
-      - 'charts/**'
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   paths:
+  #     - 'charts/**'
 
 jobs:
   oci-release:
