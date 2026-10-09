@@ -1604,6 +1604,16 @@ entries:
   nmstate:
   - apiVersion: v2
     appVersion: 4.20.0
+    created: "2026-10-09T22:16:31.204097305Z"
+    description: A Helm chart for Kubernetes
+    digest: 23b351808b8d41b6798dfaa060723d036f02ae048a0c3338b26e6245dc9223f6
+    name: nmstate
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/nmstate-0.8.1/nmstate-0.8.1.tgz
+    version: 0.8.1
+  - apiVersion: v2
+    appVersion: 4.20.0
     created: "2026-10-02T17:25:34.674234342Z"
     dependencies:
     - alias: operator
@@ -2770,6 +2780,16 @@ entries:
   rhbk:
   - apiVersion: v2
     appVersion: 26.0.9
+    created: "2026-10-09T22:16:31.331494259Z"
+    description: A Helm chart for Kubernetes
+    digest: 46c6eed160528352f35eda591fdc5e19190d16ae2c5be630abf16a52ebf0d06c
+    name: rhbk
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/rhbk-0.8.1/rhbk-0.8.1.tgz
+    version: 0.8.1
+  - apiVersion: v2
+    appVersion: 26.0.9
     created: "2026-10-02T17:25:40.103832052Z"
     dependencies:
     - alias: operator
@@ -3292,4 +3312,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-10-05T16:49:14.441084389Z"
+generated: "2026-10-09T22:16:31.331785813Z"
