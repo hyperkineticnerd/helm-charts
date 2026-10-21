@@ -1,0 +1,190 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "catalog": {
+      "additionalProperties": false,
+      "properties": {
+        "channel": {
+          "default": "stable",
+          "title": "channel",
+          "type": "string"
+        },
+        "source": {
+          "default": "my-operator-index",
+          "title": "source",
+          "type": "string"
+        },
+        "sourceNamespace": {
+          "default": "olm",
+          "title": "sourceNamespace",
+          "type": "string"
+        }
+      },
+      "required": [
+        "channel",
+        "source",
+        "sourceNamespace"
+      ],
+      "title": "catalog",
+      "type": "object"
+    },
+    "config": {
+      "additionalProperties": false,
+      "required": [],
+      "title": "config",
+      "type": "object"
+    },
+    "enabled": {
+      "default": true,
+      "title": "enabled",
+      "type": "boolean"
+    },
+    "global": {
+      "description": "Global values are values that can be accessed from any chart or subchart by exactly the same name.",
+      "required": [],
+      "title": "global",
+      "type": "object"
+    },
+    "install": {
+      "additionalProperties": false,
+      "properties": {
+        "installPlanApproval": {
+          "default": "Automatic",
+          "title": "installPlanApproval",
+          "type": "string"
+        }
+      },
+      "required": [
+        "installPlanApproval"
+      ],
+      "title": "install",
+      "type": "object"
+    },
+    "name": {
+      "default": "my-operator",
+      "title": "name",
+      "type": "string"
+    },
+    "namespace": {
+      "additionalProperties": false,
+      "properties": {
+        "annotations": {
+          "additionalProperties": false,
+          "required": [],
+          "title": "annotations",
+          "type": "object"
+        },
+        "enabled": {
+          "default": true,
+          "title": "enabled",
+          "type": "boolean"
+        },
+        "labels": {
+          "additionalProperties": false,
+          "description": "argocd.argoproj.io/sync-wave: \"-75\"",
+          "required": [],
+          "title": "labels",
+          "type": "object"
+        },
+        "name": {
+          "default": "my-operator-namespace",
+          "title": "name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "enabled",
+        "name",
+        "annotations",
+        "labels"
+      ],
+      "title": "namespace",
+      "type": "object"
+    },
+    "operatorGroup": {
+      "additionalProperties": false,
+      "properties": {
+        "additionalNamespaces": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "string"
+              }
+            ],
+            "required": []
+          },
+          "title": "additionalNamespaces",
+          "type": "array"
+        },
+        "annotations": {
+          "additionalProperties": false,
+          "required": [],
+          "title": "annotations",
+          "type": "object"
+        },
+        "enabled": {
+          "default": true,
+          "title": "enabled",
+          "type": "boolean"
+        },
+        "labels": {
+          "additionalProperties": false,
+          "description": "argocd.argoproj.io/sync-wave: \"-70\"",
+          "required": [],
+          "title": "labels",
+          "type": "object"
+        },
+        "upgradeStrategy": {
+          "default": "",
+          "title": "upgradeStrategy",
+          "type": "string"
+        }
+      },
+      "required": [
+        "enabled",
+        "additionalNamespaces",
+        "upgradeStrategy",
+        "annotations",
+        "labels"
+      ],
+      "title": "operatorGroup",
+      "type": "object"
+    },
+    "subscription": {
+      "additionalProperties": false,
+      "properties": {
+        "annotations": {
+          "additionalProperties": false,
+          "required": [],
+          "title": "annotations",
+          "type": "object"
+        },
+        "labels": {
+          "additionalProperties": false,
+          "description": "argocd.argoproj.io/sync-wave: \"-65\"",
+          "required": [],
+          "title": "labels",
+          "type": "object"
+        }
+      },
+      "required": [
+        "annotations",
+        "labels"
+      ],
+      "title": "subscription",
+      "type": "object"
+    }
+  },
+  "required": [
+    "enabled",
+    "name",
+    "namespace",
+    "install",
+    "catalog",
+    "operatorGroup",
+    "subscription",
+    "config"
+  ],
+  "type": "object"
+}
