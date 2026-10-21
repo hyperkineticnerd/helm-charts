@@ -1813,6 +1813,16 @@ entries:
   olm-operator:
   - apiVersion: v2
     appVersion: 4.20.0
+    created: "2026-10-21T18:58:44.13607174Z"
+    description: A Helm chart for Kubernetes
+    digest: a28008dfda8e8638b040a86e764b032936951cbb431d23b851e0d3e5fb60d9b9
+    name: olm-operator
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/olm-operator-0.8.1/olm-operator-0.8.1.tgz
+    version: 0.8.1
+  - apiVersion: v2
+    appVersion: 4.20.0
     created: "2026-10-02T17:25:35.222640791Z"
     description: A Helm chart for Kubernetes
     digest: 1c50ee94b8436219a81c113650ea5cb0592fb41dcbefe85e4667a1378dd3e408
@@ -3312,4 +3322,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-10-09T22:16:31.331785813Z"
+generated: "2026-10-21T18:58:44.136677903Z"
