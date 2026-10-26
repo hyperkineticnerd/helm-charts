@@ -1813,6 +1813,16 @@ entries:
   olm-operator:
   - apiVersion: v2
     appVersion: 4.20.0
+    created: "2026-10-26T12:58:36.180983448Z"
+    description: A Helm chart for Kubernetes
+    digest: 42f58834aa08c0c0d3d6bb570b650a4302c1895c49955daff2db2dc34ddf6c9a
+    name: olm-operator
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/olm-operator-0.8.2/olm-operator-0.8.2.tgz
+    version: 0.8.2
+  - apiVersion: v2
+    appVersion: 4.20.0
     created: "2026-10-21T18:58:44.13607174Z"
     description: A Helm chart for Kubernetes
     digest: a28008dfda8e8638b040a86e764b032936951cbb431d23b851e0d3e5fb60d9b9
@@ -2934,6 +2944,16 @@ entries:
   sonarr:
   - apiVersion: v2
     appVersion: 4.0.16.2944
+    created: "2026-10-26T12:58:36.414176335Z"
+    description: A Helm chart for Kubernetes
+    digest: 8c8617119b1966cacce2283e8f07e23a55ad4b09fd060c5d13ef04bf9d1f2043
+    name: sonarr
+    type: application
+    urls:
+    - https://github.com/hyperkineticnerd/helm-charts/releases/download/sonarr-0.8.1/sonarr-0.8.1.tgz
+    version: 0.8.1
+  - apiVersion: v2
+    appVersion: 4.0.16.2944
     created: "2026-10-02T17:25:40.707723676Z"
     description: A Helm chart for Kubernetes
     digest: 2bf2597eb929e9ff288a5f1a2069e82f492fab0f3bf4370a0c1f328142b484e8
@@ -3322,4 +3342,4 @@ entries:
     urls:
     - https://github.com/hyperkineticnerd/helm-charts/releases/download/wizarr-0.1.1/wizarr-0.1.1.tgz
     version: 0.1.1
-generated: "2026-10-21T18:58:44.136677903Z"
+generated: "2026-10-26T12:58:36.414544537Z"
